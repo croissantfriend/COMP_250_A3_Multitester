@@ -19,12 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7734e7e-5730-42e8-8760-77d7c1343762" name="Default Changelist" comment="Dog-ified AddCustomDog.form">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="b7734e7e-5730-42e8-8760-77d7c1343762" name="Default Changelist" comment="Dog-ified a whole bunch of stuff - I'm losing track">
+      <change beforePath="$PROJECT_DIR$/src/COMP250_A3_W2020/DViz.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/COMP250_A3_W2020/DViz.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/COMP250_A3_W2020/DViz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/COMP250_A3_W2020/DViz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/COMP250_A3_W2020/DogBox.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/COMP250_A3_W2020/DogBox.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/COMP250_A3_W2020/DogNodeDrawing.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/COMP250_A3_W2020/DogNodeDrawing.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/COMP250_A3_W2020/StressTest.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/COMP250_A3_W2020/StressTest.form" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +129,7 @@
       <workItem from="1586304994166" duration="30896000" />
       <workItem from="1586382218868" duration="709000" />
       <workItem from="1586385705498" duration="1795000" />
-      <workItem from="1606700944929" duration="3142000" />
+      <workItem from="1606700944929" duration="3576000" />
     </task>
     <task id="LOCAL-00001" summary="remove IntelliJ specific UI elements">
       <created>1586035512776</created>
@@ -246,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606713822204</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Dog-ified a whole bunch of stuff - I'm losing track">
+      <created>1606715021322</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1606715021322</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,7 +284,8 @@
     <MESSAGE value="Dog-ified the class names" />
     <MESSAGE value="Dog-ified the RandomDogs class" />
     <MESSAGE value="Dog-ified AddCustomDog.form" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dog-ified AddCustomDog.form" />
+    <MESSAGE value="Dog-ified a whole bunch of stuff - I'm losing track" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dog-ified a whole bunch of stuff - I'm losing track" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

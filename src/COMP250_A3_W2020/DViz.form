@@ -191,7 +191,7 @@
           <title-color color="-16777216"/>
         </border>
         <children>
-          <grid id="10b58" binding="ListOfCatsSide" custom-create="true" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+          <grid id="10b58" binding="ListOfDogsSide" custom-create="true" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
             <constraints/>
             <properties/>
             <border type="none"/>

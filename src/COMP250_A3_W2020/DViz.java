@@ -2,12 +2,8 @@ package COMP250_A3_W2020;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.*;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Stack;
@@ -20,9 +16,9 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
     private JPanel GraphRegion;                             //JPanel on which the tree is drawn
     private JPanel MainWindow;                              //The entire window
     private JPanel MainPanel;                               //Right side of the interface with the tree and controls
-    private JPanel ListOfCatsSide;                          //Left side of the interface with the list of cats
+    private JPanel ListOfDogsSide;                          //Left side of the interface with the list of dogs
     //Scroll panes
-    private JScrollPane dogScroller;                        //Scroll pane around list of cats
+    private JScrollPane dogScroller;                        //Scroll pane around list of dogs
     private JScrollPane GraphScroller;                      //Scroll pane around graph area
     //Interactive elements
     private JSlider RandomnessSlider;
@@ -87,8 +83,8 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
         } catch (IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-        ListOfCatsSide = new JPanel();
-        ListOfCatsSide.setLayout(new BoxLayout(ListOfCatsSide, BoxLayout.Y_AXIS));
+        ListOfDogsSide = new JPanel();
+        ListOfDogsSide.setLayout(new BoxLayout(ListOfDogsSide, BoxLayout.Y_AXIS));
         GraphRegion = new JPanel();
         GraphRegion.add(new GraphZone());
         //GraphRegion.add(new ShapesJPanel());
@@ -146,6 +142,8 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
         }
     }
 
+    // This year's Assignment 3 has no arrays to deal with.
+    /*
     private String displaySumArray(int[] input) {
         return Integer.toString(sum(input));
     }
@@ -174,15 +172,18 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
         s.replace(s.length() - 2, s.length(), "");
         return s.toString();
     }
+     */
 
     private void updateList() {
-        Stack<CatNode> s = new Stack<>();
-        CatNode curr = root;
-        ListOfCatsSide.removeAll();
+        Stack<DogNode> s = new Stack<>();
+        DogNode curr = root;
+        ListOfDogsSide.removeAll();
 
 
         // traverse the tree for side list inOrder
-        while (curr != null || s.size() > 0) {
+        while (curr != null) {
+            // .same isn't a thing in this assignment either.
+            /*
             try {
                 if (curr.same != null) {
                     CatNode temp = curr.same;
@@ -197,19 +198,20 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
                 }
             } catch (NullPointerException e) {
             }
+             */
 
             while (curr != null) {
 
                 s.push(curr);
-                curr = curr.senior;
+                curr = curr.older;
             }
             curr = s.pop();
             //output.add(curr);
-            ListOfCatsSide.add(new DogNodeDrawing(curr).panel);
+            ListOfDogsSide.add(new DogNodeDrawing(curr).panel);
 
             //System.out.print(curr.data + " ");
 
-            curr = curr.junior;
+            curr = curr.younger;
         }
     }
 
@@ -229,8 +231,8 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
         this.GraphRegion.updateUI();
         updateList();
         GraphRegion.repaint();
-        ListOfCatsSide.repaint();
-        ListOfCatsSide.revalidate();
+        ListOfDogsSide.repaint();
+        ListOfDogsSide.revalidate();
         try {
             displayNumbers();
         } catch (Exception ignored) {
@@ -255,193 +257,101 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
     //======================= UI Listener Methods =========================
 
     private void addListeners() {
-        GraphScroller.getVerticalScrollBar().addAdjustmentListener(new AdjustmentListener() {
-            @Override
-            public void adjustmentValueChanged(AdjustmentEvent e) {
-                GraphRegion.repaint();
+        GraphScroller.getVerticalScrollBar().addAdjustmentListener(e -> GraphRegion.repaint());
+        GraphScroller.getHorizontalScrollBar().addAdjustmentListener(e -> GraphRegion.repaint());
+        dogScroller.getVerticalScrollBar().addAdjustmentListener(e -> {
+            if (drawSubtreesRadioButton.isSelected()) {
+                ListOfDogsSide.repaint();
             }
         });
-        GraphScroller.getHorizontalScrollBar().addAdjustmentListener(new AdjustmentListener() {
-            @Override
-            public void adjustmentValueChanged(AdjustmentEvent e) {
-                GraphRegion.repaint();
-            }
+        dogScroller.addPropertyChangeListener(evt -> refresh());
+        drawSubtreesRadioButton.addActionListener(e -> refresh());
+        SpamFactorSlider.addChangeListener(e -> refresh());
+        CostPlanningSlider.addChangeListener(e -> refresh());
+        testIntensitySlider.addChangeListener(e -> refresh());
+        spamRemoveButton.addActionListener(e -> {
+            removeCats(SpamFactorSlider.getValue());
+            showUser("    [DViz / SpamRemove] Ran for " + SpamFactorSlider.getValue() + " iterations. Check Console for details.");
+            refresh();
         });
-        dogScroller.getVerticalScrollBar().addAdjustmentListener(new AdjustmentListener() {
-            @Override
-            public void adjustmentValueChanged(AdjustmentEvent e) {
-                if (drawSubtreesRadioButton.isSelected()) {
-                    ListOfCatsSide.repaint();
-                }
+        spamAddButton.addActionListener(e -> {
+            showUser("    [DViz / SpamAdd] This may take a while.");
+            int counter = 0;
+            if (root == null) {
+                root = rand.nextDogNode();
+                counter++;
             }
-        });
-        dogScroller.addPropertyChangeListener(new PropertyChangeListener() {
-            @Override
-            public void propertyChange(PropertyChangeEvent evt) {
-                refresh();
+            while (counter < SpamFactorSlider.getValue()) {
+                root.shelter(rand.nextDog());
+                counter++;
             }
+            showUser("    [DViz / SpamAdd] Ran for " + SpamFactorSlider.getValue() + " iterations. Check Console for details.");
+            refresh();
         });
-        drawSubtreesRadioButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                refresh();
-            }
-        });
-        SpamFactorSlider.addChangeListener(new ChangeListener() {
-            @Override
-            public void stateChanged(ChangeEvent e) {
-                refresh();
-            }
-        });
-        CostPlanningSlider.addChangeListener(new ChangeListener() {
-            @Override
-            public void stateChanged(ChangeEvent e) {
-                refresh();
-            }
-        });
-        testIntensitySlider.addChangeListener(new ChangeListener() {
-            @Override
-            public void stateChanged(ChangeEvent e) {
-                refresh();
-            }
-        });
-        spamRemoveButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                removeCats(SpamFactorSlider.getValue());
-                showUser("    [DViz / SpamRemove] Ran for " + SpamFactorSlider.getValue() + " iterations. Check Console for details.");
-                refresh();
-            }
-        });
-        spamAddButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                showUser("    [DViz / SpamAdd] This may take a while.");
-                int counter = 0;
-                if (root == null) {
-                    root = rand.nextDogNode();
-                    counter++;
-                }
-                while (counter < SpamFactorSlider.getValue()) {
-                    root.shelter(rand.nextDog());
-                    counter++;
-                }
-                showUser("    [DViz / SpamAdd] Ran for " + SpamFactorSlider.getValue() + " iterations. Check Console for details.");
-                refresh();
-            }
-        });
-        CostPlanningSlider.addPropertyChangeListener(new PropertyChangeListener() {
-            @Override
-            public void propertyChange(PropertyChangeEvent evt) {
-                refresh();
-            }
-        });
+        CostPlanningSlider.addPropertyChangeListener(evt -> refresh());
         FluffiestFromMonthSpinner.addComponentListener(new ComponentAdapter() {
         });
-        FluffiestFromMonthSpinner.addPropertyChangeListener(new PropertyChangeListener() {
-            @Override
-            public void propertyChange(PropertyChangeEvent evt) {
-                refresh();
-            }
+        FluffiestFromMonthSpinner.addPropertyChangeListener(evt -> refresh());
+        gradualTestButton.addActionListener(e -> {
+            showUser(("    [DViz / Utility] " + gradualTest(testIntensitySlider.getValue())));
+            StressTest dialog = new StressTest();
+            dialog.pack();
+            dialog.setVisible(true);
         });
-        gradualTestButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                showUser(("    [DViz / Utility] " + gradualTest(testIntensitySlider.getValue())));
-                StressTest dialog = new StressTest();
-                dialog.pack();
-                dialog.setVisible(true);
-            }
-        });
-        drawMonthHiredRadioButton.addPropertyChangeListener(new PropertyChangeListener() {
-            @Override
-            public void propertyChange(PropertyChangeEvent evt) {
-                refresh();
-            }
-        });
-        drawSamesRadioButton.addPropertyChangeListener(new PropertyChangeListener() {
-            @Override
-            public void propertyChange(PropertyChangeEvent evt) {
-                refresh();
-            }
-        });
-        drawNamesRadioButton.addPropertyChangeListener(new PropertyChangeListener() {
-            @Override
-            public void propertyChange(PropertyChangeEvent evt) {
-                refresh();
-            }
-        });
-        forceRefreshButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                refresh();
-            }
-        });
-        RemoveRandom.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                showUser("    [DViz / Utility] " + removeRandom());
-
-            }
-        });
-        stressTestButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int iter = 0;
-                int max = testIntensitySlider.getValue();
-                while (iter < max) {
-                    iter++;
-                    try {
-                        showUser("    [DViz / Utility] " + addCats());
-                    } catch (NullPointerException ex) {
-                        showUser("    [DViz / Caught Runtime Exception] NullPointerException");
-                        ex.printStackTrace();
-                    } catch (Exception ex) {
-                        showUser("    [DViz / Caught Runtime Exception] " + ex.getMessage());
-                    }
-                    try {
-                        showUser("    [DViz / Utility] " + removeCats());
-                    } catch (NullPointerException ex) {
-                        showUser("    [DViz / Caught Runtime Exception] NullPointerException");
-                        ex.printStackTrace();
-                    } catch (Exception ex) {
-                        showUser("    [DViz / Caught Runtime Exception] " + ex.getMessage());
-                    }
+        drawMonthHiredRadioButton.addPropertyChangeListener(evt -> refresh());
+        drawSamesRadioButton.addPropertyChangeListener(evt -> refresh());
+        drawNamesRadioButton.addPropertyChangeListener(evt -> refresh());
+        forceRefreshButton.addActionListener(e -> refresh());
+        RemoveRandom.addActionListener(e -> showUser("    [DViz / Utility] " + removeRandom()));
+        stressTestButton.addActionListener(e -> {
+            int iter = 0;
+            int max = testIntensitySlider.getValue();
+            while (iter < max) {
+                iter++;
+                try {
+                    showUser("    [DViz / Utility] " + addCats());
+                } catch (NullPointerException ex) {
+                    showUser("    [DViz / Caught Runtime Exception] NullPointerException");
+                    ex.printStackTrace();
+                } catch (Exception ex) {
+                    showUser("    [DViz / Caught Runtime Exception] " + ex.getMessage());
                 }
-                StressTest dialog = new StressTest();
-                dialog.pack();
-                dialog.setVisible(true);
+                try {
+                    showUser("    [DViz / Utility] " + removeCats());
+                } catch (NullPointerException ex) {
+                    showUser("    [DViz / Caught Runtime Exception] NullPointerException");
+                    ex.printStackTrace();
+                } catch (Exception ex) {
+                    showUser("    [DViz / Caught Runtime Exception] " + ex.getMessage());
+                }
             }
+            StressTest dialog = new StressTest();
+            dialog.pack();
+            dialog.setVisible(true);
         });
         RandomnessSlider.addChangeListener(e -> randomnessSliderChanged());
         WideningSlider.addChangeListener(e -> wideningSliderChanged());
 
-        AddRandomDog.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Dog toAdd = rand.nextDog();
-                showUser("    [DViz / AddRandomDog] Adding dog " + toAdd.toString());
-                shelter(rand.nextDog());
-            }
+        AddRandomDog.addActionListener(e -> {
+            Dog toAdd = rand.nextDog();
+            showUser("    [DViz / AddRandomDog] Adding dog " + toAdd.toString());
+            shelter(rand.nextDog());
         });
 
-        AddCustom.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                AddCustomDog dialog = new AddCustomDog();
-                dialog.pack();
-                dialog.setVisible(true);
-                showUser("    [DViz / AddCustomDog] User prompted for dog details.");
-                while (dialog.info == null) {
-                    if (dialog.cancelled) {
-                        showUser("    [DViz / AddCustom] Aborted.");
-                        break;
-                    }
+        AddCustom.addActionListener(e -> {
+            AddCustomDog dialog = new AddCustomDog();
+            dialog.pack();
+            dialog.setVisible(true);
+            showUser("    [DViz / AddCustomDog] User prompted for dog details.");
+            while (dialog.info == null) {
+                if (dialog.cancelled) {
+                    showUser("    [DViz / AddCustom] Aborted.");
+                    break;
                 }
-                if (!dialog.cancelled) {
-                    showUser("    [DViz / AddCustomCat] Adding cat " + dialog.info);
-                    addCat(dialog.info);
-                }
+            }
+            if (!dialog.cancelled) {
+                showUser("    [DViz / AddCustomCat] Adding cat " + dialog.info);
+                addCat(dialog.info);
             }
         });
     }
@@ -860,7 +770,7 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
         dogScroller.setVerticalScrollBarPolicy(22);
         MainWindow.add(dogScroller, BorderLayout.WEST);
         dogScroller.setBorder(BorderFactory.createTitledBorder(null, "Cats in Order", TitledBorder.LEFT, TitledBorder.TOP, this.$$$getFont$$$("Arial Black", Font.BOLD, 14, dogScroller.getFont()), new Color(-16777216)));
-        dogScroller.setViewportView(ListOfCatsSide);
+        dogScroller.setViewportView(ListOfDogsSide);
         final JPanel panel6 = new JPanel();
         panel6.setLayout(new BorderLayout(0, 0));
         MainWindow.add(panel6, BorderLayout.SOUTH);
@@ -1339,7 +1249,7 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
         private JPanel innerPanel;
         private JTextArea DogsOfMonth;
 
-        public DogNodeDrawing(CatNode input) {
+        public DogNodeDrawing(DogNode input) {
             this.node = input;
             $$$setupUI$$$();
             this.catsList.add(this.node);
