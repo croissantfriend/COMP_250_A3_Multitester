@@ -61,7 +61,7 @@
                       <text value="Draw Days in Shelter"/>
                     </properties>
                   </component>
-                  <component id="1073b" class="javax.swing.JRadioButton" binding="drawNamesRadioButton" default-binding="true">
+                  <component id="1073b" class="javax.swing.JRadioButton" binding="drawToStringRadioButton" default-binding="true">
                     <constraints>
                       <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                       <gridbag weightx="0.0" weighty="0.0"/>

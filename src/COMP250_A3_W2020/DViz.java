@@ -30,7 +30,7 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
     private JButton RemoveRandom;                           //TODO: Implement this
     private JButton stressTestButton;
     private JSlider testIntensitySlider;
-    private JRadioButton drawNamesRadioButton;
+    private JRadioButton drawToStringRadioButton;
     private JRadioButton drawDaysShelteredRadioButton;
     private JButton gradualTestButton;
     private JLabel VetScheduleDisplay;
@@ -105,7 +105,7 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
         return output;
     }
     */
-    // TODO: Update with correct dog information
+
     private void displayNumbers() {
         try {
             TestIntensityDisplay.setText(testIntensitySlider.getValue() + "");
@@ -301,7 +301,7 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
             dialog.setVisible(true);
         });
         drawDaysShelteredRadioButton.addPropertyChangeListener(evt -> refresh());
-        drawNamesRadioButton.addPropertyChangeListener(evt -> refresh());
+        drawToStringRadioButton.addPropertyChangeListener(evt -> refresh());
         forceRefreshButton.addActionListener(e -> refresh());
         RemoveRandom.addActionListener(e -> showUser("    [DViz / Utility] " + removeRandom()));
         stressTestButton.addActionListener(e -> {
@@ -658,13 +658,13 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
         gbc.gridy = 1;
         gbc.anchor = GridBagConstraints.WEST;
         panel2.add(drawDaysShelteredRadioButton, gbc);
-        drawNamesRadioButton = new JRadioButton();
-        drawNamesRadioButton.setText("Draw Names");
+        drawToStringRadioButton = new JRadioButton();
+        drawToStringRadioButton.setText("Draw Names");
         gbc = new GridBagConstraints();
         gbc.gridx = 1;
         gbc.gridy = 1;
         gbc.anchor = GridBagConstraints.WEST;
-        panel2.add(drawNamesRadioButton, gbc);
+        panel2.add(drawToStringRadioButton, gbc);
         /*
         drawSamesRadioButton = new JRadioButton();
         drawSamesRadioButton.setText("Draw Sames");
@@ -1098,7 +1098,6 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
 
 //======================= UI Element Nested Classes =========================
 
-    // TODO: Dog-ify
     class GraphZone extends JPanel {                    //Responsible for drawing the binary tree
         Dimension idealSize;
         DogNode startNode;
@@ -1167,11 +1166,12 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
             //showUser("    [DViz / Debug] " + "drawing node " + node + " at coords " + coords[0] + ", " + coords[1]);
             StringBuilder title = new StringBuilder();
             if (drawDaysShelteredRadioButton.isSelected()) {
-                title.append(node.d.monthHired);
+                title.append(node.d.getDaysAtTheShelter());
             }
-            if (drawNamesRadioButton.isSelected()) {
-                title.append(" ").append(node.data.name);
+            if (drawToStringRadioButton.isSelected()) {
+                title.append(" ").append(node.d.toString());
             }
+            /*
             if (drawSamesRadioButton.isSelected()) {
                 if (node.same != null) {
                     CatNode temp = node;
@@ -1185,7 +1185,7 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
                             if (drawDaysShelteredRadioButton.isSelected()) {
                                 titleSame.append(temp.data.monthHired);
                             }
-                            if (drawNamesRadioButton.isSelected()) {
+                            if (drawToStringRadioButton.isSelected()) {
                                 titleSame.append(" ").append(temp.data.name);
                             }
                             g.drawRect(coords[0], coords[1] + (20 * iter), titleSame.toString().length() * 7, 20);
@@ -1197,31 +1197,33 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
                     }
                 }
             }
+
+             */
             g.drawRect(coords[0], coords[1], title.toString().length() * 7, 20);
             g.drawString(title.toString(), coords[0] + 2, coords[1] + 15);
-            if (node.senior != null) {
+            if (node.older != null) {
                 g.setColor(Color.BLUE);
                 //showUser("    [DViz / Debug] " + "recursing to senior");
-                int[] nodeSenCoords;
+                int[] nodeOlderCoords;
                 if (mainWindow) {
-                    nodeSenCoords = new int[]{coords[0] - ((35 + (int) Math.round(Math.sqrt(coords[1])) * wideningCoeff + (int) Math.round(Math.pow(randomnessCoeff / 2.0 - rand.nextInt(Math.abs(randomnessCoeff)), 2)) + (3 - rand.nextInt(3 * randomnessCoeff)))), coords[1] + (50 + (7 - rand.nextInt(14)))};
+                    nodeOlderCoords = new int[]{coords[0] - ((35 + (int) Math.round(Math.sqrt(coords[1])) * wideningCoeff + (int) Math.round(Math.pow(randomnessCoeff / 2.0 - rand.nextInt(Math.abs(randomnessCoeff)), 2)) + (3 - rand.nextInt(3 * randomnessCoeff)))), coords[1] + (50 + (7 - rand.nextInt(14)))};
                 } else {
-                    nodeSenCoords = new int[]{coords[0] - ((35 + (int) Math.round(Math.sqrt(coords[1])))), coords[1] + 35};
+                    nodeOlderCoords = new int[]{coords[0] - ((35 + (int) Math.round(Math.sqrt(coords[1])))), coords[1] + 35};
                 }
-                g.drawLine(coords[0], coords[1], nodeSenCoords[0], nodeSenCoords[1]);
-                drawNodeWithChildren(g, nodeSenCoords, node.senior);
+                g.drawLine(coords[0], coords[1], nodeOlderCoords[0], nodeOlderCoords[1]);
+                drawNodeWithChildren(g, nodeOlderCoords, node.older);
             }
-            if (node.junior != null) {
+            if (node.younger != null) {
                 g.setColor(Color.DARK_GRAY);
                 //showUser("    [DViz / Debug] " + "recursing to junior");
-                int[] nodeJunCoords;
+                int[] nodeYoungerCoords;
                 if (mainWindow) {
-                    nodeJunCoords = new int[]{coords[0] + ((35 + (int) Math.round(Math.sqrt(coords[1])) * wideningCoeff + (int) Math.round(Math.pow(randomnessCoeff / 2.0 - rand.nextInt(Math.abs(randomnessCoeff)), 2)) + (3 - rand.nextInt(3 * randomnessCoeff)))), coords[1] + (50 + (7 - rand.nextInt(14)))};
+                    nodeYoungerCoords = new int[]{coords[0] + ((35 + (int) Math.round(Math.sqrt(coords[1])) * wideningCoeff + (int) Math.round(Math.pow(randomnessCoeff / 2.0 - rand.nextInt(Math.abs(randomnessCoeff)), 2)) + (3 - rand.nextInt(3 * randomnessCoeff)))), coords[1] + (50 + (7 - rand.nextInt(14)))};
                 } else {
-                    nodeJunCoords = new int[]{coords[0] + ((35 + (int) Math.round(Math.sqrt(coords[1])))), coords[1] + 35};
+                    nodeYoungerCoords = new int[]{coords[0] + ((35 + (int) Math.round(Math.sqrt(coords[1])))), coords[1] + 35};
                 }
-                g.drawLine(coords[0], coords[1], nodeJunCoords[0], nodeJunCoords[1]);
-                drawNodeWithChildren(g, nodeJunCoords, node.junior);
+                g.drawLine(coords[0], coords[1], nodeYoungerCoords[0], nodeYoungerCoords[1]);
+                drawNodeWithChildren(g, nodeYoungerCoords, node.younger);
             }
         }
     }
