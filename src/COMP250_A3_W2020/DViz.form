@@ -42,7 +42,7 @@
                 <properties/>
                 <border type="none"/>
                 <children>
-                  <component id="f39a3" class="javax.swing.JRadioButton" binding="drawSubtreesRadioButton" default-binding="true">
+                  <component id="f39a3" class="javax.swing.JCheckBox" binding="drawSubtreesCheckBox" default-binding="true">
                     <constraints>
                       <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                       <gridbag weightx="0.0" weighty="0.0"/>
@@ -51,22 +51,24 @@
                       <text value="Draw Subtrees"/>
                     </properties>
                   </component>
-                  <component id="b9b77" class="javax.swing.JRadioButton" binding="drawDaysShelteredRadioButton" default-binding="true">
+                  <component id="b9b77" class="javax.swing.JCheckBox" binding="drawDaysShelteredCheckBox" default-binding="true">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                       <gridbag weightx="0.0" weighty="0.0"/>
                     </constraints>
                     <properties>
-                      <selected value="true"/>
+                      <enabled value="true"/>
+                      <selected value="false"/>
                       <text value="Draw Days in Shelter"/>
                     </properties>
                   </component>
-                  <component id="1073b" class="javax.swing.JRadioButton" binding="drawToStringRadioButton" default-binding="true">
+                  <component id="1073b" class="javax.swing.JCheckBox" binding="drawToStringCheckBox" default-binding="true">
                     <constraints>
                       <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                       <gridbag weightx="0.0" weighty="0.0"/>
                     </constraints>
                     <properties>
+                      <selected value="true"/>
                       <text value="Draw toString"/>
                     </properties>
                   </component>
@@ -343,34 +345,6 @@
                   </grid>
                 </children>
               </grid>
-              <component id="d7e2b" class="javax.swing.JButton" binding="AddRandomDog">
-                <constraints>
-                  <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                  <gridbag weightx="0.0" weighty="0.0"/>
-                </constraints>
-                <properties>
-                  <horizontalTextPosition value="0"/>
-                  <text value="Add Random Dog"/>
-                </properties>
-              </component>
-              <component id="28491" class="javax.swing.JButton" binding="RemoveRandom">
-                <constraints>
-                  <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                  <gridbag weightx="0.0" weighty="0.0"/>
-                </constraints>
-                <properties>
-                  <text value="Rem Random Dog"/>
-                </properties>
-              </component>
-              <component id="8b3" class="javax.swing.JButton" binding="AddCustom">
-                <constraints>
-                  <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                  <gridbag weightx="0.0" weighty="0.0"/>
-                </constraints>
-                <properties>
-                  <text value="Add Custom Dog"/>
-                </properties>
-              </component>
               <component id="5421a" class="javax.swing.JButton" binding="gradualTestButton" default-binding="true">
                 <constraints>
                   <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
@@ -502,20 +476,11 @@
               </grid>
               <component id="46d86" class="javax.swing.JButton" binding="spamAddButton" default-binding="true">
                 <constraints>
-                  <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                   <gridbag weightx="0.0" weighty="0.0"/>
                 </constraints>
                 <properties>
-                  <text value="Spam Add"/>
-                </properties>
-              </component>
-              <component id="1f6ef" class="javax.swing.JButton" binding="spamRemoveButton" default-binding="true">
-                <constraints>
-                  <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                  <gridbag weightx="0.0" weighty="0.0"/>
-                </constraints>
-                <properties>
-                  <text value="Spam Remove"/>
+                  <text value="Spam Add (almost definitely broken)"/>
                 </properties>
               </component>
               <component id="352c9" class="javax.swing.JLabel">
@@ -527,6 +492,43 @@
                   <enabled value="true"/>
                   <font name="Arial Black" size="14" style="1"/>
                   <text value="Tree Manipulation"/>
+                </properties>
+              </component>
+              <component id="8b3" class="javax.swing.JButton" binding="AddCustom">
+                <constraints>
+                  <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="0.0" weighty="0.0"/>
+                </constraints>
+                <properties>
+                  <text value="Add Custom Dog"/>
+                </properties>
+              </component>
+              <component id="28491" class="javax.swing.JButton" binding="RemoveRandom">
+                <constraints>
+                  <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="0.0" weighty="0.0"/>
+                </constraints>
+                <properties>
+                  <text value="Rem Random Dog"/>
+                </properties>
+              </component>
+              <component id="1f6ef" class="javax.swing.JButton" binding="spamRemoveButton" default-binding="true">
+                <constraints>
+                  <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="0.0" weighty="0.0"/>
+                </constraints>
+                <properties>
+                  <text value="Spam Remove (probably broken)"/>
+                </properties>
+              </component>
+              <component id="d7e2b" class="javax.swing.JButton" binding="AddRandomDog">
+                <constraints>
+                  <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="0.0" weighty="0.0"/>
+                </constraints>
+                <properties>
+                  <horizontalTextPosition value="0"/>
+                  <text value="Add Random Dog&#10;(might duplicate values)"/>
                 </properties>
               </component>
             </children>

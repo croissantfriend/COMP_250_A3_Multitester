@@ -73,7 +73,7 @@ public class RandomDogs extends DogShelter {
     }
 
     public Dog nextDog() {
-        return new Dog(nextName(), 1 + rand.nextInt(20), rand.nextInt(90), rand.nextInt(50), rand.nextInt(200));
+        return new Dog(nextName(), 1 + rand.nextInt(100), rand.nextInt(365), rand.nextInt(365), rand.nextInt(20000) / 100.0);
     }
 
     public DogNode nextDogNode() {

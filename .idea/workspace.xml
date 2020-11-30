@@ -19,8 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7734e7e-5730-42e8-8760-77d7c1343762" name="Default Changelist" comment="Fixed GraphNodes; I think I got everything?">
+    <list default="true" id="b7734e7e-5730-42e8-8760-77d7c1343762" name="Default Changelist" comment="idk what changed but apparently something did">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/COMP250_A3_W2020/DViz.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/COMP250_A3_W2020/DViz.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/COMP250_A3_W2020/DViz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/COMP250_A3_W2020/DViz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/COMP250_A3_W2020/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/COMP250_A3_W2020/Dog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/COMP250_A3_W2020/DogShelter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/COMP250_A3_W2020/DogShelter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/COMP250_A3_W2020/RandomDogs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/COMP250_A3_W2020/RandomDogs.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,10 +46,11 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/COMP250_A3_W2020" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -57,6 +63,9 @@
     <property name="settings.editor.selected.configurable" value="project.propGUI" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/COMP250_A3_W2020" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/COMP250_A3_W2020" />
     </key>
@@ -129,7 +138,7 @@
       <workItem from="1586304994166" duration="30896000" />
       <workItem from="1586382218868" duration="709000" />
       <workItem from="1586385705498" duration="1795000" />
-      <workItem from="1606700944929" duration="6105000" />
+      <workItem from="1606700944929" duration="7116000" />
     </task>
     <task id="LOCAL-00001" summary="remove IntelliJ specific UI elements">
       <created>1586035512776</created>
@@ -285,7 +294,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606717749974</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="idk what changed but apparently something did">
+      <created>1606717906927</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1606717906927</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,7 +341,8 @@
     <MESSAGE value="Realized I can actually get the name from Dog.toString()" />
     <MESSAGE value="Fixed display stuff; removed unnecessary displays" />
     <MESSAGE value="Fixed GraphNodes; I think I got everything?" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed GraphNodes; I think I got everything?" />
+    <MESSAGE value="idk what changed but apparently something did" />
+    <option name="LAST_COMMIT_MESSAGE" value="idk what changed but apparently something did" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -339,6 +356,30 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="0" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1440.877/1440.23.1600.877@0.23.1440.877" timestamp="1606715430874" />
+    <state width="1558" height="231" key="GridCell.Tab.0.bottom" timestamp="1606718211849">
+      <screen x="1440" y="23" width="1600" height="877" />
+    </state>
+    <state width="1398" height="231" key="GridCell.Tab.0.bottom/0.23.1440.877/1440.23.1600.877@0.23.1440.877" timestamp="1606718091806" />
+    <state width="1558" height="231" key="GridCell.Tab.0.bottom/0.23.1440.877/1440.23.1600.877@1440.23.1600.877" timestamp="1606718211849" />
+    <state width="1558" height="231" key="GridCell.Tab.0.center" timestamp="1606718211848">
+      <screen x="1440" y="23" width="1600" height="877" />
+    </state>
+    <state width="1398" height="231" key="GridCell.Tab.0.center/0.23.1440.877/1440.23.1600.877@0.23.1440.877" timestamp="1606718091805" />
+    <state width="1558" height="231" key="GridCell.Tab.0.center/0.23.1440.877/1440.23.1600.877@1440.23.1600.877" timestamp="1606718211848" />
+    <state width="1558" height="231" key="GridCell.Tab.0.left" timestamp="1606718211848">
+      <screen x="1440" y="23" width="1600" height="877" />
+    </state>
+    <state width="1398" height="231" key="GridCell.Tab.0.left/0.23.1440.877/1440.23.1600.877@0.23.1440.877" timestamp="1606718091804" />
+    <state width="1558" height="231" key="GridCell.Tab.0.left/0.23.1440.877/1440.23.1600.877@1440.23.1600.877" timestamp="1606718211848" />
+    <state width="1558" height="231" key="GridCell.Tab.0.right" timestamp="1606718211849">
+      <screen x="1440" y="23" width="1600" height="877" />
+    </state>
+    <state width="1398" height="231" key="GridCell.Tab.0.right/0.23.1440.877/1440.23.1600.877@0.23.1440.877" timestamp="1606718091805" />
+    <state width="1558" height="231" key="GridCell.Tab.0.right/0.23.1440.877/1440.23.1600.877@1440.23.1600.877" timestamp="1606718211849" />
+    <state x="477" y="337" key="com.intellij.uiDesigner.propertyInspector.editors.string.StringEditorDialog" timestamp="1606718365144">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="477" y="337" key="com.intellij.uiDesigner.propertyInspector.editors.string.StringEditorDialog/0.0.1440.900/1440.0.1600.900@0.0.1440.900" timestamp="1606718365144" />
     <state x="419" y="244" key="refactoring.ChangeSignatureDialog" timestamp="1606714267696">
       <screen x="0" y="23" width="1440" height="877" />
     </state>

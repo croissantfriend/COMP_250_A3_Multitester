@@ -30,8 +30,8 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
     private JButton RemoveRandom;                           //TODO: Implement this
     private JButton stressTestButton;
     private JSlider testIntensitySlider;
-    private JRadioButton drawToStringRadioButton;
-    private JRadioButton drawDaysShelteredRadioButton;
+    private JCheckBox drawToStringCheckBox;
+    private JCheckBox drawDaysShelteredCheckBox;
     private JButton gradualTestButton;
     private JLabel VetScheduleDisplay;
     private JLabel DogsInTreeDisplay;
@@ -47,7 +47,7 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
     private JLabel SpamFactorDisplay;
     private JLabel TestIntensityDisplay;
     private JLabel Status;
-    private JRadioButton drawSubtreesRadioButton;
+    private JCheckBox drawSubtreesCheckBox;
     protected int randomnessCoeff = 2;
     //Randomization engine for assignment related objects
     private RandomDogs rand = new RandomDogs();             //Random dog generator
@@ -206,7 +206,6 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
              */
 
             while (curr != null) {
-
                 s.push(curr);
                 curr = curr.older;
             }
@@ -265,12 +264,12 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
         GraphScroller.getVerticalScrollBar().addAdjustmentListener(e -> GraphRegion.repaint());
         GraphScroller.getHorizontalScrollBar().addAdjustmentListener(e -> GraphRegion.repaint());
         dogScroller.getVerticalScrollBar().addAdjustmentListener(e -> {
-            if (drawSubtreesRadioButton.isSelected()) {
+            if (drawSubtreesCheckBox.isSelected()) {
                 ListOfDogsSide.repaint();
             }
         });
         dogScroller.addPropertyChangeListener(evt -> refresh());
-        drawSubtreesRadioButton.addActionListener(e -> refresh());
+        drawSubtreesCheckBox.addActionListener(e -> refresh());
         SpamFactorSlider.addChangeListener(e -> refresh());
         CostPlanningSlider.addChangeListener(e -> refresh());
         testIntensitySlider.addChangeListener(e -> refresh());
@@ -300,8 +299,8 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
             dialog.pack();
             dialog.setVisible(true);
         });
-        drawDaysShelteredRadioButton.addPropertyChangeListener(evt -> refresh());
-        drawToStringRadioButton.addPropertyChangeListener(evt -> refresh());
+        drawDaysShelteredCheckBox.addPropertyChangeListener(evt -> refresh());
+        drawToStringCheckBox.addPropertyChangeListener(evt -> refresh());
         forceRefreshButton.addActionListener(e -> refresh());
         RemoveRandom.addActionListener(e -> showUser("    [DViz / Utility] " + removeRandom()));
         stressTestButton.addActionListener(e -> {
@@ -650,29 +649,29 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
         final JPanel panel2 = new JPanel();
         panel2.setLayout(new GridBagLayout());
         panel1.add(panel2, BorderLayout.WEST);
-        drawSubtreesRadioButton = new JRadioButton();
-        drawSubtreesRadioButton.setText("Draw Subtrees");
+        drawSubtreesCheckBox = new JCheckBox();
+        drawSubtreesCheckBox.setText("Draw Subtrees");
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 1;
         gbc.anchor = GridBagConstraints.WEST;
-        panel2.add(drawSubtreesRadioButton, gbc);
-        drawDaysShelteredRadioButton = new JRadioButton();
-        drawDaysShelteredRadioButton.setSelected(true);
-        drawDaysShelteredRadioButton.setText("Draw Days in Shelter");
+        panel2.add(drawSubtreesCheckBox, gbc);
+        drawDaysShelteredCheckBox = new JCheckBox();
+        drawDaysShelteredCheckBox.setSelected(true);
+        drawDaysShelteredCheckBox.setText("Draw Days in Shelter");
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 0;
         gbc.gridwidth = 2;
         gbc.anchor = GridBagConstraints.WEST;
-        panel2.add(drawDaysShelteredRadioButton, gbc);
-        drawToStringRadioButton = new JRadioButton();
-        drawToStringRadioButton.setText("Draw toString");
+        panel2.add(drawDaysShelteredCheckBox, gbc);
+        drawToStringCheckBox = new JCheckBox();
+        drawToStringCheckBox.setText("Draw toString");
         gbc = new GridBagConstraints();
         gbc.gridx = 1;
         gbc.gridy = 1;
         gbc.anchor = GridBagConstraints.WEST;
-        panel2.add(drawToStringRadioButton, gbc);
+        panel2.add(drawToStringCheckBox, gbc);
         final JPanel panel3 = new JPanel();
         panel3.setLayout(new BorderLayout(0, 0));
         panel1.add(panel3, BorderLayout.EAST);
@@ -1118,10 +1117,10 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
         private void drawNodeWithChildren(Graphics g, int[] coords, DogNode node) {
             //showUser("    [DViz / Debug] " + "drawing node " + node + " at coords " + coords[0] + ", " + coords[1]);
             StringBuilder title = new StringBuilder();
-            if (drawDaysShelteredRadioButton.isSelected()) {
+            if (drawDaysShelteredCheckBox.isSelected()) {
                 title.append(node.d.getDaysAtTheShelter());
             }
-            if (drawToStringRadioButton.isSelected()) {
+            if (drawToStringCheckBox.isSelected()) {
                 title.append(" ").append(node.d.toString());
             }
             /*
@@ -1380,7 +1379,7 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
 
             private void createUIComponents() {
                 try {
-                    if (drawSubtreesRadioButton.isSelected()) {
+                    if (drawSubtreesCheckBox.isSelected()) {
                         gZ = new GraphZone(new Dimension(200, 100), findDog(root, data));
                         this.graphArea = new JPanel();
                         graphArea.add(gZ);
