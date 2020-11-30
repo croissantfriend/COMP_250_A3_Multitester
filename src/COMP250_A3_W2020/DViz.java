@@ -3,7 +3,10 @@ package COMP250_A3_W2020;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Stack;
@@ -270,7 +273,7 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
         CostPlanningSlider.addChangeListener(e -> refresh());
         testIntensitySlider.addChangeListener(e -> refresh());
         spamRemoveButton.addActionListener(e -> {
-            removeCats(SpamFactorSlider.getValue());
+            removeDogs(SpamFactorSlider.getValue());
             showUser("    [DViz / SpamRemove] Ran for " + SpamFactorSlider.getValue() + " iterations. Check Console for details.");
             refresh();
         });
@@ -309,7 +312,7 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
             while (iter < max) {
                 iter++;
                 try {
-                    showUser("    [DViz / Utility] " + addCats());
+                    showUser("    [DViz / Utility] " + addDogs());
                 } catch (NullPointerException ex) {
                     showUser("    [DViz / Caught Runtime Exception] NullPointerException");
                     ex.printStackTrace();
@@ -317,7 +320,7 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
                     showUser("    [DViz / Caught Runtime Exception] " + ex.getMessage());
                 }
                 try {
-                    showUser("    [DViz / Utility] " + removeCats());
+                    showUser("    [DViz / Utility] " + removeDogs());
                 } catch (NullPointerException ex) {
                     showUser("    [DViz / Caught Runtime Exception] NullPointerException");
                     ex.printStackTrace();
@@ -350,8 +353,8 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
                 }
             }
             if (!dialog.cancelled) {
-                showUser("    [DViz / AddCustomCat] Adding cat " + dialog.info);
-                addCat(dialog.info);
+                showUser("    [DViz / AddCustomCat] Adding dog " + dialog.info);
+                shelter(dialog.info);
             }
         });
     }
@@ -368,13 +371,12 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
 
     //======================== Auto Tester Methods =======================
     private String removeRandom() {
-        CatNode root = this.root;
-        CatNode victim;
-        ArrayList<CatInfo> list = new ArrayList<>();
-        Iterator<CatInfo> iter = this.iterator();
-        for (; iter.hasNext(); ) {
-            CatInfo n = iter.next();
-            list.add(n);
+        DogNode root = this.root;
+        DogNode victim;
+        ArrayList<Dog> list = new ArrayList<>();
+        // Enhanced for loops are cooler
+        for (Dog dog : this) {
+            list.add(dog);
         }
         int numberOfNodesBefore = list.size();
         int whichToRemove = 0;
@@ -384,88 +386,81 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
         } else {
             return "No nodes to remove from";
         }
-        removeCat(list.get(whichToRemove));
+        adopt(list.get(whichToRemove));
         list.remove(whichToRemove);
-        Iterator<CatInfo> iter2 = this.iterator();
+        // Enhanced for loops are cooler
         int numberOfNodesAfter = 0;
-        for (; iter2.hasNext(); ) {
-            CatInfo C = iter2.next();
+        for (Dog dog : this) {
             numberOfNodesAfter++;
         }
-        String catEssentials;
+        String dogEssentials;
         try {
-            catEssentials = victim.data.name + " hired on " + victim.data.monthHired;
+            dogEssentials = victim.d.toString();
         } catch (Exception e) {
-            catEssentials = "name not found";
+            dogEssentials = "name not found";
         }
         if (numberOfNodesAfter != numberOfNodesBefore - 1 && numberOfNodesAfter != numberOfNodesBefore) {
-            String catString;
+            String dogString;
             try {
                 StringBuilder sb = new StringBuilder();
-                if (victim.same != null) {
-                    sb.append(", had a same");
-                }
                 if (isLeaf(victim)) sb.append(" a leaf node");
-                else if (victim.senior == null && victim.junior == null) {
+                else if (victim.older == null && victim.younger == null) {
                     sb.append(", had two children");
-                } else if (victim.senior != null) {
-                    sb.append(", had a senior");
+                } else if (victim.older != null) {
+                    sb.append(", had an older");
                 } else {
-                    sb.append(", had a junior");
+                    sb.append(", had a younger");
                 }
-                if (victim.data.equals(root.data)) {
+                if (victim.d.equals(root.d)) {
                     sb.append(", was the same as root");
-                } else if (victim.data.monthHired > root.data.monthHired) {
-                    sb.append(", was junior to root");
-                } else if (victim.data.monthHired < root.data.monthHired) {
+                } else if (victim.d.getAge() > root.d.getAge()) {
+                    sb.append(", was younger to root");
+                } else if (victim.d.getAge() < root.d.getAge()) {
                     sb.append(", was senior to root");
                 } else {
-                    sb.append(", was same as root");
+                    sb.append(", was same as root (sorry the randomizer is broken)");
                 }
 
-                catString = sb.toString();
+                dogString = sb.toString();
 
             } catch (Exception e) {
-                catString = "not able to be found in tree before remove";
+                dogString = "not able to be found in tree before remove";
             }
-            return "Remove error? Number of cats before remove was " + numberOfNodesBefore + " after remove was " + numberOfNodesAfter + " cat removed was " + catEssentials + catString;
+            return "Remove error? Number of dogs before remove was " + numberOfNodesBefore + " after remove was " + numberOfNodesAfter + " dog removed was " + dogEssentials + dogString;
         } else if (numberOfNodesAfter == numberOfNodesBefore) {
-            String catString;
+            String dogString;
             try {
                 StringBuilder sb = new StringBuilder();
-                if (victim.same != null) {
-                    sb.append(", had a same");
-                }
                 if (isLeaf(victim)) sb.append(" a leaf node");
-                else if (victim.senior == null && victim.junior == null) {
+                else if (victim.older == null && victim.younger == null) {
                     sb.append(", had two children");
-                } else if (victim.senior != null) {
+                } else if (victim.older != null) {
                     sb.append(", had a senior");
                 } else {
                     sb.append(", had a junior");
                 }
-                if (victim.data.equals(root.data)) {
+                if (victim.d.equals(root.d)) {
                     sb.append(", was the same as root");
-                } else if (victim.data.monthHired > root.data.monthHired) {
-                    sb.append(", was junior to root");
-                } else if (victim.data.monthHired < root.data.monthHired) {
+                } else if (victim.d.getAge() > root.d.getAge()) {
+                    sb.append(", was younger to root");
+                } else if (victim.d.getAge() < root.d.getAge()) {
                     sb.append(", was senior to root");
                 } else {
-                    sb.append(", was same as root");
+                    sb.append(", was same as root (sorry the randomizer is broken)");
                 }
 
-                catString = sb.toString();
+                dogString = sb.toString();
 
             } catch (Exception e) {
-                catString = "not able to be found in tree before remove";
+                dogString = "not able to be found in tree before remove";
             }
-            return "The cat " + catEssentials + catString + " somehow evaded removal.";
+            return "The dog " + dogEssentials + dogString + " somehow evaded removal.";
         } else {
-            return "Remove successful according to number of nodes. May " + catEssentials + " rest in peace.";
+            return "Remove successful according to number of nodes. May " + dogEssentials + " rest in peace.";
         }
     }
 
-    private String removeCats(int toExtermiante) {
+    private String removeDogs(int toExtermiante) {
         showUser("    [DViz / SpamRemove] This may take a while.");
         int counter = 0;
         StringBuilder sb = new StringBuilder();
@@ -492,9 +487,9 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
         StringBuilder output = new StringBuilder("    [DViz / GradualTest] Test beginning with " + maximum + " stages." + "\n");
         root = rand.nextDogNode();
         for (int i = 1; i <= maximum; i++) {
-            output.append("    [DViz / GradualTest] Reached stage " + i + "\n");
+            output.append("    [DViz / GradualTest] Reached stage ").append(i).append("\n");
             for (int j = 1; j <= i; j++) {
-                addCat(rand.nextCatInfo());
+                shelter(rand.nextDog());
                 /*if (maximum < 10) {
                     delay(150);
                 }*/
@@ -502,9 +497,9 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
             }
             for (int j = 1; j <= i; j++) {
                 try {
-                    output.append(("    [DViz / GradualTest] " + removeRandom()) + "\n");
+                    output.append("    [DViz / GradualTest] ").append(removeRandom()).append("\n");
                 } catch (Exception e) {
-                    output.append("    [DViz / GradualTest / Caught Runtime Exception] " + e.getMessage() + "\n");
+                    output.append("    [DViz / GradualTest / Caught Runtime Exception] ").append(e.getMessage()).append("\n");
                     e.printStackTrace();
                 }
                 /*if (maximum < 10) {
@@ -518,13 +513,12 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
         return output.toString();
     }
 
-    private String removeCats() {
-        ArrayList<CatNode> theDeparted = new ArrayList<>();
-        ArrayList<CatInfo> list = new ArrayList<>();
-        Iterator<CatInfo> iter = this.iterator();
-        for (; iter.hasNext(); ) {
-            CatInfo n = iter.next();
-            list.add(n);
+    private String removeDogs() {
+        ArrayList<DogNode> theDeparted = new ArrayList<>();
+        ArrayList<Dog> list = new ArrayList<>();
+        // Please Sasha please use enhanced for loops
+        for (Dog dog : this) {
+            list.add(dog);
         }
         int numberOfNodesBefore = list.size();
         int toExtermiante = rand.nextInt(list.size());
@@ -533,16 +527,14 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
         while (list.size() != numberOfNodesBefore - toExtermiante) {
             whichToRemove = rand.nextInt(list.size());
             theDeparted.add(this.findDog(root, list.get(whichToRemove)));
-            removeCat(list.get(whichToRemove));
+            adopt(list.get(whichToRemove));
         }
-        Iterator<CatInfo> iter2 = this.iterator();
         int numberOfNodesAfter = 0;
-        for (; iter2.hasNext(); ) {
-            CatInfo n = iter2.next();
+        for (Dog dog : this) { // I am BEGGING you
             numberOfNodesAfter++;
         }
         if (numberOfNodesAfter != numberOfNodesBefore - toExtermiante) {
-            return "Remove error? Number of cats before remove was " + numberOfNodesBefore + " after remove was " + numberOfNodesAfter + " CatNodes to remove were multiple";
+            return "Remove error? Number of dogs before remove was " + numberOfNodesBefore + " after remove was " + numberOfNodesAfter + " DogNodes to remove were multiple";
         } else {
             return "Remove successful according to number of nodes.";
         }
@@ -569,42 +561,38 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
         }
     }
 
-    private String removeAllCats() {
-        ArrayList<CatInfo> list = new ArrayList<>();
-        Iterator<CatInfo> iter = this.iterator();
-        for (; iter.hasNext(); ) {
-            CatInfo n = iter.next();
-            list.add(n);
+    private String removeAllDogs() {
+        ArrayList<Dog> list = new ArrayList<>();
+        for (Dog dog : this) {
+            list.add(dog);
         }
         int numberOfNodesBefore = list.size();
-        int toExtermiante = list.size() - 1;
+        int toExterminate = list.size() - 1;
         int numberRemoved = 0;
         int whichToRemove;
-        while (list.size() != numberOfNodesBefore - toExtermiante) {
+        while (list.size() != numberOfNodesBefore - toExterminate) {
             whichToRemove = rand.nextInt(list.size());
-            removeCat(list.get(whichToRemove));
+            adopt(list.get(whichToRemove));
         }
-        Iterator<CatInfo> iter2 = this.iterator();
         int numberOfNodesAfter = 0;
-        for (; iter2.hasNext(); ) {
-            CatInfo n = iter2.next();
+        for (Dog dog : this) { // I am BEGGING you
             numberOfNodesAfter++;
         }
-        if (numberOfNodesAfter != numberOfNodesBefore - toExtermiante) {
-            return "Remove error? Number of cats before remove was " + numberOfNodesBefore + " after remove was " + numberOfNodesAfter;
+        if (numberOfNodesAfter != numberOfNodesBefore - toExterminate) {
+            return "Remove error? Number of dogs before remove was " + numberOfNodesBefore + " after remove was " + numberOfNodesAfter;
         } else {
-            return "Random remove probably succeeded. Number of cats before remove was " + numberOfNodesBefore + " after remove was " + numberOfNodesAfter;
+            return "Random remove probably succeeded. Number of dogs before remove was " + numberOfNodesBefore + " after remove was " + numberOfNodesAfter;
         }
     }
 
-    private String addCats() {
+    private String addDogs() {
         int numToAdd = rand.nextInt(10);
         int iter = 0;
         while (iter < numToAdd) {
             iter++;
-            addCat(rand.nextCatInfo());
+            shelter(rand.nextDog());
         }
-        return "added " + numToAdd + " cats to the tree";
+        return "added " + numToAdd + " dogs to the tree";
 
     }
 
@@ -1107,6 +1095,7 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
 
 //======================= UI Element Nested Classes =========================
 
+    // TODO: Dog-ify
     class GraphZone extends JPanel {                    //Responsible for drawing the binary tree
         Dimension idealSize;
         DogNode startNode;
@@ -1238,13 +1227,13 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
         //private static RandomCats rand;
         protected JPanel panel;
         protected JScrollPane scrollPane;
-        private final ArrayList<DogBox> CatBoxList = new ArrayList<>();
+        private final ArrayList<DogBox> DogBoxList = new ArrayList<>();
         private final Dimension idealSize;
-        private final CatNode node;
+        private final DogNode node;
         private final Dimension size = new Dimension(20, 20);
-        private boolean isList = false;
-        private int listLength = 0;
-        private final ArrayList<CatNode> catsList = new ArrayList<>();
+        private final boolean isList = false;
+        private final int listLength = 0;
+        private final ArrayList<DogNode> dogsList = new ArrayList<>();
         private JPanel DogsList;
         private JPanel innerPanel;
         private JTextArea DogsOfMonth;
@@ -1252,17 +1241,20 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
         public DogNodeDrawing(DogNode input) {
             this.node = input;
             $$$setupUI$$$();
-            this.catsList.add(this.node);
+            this.dogsList.add(this.node);
+            // Dogs don't have a node with the same seniority
+            /*
             if (this.node.same != null) {
                 this.isList = true;
                 CatNode temp = this.node;
                 while (temp.same != null) {
                     listLength++;
                     temp = temp.same;
-                    catsList.add(temp);
+                    dogsList.add(temp);
                 }
             }
-            this.idealSize = new Dimension((30 + (node.data.name.length() * 3 + (9 * Integer.toString(node.data.expectedGroomingCost).length()))), (20 + this.listLength * 20));
+             */
+            this.idealSize = new Dimension((30 + ((9 * Double.toString(node.d.getExpectedVetCost()).length()))), (20 + this.listLength * 20));
 
             //showUser("    [DViz / Debug] " + "Size of catnode visualizer is " + this.idealSize);
 
@@ -1273,19 +1265,19 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
 
             panel.setBackground(Color.GRAY);
 
-            if (catsList.size() > 1) {
+            if (dogsList.size() > 1) {
                 //innerPanel.add(new JLabel("    [DViz / Debug] " + "Cats hired on " + node.data.monthHired));
                 DogsOfMonth.setEnabled(true);
                 DogsOfMonth.setVisible(true);
-                DogsOfMonth.setText("Cats hired on month " + node.data.monthHired);
+                DogsOfMonth.setText("Dog sheltered " + node.d.getDaysAtTheShelter() + " days ago");
             }
 
-            for (CatNode cat : catsList) {
+            for (DogNode node : dogsList) {
                 //showUser("    [DViz / Debug] " + new CatBox(cat.data).getSize());
-                CatBoxList.add(new DogBox(cat.data));
+                DogBoxList.add(new DogBox(node.d));
             }
 
-            for (DogBox box : CatBoxList) {
+            for (DogBox box : DogBoxList) {
                 DogsList.add(box.mainPanel);
             }
 
@@ -1382,13 +1374,10 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
                 $$$setupUI$$$();
                 data = new RandomDogs().nextDog();
                 BigText.setText("100% definitely a dog");
-                /*
-                LowerPanel.add(new JLabel("Hired " + data.monthHired));
-                LowerPanel.add(new JLabel("Fur " + data.furThickness));
-                LowerPanel.add(new JLabel("Next App. " + data.nextGroomingAppointment));
-                LowerPanel.add(new JLabel("Cost " + data.expectedGroomingCost));
-                */
-                LowerPanel.add(new JLabel("Dog " + data.toString()));
+                LowerPanel.add(new JLabel("Sheltered " + data.getDaysAtTheShelter()));
+                LowerPanel.add(new JLabel("Age " + data.getAge()));
+                LowerPanel.add(new JLabel("Next App. " + data.getDaysToNextVetAppointment()));
+                LowerPanel.add(new JLabel("Cost " + data.getExpectedVetCost()));
                 this.setSize(70, 30);
                 DogNodeDrawing.this.createUIComponents();
                 addListeners();
@@ -1400,14 +1389,12 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
                 }
                 this.data = data;
                 $$$setupUI$$$();
-                /*
-                BigText.setText(data.name);
-                LowerPanel.add(new JLabel("Hired " + data.monthHired));
-                LowerPanel.add(new JLabel("Fur " + data.furThickness));
-                LowerPanel.add(new JLabel("Next App. " + data.nextGroomingAppointment));
-                LowerPanel.add(new JLabel("Cost " + data.expectedGroomingCost));
-                */
-                LowerPanel.add(new JLabel("Dog " + data.toString()));
+
+                BigText.setText("The name field is private :(");
+                LowerPanel.add(new JLabel("Sheltered " + data.getDaysAtTheShelter()));
+                LowerPanel.add(new JLabel("Age " + data.getAge()));
+                LowerPanel.add(new JLabel("Next App. " + data.getDaysToNextVetAppointment()));
+                LowerPanel.add(new JLabel("Cost " + data.getExpectedVetCost()));
                 this.setSize(70, 30);
                 //CatNodeDrawing.this.createUIComponents();
                 addListeners();
@@ -1864,11 +1851,7 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
             setModal(true);
             getRootPane().setDefaultButton(buttonOK);
 
-            buttonOK.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
-                    onOK();
-                }
-            });
+            buttonOK.addActionListener(e -> onOK());
         }
 
         private void onOK() {
