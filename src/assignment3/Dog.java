@@ -1,4 +1,4 @@
-package COMP250_A3_W2020;
+package assignment3;
 
 public class Dog implements Comparable<Dog> {
 

@@ -19,13 +19,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7734e7e-5730-42e8-8760-77d7c1343762" name="Default Changelist" comment="idk what changed but apparently something did">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/COMP250_A3_W2020/DViz.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/COMP250_A3_W2020/DViz.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/COMP250_A3_W2020/DViz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/COMP250_A3_W2020/DViz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/COMP250_A3_W2020/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/COMP250_A3_W2020/Dog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/COMP250_A3_W2020/DogShelter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/COMP250_A3_W2020/DogShelter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/COMP250_A3_W2020/RandomDogs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/COMP250_A3_W2020/RandomDogs.java" afterDir="false" />
+    <list default="true" id="b7734e7e-5730-42e8-8760-77d7c1343762" name="Default Changelist" comment="Changed some UI and random values&#10;- UI: Changed labels to note broken things (because I'm too lazy to fix them)&#10;- UI: Changed radio buttons to checkboxes to reflect functionality&#10;- Random: Changed values to lessen chance of duplication and create more realistic values (100 year old dogs here we come)">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/COMP250_A3_W2020/AddCustomDog.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment3/AddCustomDog.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/COMP250_A3_W2020/DViz.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment3/DViz.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/COMP250_A3_W2020/DViz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment3/DViz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/COMP250_A3_W2020/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment3/Dog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/COMP250_A3_W2020/DogBox.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment3/DogBox.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/COMP250_A3_W2020/DogNodeDrawing.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment3/DogNodeDrawing.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/COMP250_A3_W2020/DogShelter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment3/DogShelter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/COMP250_A3_W2020/Put Your java files here.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment3/Put Your java files here.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/COMP250_A3_W2020/RandomDogs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment3/RandomDogs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/COMP250_A3_W2020/StressTest.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment3/StressTest.form" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,11 +78,11 @@
   </component>
   <component name="RunManager" selected="Application.DViz">
     <configuration name="DViz" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="COMP250_A3_W2020.DViz" />
+      <option name="MAIN_CLASS_NAME" value="assignment3.DViz" />
       <module name="C250_Assignment3_Debugger" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="COMP250_A3_W2020.*" />
+          <option name="PATTERN" value="assignment3.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -89,7 +95,7 @@
       <module name="C250_Assignment3_Debugger" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="COMP250_A3_W2020.*" />
+          <option name="PATTERN" value="assignment3.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -138,7 +144,7 @@
       <workItem from="1586304994166" duration="30896000" />
       <workItem from="1586382218868" duration="709000" />
       <workItem from="1586385705498" duration="1795000" />
-      <workItem from="1606700944929" duration="7116000" />
+      <workItem from="1606700944929" duration="7482000" />
     </task>
     <task id="LOCAL-00001" summary="remove IntelliJ specific UI elements">
       <created>1586035512776</created>
@@ -301,7 +307,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606717906927</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Changed some UI and random values&#10;- UI: Changed labels to note broken things (because I'm too lazy to fix them)&#10;- UI: Changed radio buttons to checkboxes to reflect functionality&#10;- Random: Changed values to lessen chance of duplication and create more realistic values (100 year old dogs here we come)">
+      <created>1606719056733</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1606719056733</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -342,7 +355,8 @@
     <MESSAGE value="Fixed display stuff; removed unnecessary displays" />
     <MESSAGE value="Fixed GraphNodes; I think I got everything?" />
     <MESSAGE value="idk what changed but apparently something did" />
-    <option name="LAST_COMMIT_MESSAGE" value="idk what changed but apparently something did" />
+    <MESSAGE value="Changed some UI and random values&#10;- UI: Changed labels to note broken things (because I'm too lazy to fix them)&#10;- UI: Changed radio buttons to checkboxes to reflect functionality&#10;- Random: Changed values to lessen chance of duplication and create more realistic values (100 year old dogs here we come)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed some UI and random values&#10;- UI: Changed labels to note broken things (because I'm too lazy to fix them)&#10;- UI: Changed radio buttons to checkboxes to reflect functionality&#10;- Random: Changed values to lessen chance of duplication and create more realistic values (100 year old dogs here we come)" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -356,26 +370,30 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="0" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1440.877/1440.23.1600.877@0.23.1440.877" timestamp="1606715430874" />
-    <state width="1558" height="231" key="GridCell.Tab.0.bottom" timestamp="1606718211849">
-      <screen x="1440" y="23" width="1600" height="877" />
+    <state width="1398" height="231" key="GridCell.Tab.0.bottom" timestamp="1606719402840">
+      <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="231" key="GridCell.Tab.0.bottom/0.23.1440.877/1440.23.1600.877@0.23.1440.877" timestamp="1606718091806" />
+    <state width="1398" height="231" key="GridCell.Tab.0.bottom/0.23.1440.877/1440.23.1600.877@0.23.1440.877" timestamp="1606719402840" />
     <state width="1558" height="231" key="GridCell.Tab.0.bottom/0.23.1440.877/1440.23.1600.877@1440.23.1600.877" timestamp="1606718211849" />
-    <state width="1558" height="231" key="GridCell.Tab.0.center" timestamp="1606718211848">
-      <screen x="1440" y="23" width="1600" height="877" />
+    <state width="1398" height="231" key="GridCell.Tab.0.center" timestamp="1606719402839">
+      <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="231" key="GridCell.Tab.0.center/0.23.1440.877/1440.23.1600.877@0.23.1440.877" timestamp="1606718091805" />
+    <state width="1398" height="231" key="GridCell.Tab.0.center/0.23.1440.877/1440.23.1600.877@0.23.1440.877" timestamp="1606719402839" />
     <state width="1558" height="231" key="GridCell.Tab.0.center/0.23.1440.877/1440.23.1600.877@1440.23.1600.877" timestamp="1606718211848" />
-    <state width="1558" height="231" key="GridCell.Tab.0.left" timestamp="1606718211848">
-      <screen x="1440" y="23" width="1600" height="877" />
+    <state width="1398" height="231" key="GridCell.Tab.0.left" timestamp="1606719402839">
+      <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="231" key="GridCell.Tab.0.left/0.23.1440.877/1440.23.1600.877@0.23.1440.877" timestamp="1606718091804" />
+    <state width="1398" height="231" key="GridCell.Tab.0.left/0.23.1440.877/1440.23.1600.877@0.23.1440.877" timestamp="1606719402839" />
     <state width="1558" height="231" key="GridCell.Tab.0.left/0.23.1440.877/1440.23.1600.877@1440.23.1600.877" timestamp="1606718211848" />
-    <state width="1558" height="231" key="GridCell.Tab.0.right" timestamp="1606718211849">
-      <screen x="1440" y="23" width="1600" height="877" />
+    <state width="1398" height="231" key="GridCell.Tab.0.right" timestamp="1606719402839">
+      <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="231" key="GridCell.Tab.0.right/0.23.1440.877/1440.23.1600.877@0.23.1440.877" timestamp="1606718091805" />
+    <state width="1398" height="231" key="GridCell.Tab.0.right/0.23.1440.877/1440.23.1600.877@0.23.1440.877" timestamp="1606719402839" />
     <state width="1558" height="231" key="GridCell.Tab.0.right/0.23.1440.877/1440.23.1600.877@1440.23.1600.877" timestamp="1606718211849" />
+    <state x="320" y="201" key="Vcs.Push.Dialog.v2" timestamp="1606719068410">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="320" y="201" key="Vcs.Push.Dialog.v2/0.23.1440.877/1440.23.1600.877@0.23.1440.877" timestamp="1606719068410" />
     <state x="477" y="337" key="com.intellij.uiDesigner.propertyInspector.editors.string.StringEditorDialog" timestamp="1606718365144">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -393,22 +411,22 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/COMP250_A3_W2020/MiniTester.java</url>
+          <url>file://$PROJECT_DIR$/src/assignment3/MiniTester.java</url>
           <line>239</line>
           <option name="timeStamp" value="64" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/COMP250_A3_W2020/CatTree.java</url>
+          <url>file://$PROJECT_DIR$/src/assignment3/CatTree.java</url>
           <line>326</line>
           <option name="timeStamp" value="106" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/COMP250_A3_W2020/DViz.java</url>
+          <url>file://$PROJECT_DIR$/src/assignment3/DViz.java</url>
           <line>519</line>
           <option name="timeStamp" value="107" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/COMP250_A3_W2020/DViz.java</url>
+          <url>file://$PROJECT_DIR$/src/assignment3/DViz.java</url>
           <line>514</line>
           <option name="timeStamp" value="108" />
         </line-breakpoint>

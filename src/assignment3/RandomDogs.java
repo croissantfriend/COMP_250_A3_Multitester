@@ -1,4 +1,4 @@
-package COMP250_A3_W2020;
+package assignment3;
 
 import java.io.File;
 import java.io.FileNotFoundException;

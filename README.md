@@ -10,7 +10,7 @@ This tester provides a visual interface for interacting with your binary tree. M
 ## Installation: Standard Method
 
 Clone this repository to your directory of choice.
-Add your assignment .java files <code>CatTree.java, CatInfo.java</code> and any of your own classes to the <code>COMP250_A3_W2020</code> package, in the location of <code>Put Your java files here.txt</code>
+Add your assignment .java files <code>CatTree.java, CatInfo.java</code> and any of your own classes to the <code>assignment3</code> package, in the location of <code>Put Your java files here.txt</code>
 
 ![IntelliJ Recommended](https://raw.githubusercontent.com/TheBigSasha/C250_Assignment3_Debugger/master/IntelliJ%20Recommended.jpg)
 ![Eclipse Recommended](https://raw.githubusercontent.com/TheBigSasha/C250_Assignment3_Debugger/master/EclipseRecommended.jpg)

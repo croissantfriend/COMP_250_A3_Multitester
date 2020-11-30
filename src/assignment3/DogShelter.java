@@ -1,4 +1,4 @@
-package COMP250_A3_W2020;
+package assignment3;
 
 import java.util.ArrayList;
 import java.util.Iterator;
