@@ -1254,7 +1254,7 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
                 }
             }
              */
-            this.idealSize = new Dimension((30 + ((9 * Double.toString(node.d.getExpectedVetCost()).length()))), (20 + this.listLength * 20));
+            this.idealSize = new Dimension((30 + (node.d.toString().length() * 3 + (9 * Double.toString(node.d.getExpectedVetCost()).length()))), (20 + this.listLength * 20));
 
             //showUser("    [DViz / Debug] " + "Size of catnode visualizer is " + this.idealSize);
 
@@ -1373,7 +1373,7 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
             public DogBox() {
                 $$$setupUI$$$();
                 data = new RandomDogs().nextDog();
-                BigText.setText("100% definitely a dog");
+                BigText.setText(data.toString());
                 LowerPanel.add(new JLabel("Sheltered " + data.getDaysAtTheShelter()));
                 LowerPanel.add(new JLabel("Age " + data.getAge()));
                 LowerPanel.add(new JLabel("Next App. " + data.getDaysToNextVetAppointment()));
@@ -1390,7 +1390,7 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
                 this.data = data;
                 $$$setupUI$$$();
 
-                BigText.setText("The name field is private :(");
+                BigText.setText(data.toString());
                 LowerPanel.add(new JLabel("Sheltered " + data.getDaysAtTheShelter()));
                 LowerPanel.add(new JLabel("Age " + data.getAge()));
                 LowerPanel.add(new JLabel("Next App. " + data.getDaysToNextVetAppointment()));
