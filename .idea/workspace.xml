@@ -19,10 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7734e7e-5730-42e8-8760-77d7c1343762" name="Default Changelist" comment="Dog-ified the class names">
+    <list default="true" id="b7734e7e-5730-42e8-8760-77d7c1343762" name="Default Changelist" comment="Dog-ified the RandomDogs class">
+      <change beforePath="$PROJECT_DIR$/src/COMP250_A3_W2020/AddCustomDog.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/COMP250_A3_W2020/AddCustomDog.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/COMP250_A3_W2020/DViz.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/COMP250_A3_W2020/DViz.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/COMP250_A3_W2020/DViz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/COMP250_A3_W2020/DViz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/COMP250_A3_W2020/RandomDogs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/COMP250_A3_W2020/RandomDogs.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +130,7 @@
       <workItem from="1586304994166" duration="30896000" />
       <workItem from="1586382218868" duration="709000" />
       <workItem from="1586385705498" duration="1795000" />
-      <workItem from="1606700944929" duration="1182000" />
+      <workItem from="1606700944929" duration="1750000" />
     </task>
     <task id="LOCAL-00001" summary="remove IntelliJ specific UI elements">
       <created>1586035512776</created>
@@ -230,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606712509437</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Dog-ified the RandomDogs class">
+      <created>1606712956316</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1606712956316</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,7 +269,8 @@
     <MESSAGE value="Allow private iterator" />
     <MESSAGE value="Added default classes from Fall 2020 Assignment 3" />
     <MESSAGE value="Dog-ified the class names" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dog-ified the class names" />
+    <MESSAGE value="Dog-ified the RandomDogs class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dog-ified the RandomDogs class" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -272,6 +280,14 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="10" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1440.877/1440.23.1600.877@0.23.1440.877" timestamp="1606712310056" />
+    <state x="419" y="244" key="refactoring.ChangeSignatureDialog" timestamp="1606713337102">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="419" y="244" key="refactoring.ChangeSignatureDialog/0.23.1440.877/1440.23.1600.877@0.23.1440.877" timestamp="1606713337102" />
+    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup" timestamp="1606713469271">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup/0.23.1440.877/1440.23.1600.877@0.23.1440.877" timestamp="1606713469271" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

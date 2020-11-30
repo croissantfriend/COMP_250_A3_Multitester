@@ -176,7 +176,7 @@
           </scrollpane>
         </children>
       </grid>
-      <scrollpane id="c9408" binding="catScroller">
+      <scrollpane id="c9408" binding="dogScroller">
         <constraints border-constraint="West"/>
         <properties>
           <autoscrolls value="false"/>
@@ -186,7 +186,7 @@
           <preferredSize width="350" height="10"/>
           <verticalScrollBarPolicy value="22"/>
         </properties>
-        <border type="none" title="Cats in Order" title-justification="1" title-position="2">
+        <border type="none" title="Dogs In Order" title-justification="1" title-position="2">
           <font name="Arial Black" size="14" style="1"/>
           <title-color color="-16777216"/>
         </border>
@@ -452,7 +452,7 @@
                         </constraints>
                         <properties>
                           <font name="Arial Black" size="14" style="1"/>
-                          <text value="Cats in Tree"/>
+                          <text value="Dogs in Tree"/>
                         </properties>
                       </component>
                       <component id="dd9ec" class="javax.swing.JLabel" binding="CatsInTreeDisplay">

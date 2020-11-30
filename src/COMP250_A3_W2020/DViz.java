@@ -22,7 +22,7 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
     private JPanel MainPanel;                               //Right side of the interface with the tree and controls
     private JPanel ListOfCatsSide;                          //Left side of the interface with the list of cats
     //Scroll panes
-    private JScrollPane catScroller;                        //Scroll pane around list of cats
+    private JScrollPane dogScroller;                        //Scroll pane around list of cats
     private JScrollPane GraphScroller;                      //Scroll pane around graph area
     //Interactive elements
     private JSlider RandomnessSlider;
@@ -61,7 +61,7 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
      * <p>
      * Builds GUI and generates DogShelter
      *
-     * @param c any Dog to instantiate the root node.
+     * @param d any Dog to instantiate the root node.
      */
     public DViz(Dog d) {
         super(d);                                           //Calls constructor of superclass
@@ -73,7 +73,7 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
     public static void main(String[] args) {
         JFrame frame = new JFrame("DViz");
         RandomDogs statRand = new RandomDogs();
-        frame.setContentPane(statRand.nextCViz().MainWindow);
+        frame.setContentPane(statRand.nextDViz().MainWindow);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
@@ -105,13 +105,14 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
         return output;
     }
 
+    // TODO: Update with correct dog information
     private void displayNumbers() {
         try {
             TestIntensityDisplay.setText(testIntensitySlider.getValue() + "");
             SpamFactorDisplay.setText(SpamFactorSlider.getValue() + "");
         } catch (Exception e) {
             TestIntensityDisplay.setText("NaN");
-            SpamFactorDisplay.setText("Nan");
+            SpamFactorDisplay.setText("NaN");
         }
         try {
             CostPlanningDisplay.setText(displaySumArray(costPlanning(CostPlanningSlider.getValue())) + " over " + CostPlanningSlider.getValue() + " months.");
@@ -190,7 +191,7 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
                         try {
                             temp = temp.same;
                         } catch (NullPointerException e) {//TODO: is this even necessary
-                            //showUser("    [CViz / Debug] " + "is this even necessary?");  //TODO: Cleanup console output
+                            //showUser("    [DViz / Debug] " + "is this even necessary?");  //TODO: Cleanup console output
                         }
                     }
                 }
@@ -218,12 +219,12 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
         try {
             GraphX = GraphScroller.getHorizontalScrollBar().getValue();
             GraphY = GraphScroller.getVerticalScrollBar().getValue();
-        } catch (Exception e) {
+        } catch (Exception ignored) {
         }
         int ListY = 0;
         try {
-            ListY = catScroller.getVerticalScrollBar().getValue();
-        } catch (Exception e) {
+            ListY = dogScroller.getVerticalScrollBar().getValue();
+        } catch (Exception ignored) {
         }
         this.GraphRegion.updateUI();
         updateList();
@@ -232,16 +233,16 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
         ListOfCatsSide.revalidate();
         try {
             displayNumbers();
-        } catch (Exception e) {
+        } catch (Exception ignored) {
         }
         try {
-            catScroller.getVerticalScrollBar().setValue(ListY);
-        } catch (Exception e) {
+            dogScroller.getVerticalScrollBar().setValue(ListY);
+        } catch (Exception ignored) {
         }
         try {
             GraphScroller.getVerticalScrollBar().setValue(GraphY);
             GraphScroller.getHorizontalScrollBar().setValue(GraphX);
-        } catch (Exception e) {
+        } catch (Exception ignored) {
         }
     }
 
@@ -266,7 +267,7 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
                 GraphRegion.repaint();
             }
         });
-        catScroller.getVerticalScrollBar().addAdjustmentListener(new AdjustmentListener() {
+        dogScroller.getVerticalScrollBar().addAdjustmentListener(new AdjustmentListener() {
             @Override
             public void adjustmentValueChanged(AdjustmentEvent e) {
                 if (drawSubtreesRadioButton.isSelected()) {
@@ -274,7 +275,7 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
                 }
             }
         });
-        catScroller.addPropertyChangeListener(new PropertyChangeListener() {
+        dogScroller.addPropertyChangeListener(new PropertyChangeListener() {
             @Override
             public void propertyChange(PropertyChangeEvent evt) {
                 refresh();
@@ -308,24 +309,24 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
             @Override
             public void actionPerformed(ActionEvent e) {
                 removeCats(SpamFactorSlider.getValue());
-                showUser("    [CViz / SpamRemove] Ran for " + SpamFactorSlider.getValue() + " iterations. Check Console for details.");
+                showUser("    [DViz / SpamRemove] Ran for " + SpamFactorSlider.getValue() + " iterations. Check Console for details.");
                 refresh();
             }
         });
         spamAddButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                showUser("    [CViz / SpamAdd] This may take a while.");
+                showUser("    [DViz / SpamAdd] This may take a while.");
                 int counter = 0;
                 if (root == null) {
                     root = rand.nextDogNode();
                     counter++;
                 }
                 while (counter < SpamFactorSlider.getValue()) {
-                    root.addCat(rand.nextDogNode());
+                    root.shelter(rand.nextDog());
                     counter++;
                 }
-                showUser("    [CViz / SpamAdd] Ran for " + SpamFactorSlider.getValue() + " iterations. Check Console for details.");
+                showUser("    [DViz / SpamAdd] Ran for " + SpamFactorSlider.getValue() + " iterations. Check Console for details.");
                 refresh();
             }
         });
@@ -346,7 +347,7 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
         gradualTestButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                showUser(("    [CViz / Utility] " + gradualTest(testIntensitySlider.getValue())));
+                showUser(("    [DViz / Utility] " + gradualTest(testIntensitySlider.getValue())));
                 StressTest dialog = new StressTest();
                 dialog.pack();
                 dialog.setVisible(true);
@@ -379,7 +380,7 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
         RemoveRandom.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                showUser("    [CViz / Utility] " + removeRandom());
+                showUser("    [DViz / Utility] " + removeRandom());
 
             }
         });
@@ -391,20 +392,20 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
                 while (iter < max) {
                     iter++;
                     try {
-                        showUser("    [CViz / Utility] " + addCats());
+                        showUser("    [DViz / Utility] " + addCats());
                     } catch (NullPointerException ex) {
-                        showUser("    [CViz / Caught Runtime Exception] NullPointerException");
+                        showUser("    [DViz / Caught Runtime Exception] NullPointerException");
                         ex.printStackTrace();
                     } catch (Exception ex) {
-                        showUser("    [CViz / Caught Runtime Exception] " + ex.getMessage());
+                        showUser("    [DViz / Caught Runtime Exception] " + ex.getMessage());
                     }
                     try {
-                        showUser("    [CViz / Utility] " + removeCats());
+                        showUser("    [DViz / Utility] " + removeCats());
                     } catch (NullPointerException ex) {
-                        showUser("    [CViz / Caught Runtime Exception] NullPointerException");
+                        showUser("    [DViz / Caught Runtime Exception] NullPointerException");
                         ex.printStackTrace();
                     } catch (Exception ex) {
-                        showUser("    [CViz / Caught Runtime Exception] " + ex.getMessage());
+                        showUser("    [DViz / Caught Runtime Exception] " + ex.getMessage());
                     }
                 }
                 StressTest dialog = new StressTest();
@@ -418,27 +419,27 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
         AddRandomDog.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                CatInfo toAdd = rand.nextCatInfo();
-                showUser("    [CViz / AddRandomCat] Adding cat " + toAdd.name + " who was hired on " + toAdd.monthHired + " with fur thickness " + toAdd.furThickness);
-                addCat(rand.nextCatInfo());
+                Dog toAdd = rand.nextDog();
+                showUser("    [DViz / AddRandomDog] Adding dog " + toAdd.toString());
+                shelter(rand.nextDog());
             }
         });
 
         AddCustom.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                AddCustomCat dialog = new AddCustomCat();
+                AddCustomDog dialog = new AddCustomDog();
                 dialog.pack();
                 dialog.setVisible(true);
-                showUser("    [CViz / AddCustomCat] User prompted for cat details.");
+                showUser("    [DViz / AddCustomDog] User prompted for dog details.");
                 while (dialog.info == null) {
                     if (dialog.cancelled) {
-                        showUser("    [CViz / AddCustom] Aborted.");
+                        showUser("    [DViz / AddCustom] Aborted.");
                         break;
                     }
                 }
                 if (!dialog.cancelled) {
-                    showUser("    [CViz / AddCustomCat] Adding cat " + dialog.info.name + " who was hired on " + dialog.info.monthHired + " with fur thickness " + dialog.info.furThickness);
+                    showUser("    [DViz / AddCustomCat] Adding cat " + dialog.info);
                     addCat(dialog.info);
                 }
             }
@@ -555,12 +556,12 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
     }
 
     private String removeCats(int toExtermiante) {
-        showUser("    [CViz / SpamRemove] This may take a while.");
+        showUser("    [DViz / SpamRemove] This may take a while.");
         int counter = 0;
         StringBuilder sb = new StringBuilder();
         while (counter < toExtermiante) {
             //sb.append(this.removeRandom());
-            showUser("    [CViz / SpamRemove] " + this.removeRandom());
+            showUser("    [DViz / SpamRemove] " + this.removeRandom());
             refresh();
             counter++;
         }
@@ -578,10 +579,10 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
     }
 
     private String gradualTest(int maximum) {
-        StringBuilder output = new StringBuilder("    [CViz / GradualTest] Test beginning with " + maximum + " stages." + "\n");
+        StringBuilder output = new StringBuilder("    [DViz / GradualTest] Test beginning with " + maximum + " stages." + "\n");
         root = rand.nextDogNode();
         for (int i = 1; i <= maximum; i++) {
-            output.append("    [CViz / GradualTest] Reached stage " + i + "\n");
+            output.append("    [DViz / GradualTest] Reached stage " + i + "\n");
             for (int j = 1; j <= i; j++) {
                 addCat(rand.nextCatInfo());
                 /*if (maximum < 10) {
@@ -591,9 +592,9 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
             }
             for (int j = 1; j <= i; j++) {
                 try {
-                    output.append(("    [CViz / GradualTest] " + removeRandom()) + "\n");
+                    output.append(("    [DViz / GradualTest] " + removeRandom()) + "\n");
                 } catch (Exception e) {
-                    output.append("    [CViz / GradualTest / Caught Runtime Exception] " + e.getMessage() + "\n");
+                    output.append("    [DViz / GradualTest / Caught Runtime Exception] " + e.getMessage() + "\n");
                     e.printStackTrace();
                 }
                 /*if (maximum < 10) {
@@ -603,7 +604,7 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
             }
             root = rand.nextDogNode();
         }
-        output.append("    [CViz / GradualTest] Test concluded.");
+        output.append("    [DViz / GradualTest] Test concluded.");
         return output.toString();
     }
 
@@ -713,7 +714,7 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
 
     @Override
     public void adopt(Dog d) {
-        //showUser("    [CViz / Debug] " + "Remove called on cat with name " + c.name);
+        //showUser("    [DViz / Debug] " + "Remove called on cat with name " + c.name);
         super.adopt(d);
         refresh();
     }
@@ -853,16 +854,16 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
         MainPanel.add(GraphScroller, gbc);
         GraphRegion.setMinimumSize(new Dimension(300, 200));
         GraphScroller.setViewportView(GraphRegion);
-        catScroller = new JScrollPane();
-        catScroller.setAutoscrolls(false);
-        catScroller.setHorizontalScrollBarPolicy(30);
-        catScroller.setMaximumSize(new Dimension(400, 32767));
-        catScroller.setMinimumSize(new Dimension(300, 39));
-        catScroller.setPreferredSize(new Dimension(350, 10));
-        catScroller.setVerticalScrollBarPolicy(22);
-        MainWindow.add(catScroller, BorderLayout.WEST);
-        catScroller.setBorder(BorderFactory.createTitledBorder(null, "Cats in Order", TitledBorder.LEFT, TitledBorder.TOP, this.$$$getFont$$$("Arial Black", Font.BOLD, 14, catScroller.getFont()), new Color(-16777216)));
-        catScroller.setViewportView(ListOfCatsSide);
+        dogScroller = new JScrollPane();
+        dogScroller.setAutoscrolls(false);
+        dogScroller.setHorizontalScrollBarPolicy(30);
+        dogScroller.setMaximumSize(new Dimension(400, 32767));
+        dogScroller.setMinimumSize(new Dimension(300, 39));
+        dogScroller.setPreferredSize(new Dimension(350, 10));
+        dogScroller.setVerticalScrollBarPolicy(22);
+        MainWindow.add(dogScroller, BorderLayout.WEST);
+        dogScroller.setBorder(BorderFactory.createTitledBorder(null, "Cats in Order", TitledBorder.LEFT, TitledBorder.TOP, this.$$$getFont$$$("Arial Black", Font.BOLD, 14, dogScroller.getFont()), new Color(-16777216)));
+        dogScroller.setViewportView(ListOfCatsSide);
         final JPanel panel6 = new JPanel();
         panel6.setLayout(new BorderLayout(0, 0));
         MainWindow.add(panel6, BorderLayout.SOUTH);
@@ -1213,7 +1214,7 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
             try {
                 GraphScroller.getHorizontalScrollBar().setValue(540);
             } catch (Exception n) {
-                //showUser("    [CViz / Debug] " + "not resized");
+                //showUser("    [DViz / Debug] " + "not resized");
             }
             /*
             if (mainWindow) {
@@ -1226,14 +1227,14 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
                         try {
                             GraphScroller.getHorizontalScrollBar().setValue(960);
                         } catch (Exception n) {
-                            //showUser("    [CViz / Debug] " + "not resized");
+                            //showUser("    [DViz / Debug] " + "not resized");
                         }
                     }
                 }
             }*/
         }
 
-        public GraphZone(Dimension d, CatNode startNode) {
+        public GraphZone(Dimension d, DogNode startNode) {
             this.idealSize = d;
             this.startNode = startNode;
         }
@@ -1263,11 +1264,11 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
 
         }
 
-        private void drawNodeWithChildren(Graphics g, int[] coords, CatNode node) {
-            //showUser("    [CViz / Debug] " + "drawing node " + node + " at coords " + coords[0] + ", " + coords[1]);
+        private void drawNodeWithChildren(Graphics g, int[] coords, DogNode node) {
+            //showUser("    [DViz / Debug] " + "drawing node " + node + " at coords " + coords[0] + ", " + coords[1]);
             StringBuilder title = new StringBuilder();
             if (drawMonthHiredRadioButton.isSelected()) {
-                title.append(node.data.monthHired);
+                title.append(node.d.monthHired);
             }
             if (drawNamesRadioButton.isSelected()) {
                 title.append(" ").append(node.data.name);
@@ -1301,7 +1302,7 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
             g.drawString(title.toString(), coords[0] + 2, coords[1] + 15);
             if (node.senior != null) {
                 g.setColor(Color.BLUE);
-                //showUser("    [CViz / Debug] " + "recursing to senior");
+                //showUser("    [DViz / Debug] " + "recursing to senior");
                 int[] nodeSenCoords;
                 if (mainWindow) {
                     nodeSenCoords = new int[]{coords[0] - ((35 + (int) Math.round(Math.sqrt(coords[1])) * wideningCoeff + (int) Math.round(Math.pow(randomnessCoeff / 2.0 - rand.nextInt(Math.abs(randomnessCoeff)), 2)) + (3 - rand.nextInt(3 * randomnessCoeff)))), coords[1] + (50 + (7 - rand.nextInt(14)))};
@@ -1313,7 +1314,7 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
             }
             if (node.junior != null) {
                 g.setColor(Color.DARK_GRAY);
-                //showUser("    [CViz / Debug] " + "recursing to junior");
+                //showUser("    [DViz / Debug] " + "recursing to junior");
                 int[] nodeJunCoords;
                 if (mainWindow) {
                     nodeJunCoords = new int[]{coords[0] + ((35 + (int) Math.round(Math.sqrt(coords[1])) * wideningCoeff + (int) Math.round(Math.pow(randomnessCoeff / 2.0 - rand.nextInt(Math.abs(randomnessCoeff)), 2)) + (3 - rand.nextInt(3 * randomnessCoeff)))), coords[1] + (50 + (7 - rand.nextInt(14)))};
@@ -1356,7 +1357,7 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
             }
             this.idealSize = new Dimension((30 + (node.data.name.length() * 3 + (9 * Integer.toString(node.data.expectedGroomingCost).length()))), (20 + this.listLength * 20));
 
-            //showUser("    [CViz / Debug] " + "Size of catnode visualizer is " + this.idealSize);
+            //showUser("    [DViz / Debug] " + "Size of catnode visualizer is " + this.idealSize);
 
             panel.setSize(idealSize);
             this.setPreferredSize(idealSize);
@@ -1366,14 +1367,14 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
             panel.setBackground(Color.GRAY);
 
             if (catsList.size() > 1) {
-                //innerPanel.add(new JLabel("    [CViz / Debug] " + "Cats hired on " + node.data.monthHired));
+                //innerPanel.add(new JLabel("    [DViz / Debug] " + "Cats hired on " + node.data.monthHired));
                 DogsOfMonth.setEnabled(true);
                 DogsOfMonth.setVisible(true);
                 DogsOfMonth.setText("Cats hired on month " + node.data.monthHired);
             }
 
             for (CatNode cat : catsList) {
-                //showUser("    [CViz / Debug] " + new CatBox(cat.data).getSize());
+                //showUser("    [DViz / Debug] " + new CatBox(cat.data).getSize());
                 CatBoxList.add(new CatBox(cat.data));
             }
 
@@ -1617,42 +1618,39 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
         }
     }
 
-    class AddCustomCat extends JDialog {
+    class AddCustomDog extends JDialog {
         private JPanel contentPane;
         private JButton buttonOK;
         private JButton buttonCancel;
         private JTextField enterNameTextField;
-        private JSlider sliderFur, sliderCost, sliderMonth, sliderApp;
-        private JSpinner spinnerFur, spinnerCost, spinnerApp, spinnerMonth;
+        public Dog info;
+        private JSlider sliderAge, sliderCost, sliderDays, sliderApp;
         private JButton randomNameButton;
         private final RandomDogs rand = new RandomDogs();
-        public CatInfo info;
+        private JSpinner spinnerAge, spinnerCost, spinnerApp, spinnerDays;
         public boolean cancelled = false;
-
-        private int monthHired = 243;
-        private int furThick = 100;
-        private int nextApp = 100;
+        private int daysInShelter = 0;
+        private int age = 0;
+        private int nextApp = 0;
         private int nextAppCost = 0;
         private String name = "";
 
-        public AddCustomCat() {
+        public AddCustomDog() {
             setContentPane(contentPane);
             setModal(true);
             getRootPane().setDefaultButton(buttonOK);
             addListeners();
-
-
         }
 
         private void onOK() {
             // add your code here
-            monthHired = sliderMonth.getValue();
+            daysInShelter = sliderDays.getValue();
             nextApp = sliderApp.getValue();
             nextAppCost = sliderCost.getValue();
-            furThick = sliderFur.getValue();
+            age = sliderAge.getValue();
             name = enterNameTextField.getText();
-            info = new CatInfo(name, monthHired, furThick, nextApp, nextAppCost);
-            //showUser("    [CViz / Debug] " + info);
+            info = new Dog(name, age, daysInShelter, nextApp, nextAppCost);
+            //showUser("    [DViz / Debug] " + info);
             //addCat(new CatInfo(name, monthHired, furThick, nextApp, nextAppCost));
             dispose();
         }
@@ -1672,27 +1670,19 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
         }*/
 
         private void addListeners() {
-            sliderFur.addChangeListener(e -> sliderThickChanged());
-            spinnerFur.addChangeListener(e -> spinnerThickChanged());
+            sliderAge.addChangeListener(e -> sliderThickChanged());
+            spinnerAge.addChangeListener(e -> spinnerThickChanged());
             sliderApp.addChangeListener(e -> sliderAppChanged());
             spinnerApp.addChangeListener(e -> spinnerAppChanged());
             sliderCost.addChangeListener(e -> sliderCostChanged());
             spinnerCost.addChangeListener(e -> spinnerCostChanged());
-            sliderMonth.addChangeListener(e -> sliderMonthChanged());
-            spinnerMonth.addChangeListener(e -> spinnerMonthChanged());
+            sliderDays.addChangeListener(e -> sliderMonthChanged());
+            spinnerDays.addChangeListener(e -> spinnerMonthChanged());
             refresh();
 
-            buttonOK.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
-                    onOK();
-                }
-            });
+            buttonOK.addActionListener(e -> onOK());
 
-            buttonCancel.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
-                    onCancel();
-                }
-            });
+            buttonCancel.addActionListener(e -> onCancel());
 
             // call onCancel() when cross is clicked
             setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
@@ -1703,17 +1693,8 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
             });
 
             // call onCancel() on ESCAPE
-            contentPane.registerKeyboardAction(new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
-                    onCancel();
-                }
-            }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-            randomNameButton.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    enterNameTextField.setText(rand.nextName());
-                }
-            });
+            contentPane.registerKeyboardAction(e -> onCancel(), KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+            randomNameButton.addActionListener(e -> enterNameTextField.setText(rand.nextName()));
         }
 
         private void refresh() {
@@ -1728,11 +1709,11 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
         }
 
         private void sliderThickChanged() {
-            spinnerFur.setValue(sliderFur.getValue());
+            spinnerAge.setValue(sliderAge.getValue());
         }
 
         private void sliderMonthChanged() {
-            spinnerMonth.setValue(sliderMonth.getValue());
+            spinnerDays.setValue(sliderDays.getValue());
         }
 
         private void sliderAppChanged() {
@@ -1744,11 +1725,11 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
         }
 
         private void spinnerMonthChanged() {
-            sliderMonth.setValue(Integer.parseInt(spinnerMonth.getValue().toString()));
+            sliderDays.setValue(Integer.parseInt(spinnerDays.getValue().toString()));
         }
 
         private void spinnerThickChanged() {
-            sliderFur.setValue(Integer.parseInt(spinnerFur.getValue().toString()));
+            sliderAge.setValue(Integer.parseInt(spinnerAge.getValue().toString()));
         }
 
         private void spinnerCostChanged() {
@@ -1826,15 +1807,15 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
             final JPanel panel6 = new JPanel();
             panel6.setLayout(new GridBagLayout());
             panel5.add(panel6);
-            sliderFur = new JSlider();
-            sliderFur.setToolTipText("Fur Thickness");
+            sliderAge = new JSlider();
+            sliderAge.setToolTipText("Fur Thickness");
             gbc = new GridBagConstraints();
             gbc.gridx = 0;
             gbc.gridy = 1;
             gbc.gridwidth = 2;
             gbc.weightx = 1.0;
             gbc.weighty = 1.0;
-            panel6.add(sliderFur, gbc);
+            panel6.add(sliderAge, gbc);
             final JLabel label2 = new JLabel();
             label2.setText("Fur Thickness");
             gbc = new GridBagConstraints();
@@ -1844,7 +1825,7 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
             gbc.weighty = 1.0;
             gbc.anchor = GridBagConstraints.WEST;
             panel6.add(label2, gbc);
-            spinnerFur = new JSpinner();
+            spinnerAge = new JSpinner();
             gbc = new GridBagConstraints();
             gbc.gridx = 1;
             gbc.gridy = 0;
@@ -1852,7 +1833,7 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
             gbc.weighty = 1.0;
             gbc.anchor = GridBagConstraints.WEST;
             gbc.fill = GridBagConstraints.HORIZONTAL;
-            panel6.add(spinnerFur, gbc);
+            panel6.add(spinnerAge, gbc);
             final JPanel panel7 = new JPanel();
             panel7.setLayout(new GridBagLayout());
             panel5.add(panel7);
@@ -1895,18 +1876,18 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
             final JPanel panel9 = new JPanel();
             panel9.setLayout(new GridBagLayout());
             panel8.add(panel9);
-            sliderMonth = new JSlider();
-            sliderMonth.setMaximum(243);
-            sliderMonth.setMinimum(0);
-            sliderMonth.setToolTipText("Month Hired");
-            sliderMonth.setValue(122);
+            sliderDays = new JSlider();
+            sliderDays.setMaximum(243);
+            sliderDays.setMinimum(0);
+            sliderDays.setToolTipText("Month Hired");
+            sliderDays.setValue(122);
             gbc = new GridBagConstraints();
             gbc.gridx = 0;
             gbc.gridy = 1;
             gbc.gridwidth = 2;
             gbc.weightx = 1.0;
             gbc.weighty = 1.0;
-            panel9.add(sliderMonth, gbc);
+            panel9.add(sliderDays, gbc);
             final JLabel label4 = new JLabel();
             label4.setText("Month Hired");
             gbc = new GridBagConstraints();
@@ -1916,7 +1897,7 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
             gbc.weighty = 1.0;
             gbc.anchor = GridBagConstraints.WEST;
             panel9.add(label4, gbc);
-            spinnerMonth = new JSpinner();
+            spinnerDays = new JSpinner();
             gbc = new GridBagConstraints();
             gbc.gridx = 1;
             gbc.gridy = 0;
@@ -1924,7 +1905,7 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
             gbc.weighty = 1.0;
             gbc.anchor = GridBagConstraints.WEST;
             gbc.fill = GridBagConstraints.HORIZONTAL;
-            panel9.add(spinnerMonth, gbc);
+            panel9.add(spinnerDays, gbc);
             final JPanel panel10 = new JPanel();
             panel10.setLayout(new GridBagLayout());
             panel8.add(panel10);
