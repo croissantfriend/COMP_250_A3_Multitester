@@ -205,7 +205,7 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
             }
             curr = s.pop();
             //output.add(curr);
-            ListOfCatsSide.add(new CatNodeDrawing(curr).panel);
+            ListOfCatsSide.add(new DogNodeDrawing(curr).panel);
 
             //System.out.print(curr.data + " ");
 
@@ -470,7 +470,7 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
         int whichToRemove = 0;
         if (list.size() > 0) {
             whichToRemove = rand.nextInt(list.size());
-            victim = (this.findCat(root, list.get(whichToRemove)));
+            victim = (this.findDog(root, list.get(whichToRemove)));
         } else {
             return "No nodes to remove from";
         }
@@ -622,7 +622,7 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
         int whichToRemove;
         while (list.size() != numberOfNodesBefore - toExtermiante) {
             whichToRemove = rand.nextInt(list.size());
-            theDeparted.add(this.findCat(root, list.get(whichToRemove)));
+            theDeparted.add(this.findDog(root, list.get(whichToRemove)));
             removeCat(list.get(whichToRemove));
         }
         Iterator<CatInfo> iter2 = this.iterator();
@@ -638,27 +638,24 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
         }
     }
 
-    private boolean isLeaf(CatNode c) {
-        return c.junior == null && c.senior == null && c.same == null;
+    private boolean isLeaf(DogNode d) {
+        return d.younger == null && d.older == null;
     }
 
-    private CatNode findCat(CatNode iter, CatInfo c) {
-        if (iter == null || c == null) {
+    private DogNode findDog(DogNode iter, Dog dog) {
+        if (iter == null || dog == null) {
             return null;
         }
-        if (iter.data.equals(c)) {
+        if (iter.d.equals(dog)) {
             return iter;
         }
-        if (iter.data.monthHired == c.monthHired) {
-            if (iter.data.furThickness > c.furThickness) {
-                return findCat(iter.same, c);       //Traverses the list in this order cuz that is good
-            } else {
-                return null;
-            }
-        } else if (iter.data.monthHired > c.monthHired) {
-            return findCat(iter.senior, c);
+        // Traverse by, uh, age? yeah this is just the BST part of the treap
+        if (iter.d.getAge() > dog.getAge()) {
+            return findDog(iter.younger, dog);
+        } else if (iter.d.getAge() < dog.getAge()) {
+            return findDog(iter.older, dog);
         } else {
-            return findCat(iter.junior, c);
+            return null;
         }
     }
 
@@ -1327,22 +1324,22 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
         }
     }
 
-    class CatNodeDrawing extends JComponent {
+    class DogNodeDrawing extends JComponent {
         //private static RandomCats rand;
         protected JPanel panel;
         protected JScrollPane scrollPane;
-        private final ArrayList<CatBox> CatBoxList = new ArrayList<>();
+        private final ArrayList<DogBox> CatBoxList = new ArrayList<>();
         private final Dimension idealSize;
         private final CatNode node;
         private final Dimension size = new Dimension(20, 20);
         private boolean isList = false;
         private int listLength = 0;
         private final ArrayList<CatNode> catsList = new ArrayList<>();
-        private JPanel CatsList;
+        private JPanel DogsList;
         private JPanel innerPanel;
         private JTextArea DogsOfMonth;
 
-        public CatNodeDrawing(CatNode input) {
+        public DogNodeDrawing(CatNode input) {
             this.node = input;
             $$$setupUI$$$();
             this.catsList.add(this.node);
@@ -1375,11 +1372,11 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
 
             for (CatNode cat : catsList) {
                 //showUser("    [DViz / Debug] " + new CatBox(cat.data).getSize());
-                CatBoxList.add(new CatBox(cat.data));
+                CatBoxList.add(new DogBox(cat.data));
             }
 
-            for (CatBox box : CatBoxList) {
-                CatsList.add(box.mainPanel);
+            for (DogBox box : CatBoxList) {
+                DogsList.add(box.mainPanel);
             }
 
             add(panel);
@@ -1399,8 +1396,8 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
         }*/
 
         private void createUIComponents() {
-            CatsList = new JPanel();
-            CatsList.setLayout(new BoxLayout(this.CatsList, BoxLayout.Y_AXIS));
+            DogsList = new JPanel();
+            DogsList.setLayout(new BoxLayout(this.DogsList, BoxLayout.Y_AXIS));
 
         }
 
@@ -1421,7 +1418,7 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
             scrollPane = new JScrollPane();
             scrollPane.setHorizontalScrollBarPolicy(31);
             innerPanel.add(scrollPane, BorderLayout.SOUTH);
-            scrollPane.setViewportView(CatsList);
+            scrollPane.setViewportView(DogsList);
             DogsOfMonth = new JTextArea();
             DogsOfMonth.setEditable(false);
             DogsOfMonth.setEnabled(false);
@@ -1460,9 +1457,9 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
             return panel;
         }
 
-        public class CatBox extends JComponent {
+        public class DogBox extends JComponent {
             protected JPanel mainPanel;
-            protected CatInfo data;
+            protected Dog data;
             private JPanel UpperPanel;
             private JPanel LowerPanel;
             private JTextArea BigText;
@@ -1471,30 +1468,36 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
             private JPanel graphArea;
             private GraphZone gZ;
 
-            public CatBox() {
+            public DogBox() {
                 $$$setupUI$$$();
-                data = new RandomDogs().nextCatInfo();
-                BigText.setText(data.name);
+                data = new RandomDogs().nextDog();
+                BigText.setText("100% definitely a dog");
+                /*
                 LowerPanel.add(new JLabel("Hired " + data.monthHired));
                 LowerPanel.add(new JLabel("Fur " + data.furThickness));
                 LowerPanel.add(new JLabel("Next App. " + data.nextGroomingAppointment));
                 LowerPanel.add(new JLabel("Cost " + data.expectedGroomingCost));
+                */
+                LowerPanel.add(new JLabel("Dog " + data.toString()));
                 this.setSize(70, 30);
-                CatNodeDrawing.this.createUIComponents();
+                DogNodeDrawing.this.createUIComponents();
                 addListeners();
             }
 
-            public CatBox(CatInfo data) {
+            public DogBox(Dog data) {
                 if (data == null) {
                     return;
                 }
                 this.data = data;
                 $$$setupUI$$$();
+                /*
                 BigText.setText(data.name);
                 LowerPanel.add(new JLabel("Hired " + data.monthHired));
                 LowerPanel.add(new JLabel("Fur " + data.furThickness));
                 LowerPanel.add(new JLabel("Next App. " + data.nextGroomingAppointment));
                 LowerPanel.add(new JLabel("Cost " + data.expectedGroomingCost));
+                */
+                LowerPanel.add(new JLabel("Dog " + data.toString()));
                 this.setSize(70, 30);
                 //CatNodeDrawing.this.createUIComponents();
                 addListeners();
@@ -1517,18 +1520,13 @@ public class DViz extends DogShelter {                         //TODO: Cleanup c
                         GraphRegion.add(new GraphZone(new Dimension(1280, 800), findCat(root, data)));
                     }
                 });*/
-                removeButton.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        removeCat(data);
-                    }
-                });
+                removeButton.addActionListener(e -> adopt(data));
             }
 
             private void createUIComponents() {
                 try {
                     if (drawSubtreesRadioButton.isSelected()) {
-                        gZ = new GraphZone(new Dimension(200, 100), findCat(root, data));
+                        gZ = new GraphZone(new Dimension(200, 100), findDog(root, data));
                         this.graphArea = new JPanel();
                         graphArea.add(gZ);
                         gZ.repaint();

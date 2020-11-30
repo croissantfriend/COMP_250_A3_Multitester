@@ -359,7 +359,7 @@
                 </constraints>
                 <properties>
                   <horizontalTextPosition value="0"/>
-                  <text value="Add Random Cat"/>
+                  <text value="Add Random Dog"/>
                 </properties>
               </component>
               <component id="28491" class="javax.swing.JButton" binding="RemoveRandom">
@@ -368,7 +368,7 @@
                   <gridbag weightx="0.0" weighty="0.0"/>
                 </constraints>
                 <properties>
-                  <text value="Rem Random Cat"/>
+                  <text value="Rem Random Dog"/>
                 </properties>
               </component>
               <component id="8b3" class="javax.swing.JButton" binding="AddCustom">
