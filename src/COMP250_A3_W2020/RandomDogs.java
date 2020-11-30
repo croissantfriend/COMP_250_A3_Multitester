@@ -6,13 +6,13 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
-public class RandomDogs extends CatTree {
+public class RandomDogs extends DogShelter {
     Random rand;
-    ArrayList<String> names = new ArrayList<String>();
+    ArrayList<String> names = new ArrayList<>();
     File Lastnames = new File("src/COMP250_A3_W2020/Put Your java files here.txt");
 
     public RandomDogs(long seed) {
-        super(new CatInfo("trick to access inner methods of cattree :) Ignore me", 1, 10, 243, 0));
+        super(new Dog("trick to access inner methods of cattree :) Ignore me", 1, 10, 243, 0));
         rand = new Random(seed);
         try {
             Scanner scanner = new Scanner(Lastnames);
@@ -57,14 +57,14 @@ public class RandomDogs extends CatTree {
     }
 
     public RandomDogs() {
-        super(new CatInfo("trick to access inner methods of cattree :) Ignore me", 1, 10, 243, 0));
+        super(new Dog("trick to access inner methods of cattree :) Ignore me", 1, 10, 243, 0));
         rand = new Random();
         try {
             Scanner scanner = new Scanner(Lastnames);
             while (scanner.hasNextLine()) {
                 names.add(scanner.nextLine());
             }
-        } catch (FileNotFoundException e) {
+        } catch (FileNotFoundException ignored) {
         }
     }
 
@@ -72,30 +72,30 @@ public class RandomDogs extends CatTree {
         return rand.nextInt(Math.abs(i));
     }
 
-    public CatInfo nextCatInfo() {
-        return new CatInfo(nextName(), 1 + rand.nextInt(243), 10 + rand.nextInt(90), 243 + rand.nextInt(100), rand.nextInt(200));
+    public Dog nextDog() {
+        return new Dog(nextName(), 1 + rand.nextInt(20), rand.nextInt(90), rand.nextInt(50), rand.nextInt(200));
     }
 
-    public CatNode nextCatNode() {
-        return new CatNode(nextCatInfo());
+    public DogNode nextDogNode() {
+        return new DogNode(nextDog());
     }
 
-    public CatTree nextCatTree(int numNodes) {
-        CatTree output = new CatTree(nextCatInfo());
+    public DogShelter nextDogShelter(int numNodes) {
+        DogShelter output = new DogShelter(nextDog());
         if (numNodes > 1) {
             for (int i = 0; i < numNodes; i++) {
-                output.addCat(nextCatInfo());
+                output.shelter(nextDog());
             }
         }
         return output;
     }
 
-    public CatTree nextCatTree() {
-        CatTree output = new CatTree(nextCatInfo());
+    public DogShelter nextDogShelter() {
+        DogShelter output = new DogShelter(nextDog());
         int numNodes = 1 + rand.nextInt(25);
         if (numNodes > 1) {
             for (int i = 0; i < numNodes; i++) {
-                output.addCat(nextCatInfo());
+                output.shelter(nextDog());
             }
         }
         return output;
@@ -132,12 +132,12 @@ public class RandomDogs extends CatTree {
 
     }
 
-    public DViz nextCViz() {
-        DViz viz = new DViz(nextCatInfo());
+    public DViz nextDViz() {
+        DViz viz = new DViz(nextDog());
         int numNodes = 1 + rand.nextInt(2);
         if (numNodes > 1) {
             for (int i = 0; i < numNodes; i++) {
-                viz.addCat(nextCatInfo());
+                viz.shelter(nextDog());
             }
         }
         return viz;

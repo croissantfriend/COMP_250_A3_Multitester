@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Stack;
 
-public class DViz extends CatTree {                         //TODO: Cleanup console outputs
+public class DViz extends DogShelter {                         //TODO: Cleanup console outputs
     //TODO: Implement cost at the top, autotesters and the other useful methods!
     //User Facing Parameters
     protected int wideningCoeff = 2;
@@ -27,7 +27,7 @@ public class DViz extends CatTree {                         //TODO: Cleanup cons
     //Interactive elements
     private JSlider RandomnessSlider;
     private JSlider WideningSlider;
-    private JButton AddRandomCat;
+    private JButton AddRandomDog;
     private JButton AddCustom;
     private JButton forceRefreshButton;
     private JButton RemoveRandom;                           //TODO: Implement this
@@ -52,26 +52,26 @@ public class DViz extends CatTree {                         //TODO: Cleanup cons
     private JRadioButton drawSubtreesRadioButton;
     protected int randomnessCoeff = 2;
     //Randomization engine for assignment related objects
-    private RandomDogs rand = new RandomDogs();             //Random cat generator
+    private RandomDogs rand = new RandomDogs();             //Random dog generator
 
     //======================= User facing methods & constructors =========================
 
     /**
-     * Instantiates a CViz object. Functional as a drop in replacement for a CatTree object.
+     * Instantiates a DViz object. Functional as a drop in replacement for a DogShelter object.
      * <p>
-     * Builds GUI and generates CatTree
+     * Builds GUI and generates DogShelter
      *
-     * @param c any CatInfo to instantiate the root node.
+     * @param c any Dog to instantiate the root node.
      */
-    public DViz(CatInfo c) {
-        super(c);                                           //Calls constructor of superclass
+    public DViz(Dog d) {
+        super(d);                                           //Calls constructor of superclass
         $$$setupUI$$$();
         addListeners();                                     //Binds listeners for UI
         refresh();                                          //Draws the graphics elements
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("CViz");
+        JFrame frame = new JFrame("DViz");
         RandomDogs statRand = new RandomDogs();
         frame.setContentPane(statRand.nextCViz().MainWindow);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -318,11 +318,11 @@ public class DViz extends CatTree {                         //TODO: Cleanup cons
                 showUser("    [CViz / SpamAdd] This may take a while.");
                 int counter = 0;
                 if (root == null) {
-                    root = rand.nextCatNode();
+                    root = rand.nextDogNode();
                     counter++;
                 }
                 while (counter < SpamFactorSlider.getValue()) {
-                    root.addCat(rand.nextCatNode());
+                    root.addCat(rand.nextDogNode());
                     counter++;
                 }
                 showUser("    [CViz / SpamAdd] Ran for " + SpamFactorSlider.getValue() + " iterations. Check Console for details.");
@@ -415,7 +415,7 @@ public class DViz extends CatTree {                         //TODO: Cleanup cons
         RandomnessSlider.addChangeListener(e -> randomnessSliderChanged());
         WideningSlider.addChangeListener(e -> wideningSliderChanged());
 
-        AddRandomCat.addActionListener(new ActionListener() {
+        AddRandomDog.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 CatInfo toAdd = rand.nextCatInfo();
@@ -579,7 +579,7 @@ public class DViz extends CatTree {                         //TODO: Cleanup cons
 
     private String gradualTest(int maximum) {
         StringBuilder output = new StringBuilder("    [CViz / GradualTest] Test beginning with " + maximum + " stages." + "\n");
-        root = rand.nextCatNode();
+        root = rand.nextDogNode();
         for (int i = 1; i <= maximum; i++) {
             output.append("    [CViz / GradualTest] Reached stage " + i + "\n");
             for (int j = 1; j <= i; j++) {
@@ -601,7 +601,7 @@ public class DViz extends CatTree {                         //TODO: Cleanup cons
                 }*/
                 this.refresh();
             }
-            root = rand.nextCatNode();
+            root = rand.nextDogNode();
         }
         output.append("    [CViz / GradualTest] Test concluded.");
         return output.toString();
@@ -703,18 +703,18 @@ public class DViz extends CatTree {                         //TODO: Cleanup cons
     //======================= Overridden methods =========================
 
     @Override
-    public void addCat(CatInfo c) {
+    public void shelter(Dog d) {
         if (root == null) {
-            root = new CatNode(c);
+            root = new DogNode(d);
         }
-        super.addCat(c);
+        super.shelter(d);
         refresh();
     }
 
     @Override
-    public void removeCat(CatInfo c) {
+    public void adopt(Dog d) {
         //showUser("    [CViz / Debug] " + "Remove called on cat with name " + c.name);
-        super.removeCat(c);
+        super.adopt(d);
         refresh();
     }
 
@@ -978,14 +978,14 @@ public class DViz extends CatTree {                         //TODO: Cleanup cons
         gbc.gridx = 0;
         gbc.gridy = 2;
         panel9.add(TestIntensityDisplay, gbc);
-        AddRandomCat = new JButton();
-        AddRandomCat.setHorizontalTextPosition(0);
-        AddRandomCat.setText("Add Random Cat");
+        AddRandomDog = new JButton();
+        AddRandomDog.setHorizontalTextPosition(0);
+        AddRandomDog.setText("Add Random Cat");
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 8;
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        panel7.add(AddRandomCat, gbc);
+        panel7.add(AddRandomDog, gbc);
         RemoveRandom = new JButton();
         RemoveRandom.setText("Rem Random Cat");
         gbc = new GridBagConstraints();
@@ -1201,7 +1201,7 @@ public class DViz extends CatTree {                         //TODO: Cleanup cons
 
     class GraphZone extends JPanel {                    //Responsible for drawing the binary tree
         Dimension idealSize;
-        CatNode startNode;
+        DogNode startNode;
         boolean mainWindow = false;
 
         public GraphZone() {
