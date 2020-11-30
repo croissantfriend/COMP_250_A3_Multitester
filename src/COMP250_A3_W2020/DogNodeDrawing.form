@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="COMP250_A3_W2020.CViz.CatNodeDrawing">
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="COMP250_A3_W2020.DViz.CatNodeDrawing">
   <grid id="27dc6" binding="panel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
     <constraints>
       <xy x="20" y="20" width="500" height="400"/>
@@ -27,7 +27,7 @@
               </grid>
             </children>
           </scrollpane>
-          <component id="68061" class="javax.swing.JTextArea" binding="CatsOfMonth">
+          <component id="68061" class="javax.swing.JTextArea" binding="DogsOfMonth">
             <constraints border-constraint="North"/>
             <properties>
               <editable value="false"/>

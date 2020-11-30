@@ -6,12 +6,12 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
-public class RandomCats extends CatTree {
+public class RandomDogs extends CatTree {
     Random rand;
     ArrayList<String> names = new ArrayList<String>();
     File Lastnames = new File("src/COMP250_A3_W2020/Put Your java files here.txt");
 
-    public RandomCats(long seed) {
+    public RandomDogs(long seed) {
         super(new CatInfo("trick to access inner methods of cattree :) Ignore me", 1, 10, 243, 0));
         rand = new Random(seed);
         try {
@@ -56,7 +56,7 @@ public class RandomCats extends CatTree {
         }
     }
 
-    public RandomCats() {
+    public RandomDogs() {
         super(new CatInfo("trick to access inner methods of cattree :) Ignore me", 1, 10, 243, 0));
         rand = new Random();
         try {
@@ -132,8 +132,8 @@ public class RandomCats extends CatTree {
 
     }
 
-    public CViz nextCViz() {
-        CViz viz = new CViz(nextCatInfo());
+    public DViz nextCViz() {
+        DViz viz = new DViz(nextCatInfo());
         int numNodes = 1 + rand.nextInt(2);
         if (numNodes > 1) {
             for (int i = 0; i < numNodes; i++) {

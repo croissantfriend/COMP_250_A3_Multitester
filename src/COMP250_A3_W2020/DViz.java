@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Stack;
 
-public class CViz extends CatTree {                         //TODO: Cleanup console outputs
+public class DViz extends CatTree {                         //TODO: Cleanup console outputs
     //TODO: Implement cost at the top, autotesters and the other useful methods!
     //User Facing Parameters
     protected int wideningCoeff = 2;
@@ -52,7 +52,7 @@ public class CViz extends CatTree {                         //TODO: Cleanup cons
     private JRadioButton drawSubtreesRadioButton;
     protected int randomnessCoeff = 2;
     //Randomization engine for assignment related objects
-    private RandomCats rand = new RandomCats();             //Random cat generator
+    private RandomDogs rand = new RandomDogs();             //Random cat generator
 
     //======================= User facing methods & constructors =========================
 
@@ -63,7 +63,7 @@ public class CViz extends CatTree {                         //TODO: Cleanup cons
      *
      * @param c any CatInfo to instantiate the root node.
      */
-    public CViz(CatInfo c) {
+    public DViz(CatInfo c) {
         super(c);                                           //Calls constructor of superclass
         $$$setupUI$$$();
         addListeners();                                     //Binds listeners for UI
@@ -72,7 +72,7 @@ public class CViz extends CatTree {                         //TODO: Cleanup cons
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("CViz");
-        RandomCats statRand = new RandomCats();
+        RandomDogs statRand = new RandomDogs();
         frame.setContentPane(statRand.nextCViz().MainWindow);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
@@ -92,7 +92,7 @@ public class CViz extends CatTree {                         //TODO: Cleanup cons
         GraphRegion = new JPanel();
         GraphRegion.add(new GraphZone());
         //GraphRegion.add(new ShapesJPanel());
-        rand = new RandomCats();
+        rand = new RandomDogs();
         //ListOfCatsSide.add(new CatNodeDrawing(rand.nextCatNode()));
         refresh();
     }
@@ -1330,16 +1330,16 @@ public class CViz extends CatTree {                         //TODO: Cleanup cons
         //private static RandomCats rand;
         protected JPanel panel;
         protected JScrollPane scrollPane;
-        private ArrayList<CatBox> CatBoxList = new ArrayList<>();
-        private Dimension idealSize;
-        private CatNode node;
-        private Dimension size = new Dimension(20, 20);
+        private final ArrayList<CatBox> CatBoxList = new ArrayList<>();
+        private final Dimension idealSize;
+        private final CatNode node;
+        private final Dimension size = new Dimension(20, 20);
         private boolean isList = false;
         private int listLength = 0;
-        private ArrayList<CatNode> catsList = new ArrayList<>();
+        private final ArrayList<CatNode> catsList = new ArrayList<>();
         private JPanel CatsList;
         private JPanel innerPanel;
-        private JTextArea CatsOfMonth;
+        private JTextArea DogsOfMonth;
 
         public CatNodeDrawing(CatNode input) {
             this.node = input;
@@ -1367,9 +1367,9 @@ public class CViz extends CatTree {                         //TODO: Cleanup cons
 
             if (catsList.size() > 1) {
                 //innerPanel.add(new JLabel("    [CViz / Debug] " + "Cats hired on " + node.data.monthHired));
-                CatsOfMonth.setEnabled(true);
-                CatsOfMonth.setVisible(true);
-                CatsOfMonth.setText("Cats hired on month " + node.data.monthHired);
+                DogsOfMonth.setEnabled(true);
+                DogsOfMonth.setVisible(true);
+                DogsOfMonth.setText("Cats hired on month " + node.data.monthHired);
             }
 
             for (CatNode cat : catsList) {
@@ -1421,16 +1421,16 @@ public class CViz extends CatTree {                         //TODO: Cleanup cons
             scrollPane.setHorizontalScrollBarPolicy(31);
             innerPanel.add(scrollPane, BorderLayout.SOUTH);
             scrollPane.setViewportView(CatsList);
-            CatsOfMonth = new JTextArea();
-            CatsOfMonth.setEditable(false);
-            CatsOfMonth.setEnabled(false);
-            CatsOfMonth.setFocusable(false);
-            Font CatsOfMonthFont = this.$$$getFont$$$("Franklin Gothic Medium Cond", -1, 14, CatsOfMonth.getFont());
-            if (CatsOfMonthFont != null) CatsOfMonth.setFont(CatsOfMonthFont);
-            CatsOfMonth.setLineWrap(true);
-            CatsOfMonth.setOpaque(true);
-            CatsOfMonth.setVisible(false);
-            innerPanel.add(CatsOfMonth, BorderLayout.NORTH);
+            DogsOfMonth = new JTextArea();
+            DogsOfMonth.setEditable(false);
+            DogsOfMonth.setEnabled(false);
+            DogsOfMonth.setFocusable(false);
+            Font CatsOfMonthFont = this.$$$getFont$$$("Franklin Gothic Medium Cond", -1, 14, DogsOfMonth.getFont());
+            if (CatsOfMonthFont != null) DogsOfMonth.setFont(CatsOfMonthFont);
+            DogsOfMonth.setLineWrap(true);
+            DogsOfMonth.setOpaque(true);
+            DogsOfMonth.setVisible(false);
+            innerPanel.add(DogsOfMonth, BorderLayout.NORTH);
         }
 
         /**
@@ -1472,7 +1472,7 @@ public class CViz extends CatTree {                         //TODO: Cleanup cons
 
             public CatBox() {
                 $$$setupUI$$$();
-                data = new RandomCats().nextCatInfo();
+                data = new RandomDogs().nextCatInfo();
                 BigText.setText(data.name);
                 LowerPanel.add(new JLabel("Hired " + data.monthHired));
                 LowerPanel.add(new JLabel("Fur " + data.furThickness));
@@ -1625,7 +1625,7 @@ public class CViz extends CatTree {                         //TODO: Cleanup cons
         private JSlider sliderFur, sliderCost, sliderMonth, sliderApp;
         private JSpinner spinnerFur, spinnerCost, spinnerApp, spinnerMonth;
         private JButton randomNameButton;
-        private RandomCats rand = new RandomCats();
+        private final RandomDogs rand = new RandomDogs();
         public CatInfo info;
         public boolean cancelled = false;
 
