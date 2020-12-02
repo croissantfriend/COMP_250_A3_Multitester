@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class RandomDogs extends DogShelter {
     Random rand;
     ArrayList<String> names = new ArrayList<>();
-    File Lastnames = new File("src/COMP250_A3_W2020/Put Your java files here.txt");
+    File Lastnames = new File("src/COMP250_A3_W2020/Add DogShelter.java here.txt");
 
     public RandomDogs(long seed) {
         super(new Dog("trick to access inner methods of cattree :) Ignore me", 1, 10, 243, 0));
@@ -28,14 +28,14 @@ public class RandomDogs extends DogShelter {
                 }
             } catch (FileNotFoundException f) {
                 try {
-                    Lastnames = new File("last_names.all.txt");
+                    Lastnames = new File("assignment3/last_names.all.txt");
                     Scanner scanner = new Scanner(Lastnames);
                     while (scanner.hasNextLine()) {
                         names.add(scanner.nextLine());
                     }
                 } catch (FileNotFoundException g) {
                     try {
-                        Lastnames = new File("Put Your java files here.txt");
+                        Lastnames = new File("Add DogShelter.java here.txt");
                         Scanner scanner = new Scanner(Lastnames);
                         while (scanner.hasNextLine()) {
                             names.add(scanner.nextLine());
