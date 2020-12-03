@@ -1,13 +1,13 @@
 # COMP 250: Assignment 3 - Grand Unified Tester
 This repository is meant to act as a bundle of
-the following tools and testers others have 
+several tools and testers others have 
 shared over the past days and weeks. 
 
 Includes:
 
 - Dog, Minitester, and the course-provided template for DogShelter - replace this with your own code
 - SpeedTester.java
-    * speedtesting functions written by me, which means they probably have issues - 
+    * speedtesting functions written by me (currently only `shelter()` and `adopt()`), which means they probably have issues - 
     definitely modify and add your own! (Feel free to submit a PR so I can add them as well!)
     * Requires TheBigSasha's [RuntimeTester](https://github.com/TheBigSasha/RuntimeTester)
 - [DViz.java](https://github.com/meow10811/C250_Assignment3_Debugger) and related files
@@ -23,7 +23,7 @@ Includes:
     
 and more!
 
-##Installation
+## Installation
 IntelliJ
 1. Click "Get from version control..."
 2. Select a local directory and paste the URL of this project
@@ -34,7 +34,8 @@ Eclipse
   3. Paste the URL of this project into "URI"
   4. Select the "master" branch
 
-##Usage
+## Usage
+* First of all, add your DogShelter code in place of the blank/template DogShelter file.
 * DViz: 
     * Run DViz.java.
 * Test cases:
