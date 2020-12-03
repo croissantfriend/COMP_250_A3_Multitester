@@ -37,22 +37,22 @@ Eclipse
 
 ## Usage
 
-Now supports Eclipse! You should be able to import the file and just All instructions are written with IntelliJ in mind;
-also not sure about JUnit's compatibility with Eclipse out-of-the-box, so yeah try IntelliJ.
+Now supports Eclipse! You should be able to import the project as described above and run Megatester.java by left-clicking.
+All other instructions are written with IntelliJ in mind;  also not sure how to import libraries into Eclipse, so yeah try IntelliJ.
 
 * First of all, add your DogShelter code in place of the blank/template DogShelter file.
 * DViz:
     * Run `DViz.java`.
 * __M E G A T E S T E R__:
     * Test cases:
-        * (In IntelliJ) right click the folder `assignment3` under `src` and click "Run Tests in 'assignment3", or
+        * (In IntelliJ) right click the folder `assignment3` under `src/test/java` and click "Run Tests in 'assignment3", or
           select "Run..." on Megatester.java through the menu or though Alt-Shift-F10 (or the Mac equivalent Ctrl-R),
           and select the one with orange and green arrows
-
+      * Alternatively, uncomment out the lines in `main()` and run the file manually.
 * SpeedTester:
     * Follow the instructions on [this page](https://github.com/TheBigSasha/RuntimeTester) to download RuntimeTester.jar
       and add it to your project.
-    * Run SpeedTester.java.
+    * Run `SpeedTester.java`.
 * TreePrinter
     * Make DogNode implement PrintableNode, including its 3 methods. (remove this after!)
     * Call `TreePrinter.print(shelter.root)` on the root of the desired shelter.

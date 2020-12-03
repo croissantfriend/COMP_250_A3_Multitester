@@ -13,11 +13,61 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class Megatester {
 
-    // The shelter
-    DogShelter shelter;
-    // My test 🐶
-    Dog max = new Dog("Max", 11, 0, 2, 100.0);
-    Dog neptune = new Dog("Neptune", 12, 3, 250, 0.0);
+    public static void main(String[] args) {
+        // Uncomment these if IntelliJ/Gradle testing doesn't work
+//        testShelter1();
+//        testShelter2();
+//        testShelter3();
+//        testShelter4();
+//        testAdopt1();
+//        testAdopt2();
+//        testAdopt3();
+//        testFindOldest1();
+//        testFindYoungest1();
+//        testFindDogToAdopt1();
+//        testBudgetVetExpenses1();
+//        testGetVetSchedule1();
+//        testGetVetSchedule2();
+//        testDogShelterIterator1();
+//        testDogShelterIterator2();
+//        testDogShelterIterator3();
+    }
+
+    // James Xu's tests
+    DogShelter generateSampleShelter() {
+        Dog R = new Dog("Rex", 8, 100, 5, 50.0);
+        Dog S = new Dog("Stella", 5, 50, 2, 250.0);
+        Dog L = new Dog("Lessie", 3, 70, 9, 25.0);
+        Dog Z = new Dog("Z", 4, 200, 10, 25.0);
+//        Dog P = new Dog("Poldo", 10, 60, 1, 35.0);
+//        Dog B = new Dog("Bella", 1, 55, 15, 120.0);
+//        Dog C = new Dog("Cloud", 4, 10, 23, 80.0);
+//        Dog A = new Dog("Archie", 6, 120, 18, 40.0);
+//        Dog D = new Dog("Daisy", 7, 15, 12, 35.0);
+        DogShelter shelter = new DogShelter(R);
+        shelter.shelter(S);
+        shelter.shelter(L);
+        shelter.shelter(Z);
+        return shelter;
+    }
+
+    DogShelter generateSampleShelter2() {
+        // From meow10811's Test Suite
+        Dog M = new Dog("Max", 11, 0, 2, 100.0);
+
+        Dog R = new Dog("Rex", 8, 100, 5, 50.0);
+        Dog S = new Dog("Stella", 5, 50, 2, 250.0);
+        Dog L = new Dog("Lessie", 3, 70, 9, 25.0);
+        Dog P = new Dog("Poldo", 10, 60, 1, 35.0);
+        Dog B = new Dog("Bella", 1, 55, 15, 120.0);
+        Dog C = new Dog("Cloud", 4, 10, 23, 80.0);
+        Dog A = new Dog("Archie", 6, 120, 18, 40.0);
+        Dog D = new Dog("Daisy", 7, 15, 12, 35.0);
+
+        DogShelter shelter = new DogShelter(M);
+        DogShelter.DogNode node = shelter.new DogNode(M);
+        return shelter;
+    }
 
     @Test
     void testShelter1() {
@@ -122,7 +172,44 @@ public class Megatester {
         Assertions.assertTrue(checkDogs && checkParents && checkNulls);
     }
 
-    Dog izzie = new Dog("Izzie", 6, 5, 15, 150.0);
+    @Test
+    void testShelter3() {
+        Dog R = new Dog("Rex", 8, 100, 5, 50.0);
+        Dog S = new Dog("Stella", 5, 50, 2, 250.0);
+        Dog L = new Dog("Lessie", 3, 70, 9, 25.0);
+
+        DogShelter test = new DogShelter(L);
+        DogShelter.DogNode nodeS = test.new DogNode(S);
+        test.root.older = nodeS;
+        nodeS.parent = test.root;
+
+        System.out.print("Testing shelter() #3 [2 (left) tree rotations]... \n");
+//        TreePrinter.print(test.root);
+        test.shelter(R);
+//        TreePrinter.print(test.root);
+
+        StringBuilder errorBuilder = new StringBuilder();
+        boolean checkDogs = test.root.d == R && test.root.younger.d == L && test.root.younger.older.d == S;
+        if (!checkDogs) {
+            errorBuilder.append("Dogs are not assigned correctly. ");
+        }
+        boolean checkParents = test.root.younger.parent.d == R && test.root.younger.older.parent.d == L;
+        if (!checkParents) {
+            errorBuilder.append("Parent pointers are not assigned correctly. ");
+        }
+        boolean checkNulls = test.root.parent == null && test.root.older == null &&
+                test.root.younger.younger == null &&
+                test.root.younger.older.younger == null && test.root.younger.older.older == null;
+        if (!checkNulls) {
+            errorBuilder.append("Null values are not assigned correctly.");
+        }
+        if (!checkDogs || !checkParents || !checkNulls) {
+            System.out.println(errorBuilder.toString());
+        } else {
+            System.out.println("Passed.\n");
+        }
+        Assertions.assertTrue(checkDogs && checkParents && checkNulls);
+    }
 
     @Test
     void testShelter4() {
@@ -246,107 +333,134 @@ public class Megatester {
         Assertions.assertTrue(dogs && nulls && parents);
     }
 
-    public static void main(String[] args) {
-        // Uncomment these if IntelliJ/Gradle testing doesn't work
-//        testShelter1();
-//        testShelter2();
-//        testShelter3();
-//        testShelter4();
-//        testAdopt1();
-//        testAdopt2();
-//        testAdopt3();
-//        testFindOldest1();
-//        testFindYoungest1();
-//        testFindDogToAdopt1();
-//        testBudgetVetExpenses1();
-//        testGetVetSchedule1();
-//        testGetVetSchedule2();
-//        testDogShelterIterator1();
-//        testDogShelterIterator2();
-//        testDogShelterIterator3();
-    }
-
-    // James Xu's tests
-    DogShelter generateSampleShelter() {
-        Dog R = new Dog("Rex", 8, 100, 5, 50.0);
-        Dog S = new Dog("Stella", 5, 50, 2, 250.0);
-        Dog L = new Dog("Lessie", 3, 70, 9, 25.0);
-        Dog Z = new Dog("Z", 4, 200, 10, 25.0);
-//        Dog P = new Dog("Poldo", 10, 60, 1, 35.0);
-//        Dog B = new Dog("Bella", 1, 55, 15, 120.0);
-//        Dog C = new Dog("Cloud", 4, 10, 23, 80.0);
-//        Dog A = new Dog("Archie", 6, 120, 18, 40.0);
-//        Dog D = new Dog("Daisy", 7, 15, 12, 35.0);
-        DogShelter shelter = new DogShelter(R);
-        shelter.shelter(S);
-        shelter.shelter(L);
-        shelter.shelter(Z);
-        return shelter;
-    }
-
-    DogShelter generateSampleShelter2() {
-        // From meow10811's Test Suite
-        Dog M = new Dog("Max", 11, 0, 2, 100.0);
-
-        Dog R = new Dog("Rex", 8, 100, 5, 50.0);
-        Dog S = new Dog("Stella", 5, 50, 2, 250.0);
-        Dog L = new Dog("Lessie", 3, 70, 9, 25.0);
-        Dog P = new Dog("Poldo", 10, 60, 1, 35.0);
-        Dog B = new Dog("Bella", 1, 55, 15, 120.0);
-        Dog C = new Dog("Cloud", 4, 10, 23, 80.0);
-        Dog A = new Dog("Archie", 6, 120, 18, 40.0);
-        Dog D = new Dog("Daisy", 7, 15, 12, 35.0);
-
-        DogShelter shelter = new DogShelter(M);
-        DogShelter.DogNode node = shelter.new DogNode(M);
-        return shelter;
-    }
-
-    @Test
-    void testShelter3() {
-        Dog R = new Dog("Rex", 8, 100, 5, 50.0);
-        Dog S = new Dog("Stella", 5, 50, 2, 250.0);
-        Dog L = new Dog("Lessie", 3, 70, 9, 25.0);
-
-        DogShelter test = new DogShelter(L);
-        DogShelter.DogNode nodeS = test.new DogNode(S);
-        test.root.older = nodeS;
-        nodeS.parent = test.root;
-
-        System.out.print("Testing shelter() #3 [2 (left) tree rotations]... \n");
-//        TreePrinter.print(test.root);
-        test.shelter(R);
-//        TreePrinter.print(test.root);
-
-        StringBuilder errorBuilder = new StringBuilder();
-        boolean checkDogs = test.root.d == R && test.root.younger.d == L && test.root.younger.older.d == S;
-        if (!checkDogs) {
-            errorBuilder.append("Dogs are not assigned correctly. ");
-        }
-        boolean checkParents = test.root.younger.parent.d == R && test.root.younger.older.parent.d == L;
-        if (!checkParents) {
-            errorBuilder.append("Parent pointers are not assigned correctly. ");
-        }
-        boolean checkNulls = test.root.parent == null && test.root.older == null &&
-                test.root.younger.younger == null &&
-                test.root.younger.older.younger == null && test.root.younger.older.older == null;
-        if (!checkNulls) {
-            errorBuilder.append("Null values are not assigned correctly.");
-        }
-        if (!checkDogs || !checkParents || !checkNulls) {
-            System.out.println(errorBuilder.toString());
-        } else {
-            System.out.println("Passed.\n");
-        }
-        Assertions.assertTrue(checkDogs && checkParents && checkNulls);
-    }
-
     @Test
     @DisplayName("Should adopt root correctly")
     void testAdopt1() {
         DogShelter shelter = generateSampleShelter();
         Dog Z = new Dog("Z", 4, 200, 10, 25.0);
         Assertions.assertEquals(shelter.adopt(), Z);
+    }
+
+    @Test
+    @DisplayName("Should adopt iteratively all dogs correctly")
+    void testAdopt2() {
+        DogShelter shelter = generateSampleShelter();
+        Dog R = new Dog("Rex", 8, 100, 5, 50.0);
+        Dog S = new Dog("Stella", 5, 50, 2, 250.0);
+        Dog L = new Dog("Lessie", 3, 70, 9, 25.0);
+        Dog Z = new Dog("Z", 4, 200, 10, 25.0);
+//        TreePrinter.print(shelter.root);
+        Assertions.assertEquals(shelter.adopt(), Z);
+//        TreePrinter.print(shelter.root);
+        Assertions.assertEquals(shelter.adopt(), R);
+//        TreePrinter.print(shelter.root);
+        Assertions.assertEquals(shelter.adopt(), L);
+//        TreePrinter.print(shelter.root);
+        Assertions.assertEquals(shelter.adopt(), S);
+//        TreePrinter.print(shelter.root);
+    }
+
+    @Test
+    void testAdopt3() {
+        Dog L = new Dog("Lessie", 3, 70, 9, 25.0);
+        Dog R = new Dog("Rex", 8, 100, 5, 50.0);
+        Dog S = new Dog("Stella", 5, 50, 2, 250.0);
+        Dog P = new Dog("Poldo", 10, 60, 1, 35.0);
+        Dog B = new Dog("Bella", 1, 55, 15, 120.0);
+        Dog C = new Dog("Cloud", 4, 10, 23, 80.0);
+        Dog A = new Dog("Archie", 6, 120, 18, 40.0);
+        Dog D = new Dog("Daisy", 7, 15, 12, 35.0);
+
+        DogShelter test = new DogShelter(A);
+
+        DogShelter.DogNode ll = test.new DogNode(L);
+        DogShelter.DogNode rr = test.new DogNode(R);
+        DogShelter.DogNode ss = test.new DogNode(S);
+        DogShelter.DogNode pp = test.new DogNode(P);
+        DogShelter.DogNode bb = test.new DogNode(B);
+        DogShelter.DogNode cc = test.new DogNode(C);
+        DogShelter.DogNode aa = test.new DogNode(A);
+        DogShelter.DogNode dd = test.new DogNode(D);
+
+        test.root.younger = ll;
+        test.root.younger.parent = test.root;
+        test.root.older = rr;
+        test.root.older.parent = test.root;
+
+        test.root.younger.younger = bb;
+        test.root.younger.younger.parent = ll;
+        test.root.younger.older = ss;
+        test.root.younger.older.parent = ll;
+
+        test.root.younger.older.younger = cc;
+        test.root.younger.older.younger.parent = ss;
+
+        test.root.older.younger = dd;
+        test.root.older.younger.parent = rr;
+        test.root.older.older = pp;
+        test.root.older.older.parent = rr;
+
+        System.out.print("Testing adopt() #3... \n");
+////        TreePrinter.print(test.root);
+        Dog a = test.adopt();
+//        TreePrinter.print(test.root);
+
+        boolean dogs = test.root.d == R && test.root.younger.d == L && test.root.older.d == P &&
+                test.root.younger.younger.d == B && test.root.younger.older.d == S && test.root.younger.older.younger.d == C &&
+                test.root.younger.older.older.d == D;
+
+        boolean nulls = test.root.parent == null && test.root.older.younger == null && test.root.older.older == null &&
+                test.root.younger.younger.younger == null && test.root.younger.younger.older == null &&
+                test.root.younger.older.younger.younger == null && test.root.younger.older.younger.older == null &&
+                test.root.younger.older.older.younger == null && test.root.younger.older.older.older == null;
+
+        boolean parents = test.root.younger.parent.d == R &&
+                test.root.older.parent.d == R &&
+                test.root.younger.younger.parent.d == L &&
+                test.root.younger.older.parent.d == L &&
+                test.root.younger.older.younger.parent.d == S &&
+                test.root.younger.older.older.parent.d == S;
+        boolean ret = a == A;
+
+        if (!(dogs && nulls && parents && ret)) {
+            if (!dogs) System.out.println("Dogs are not assigned correctly");
+            else if (!nulls) System.out.println("Null values are not assigned correctly");
+            else if (!parents) System.out.println("Parent pointers are not assigned correctly");
+            else if (!ret) System.out.println("The method returned incorrect value");
+        } else {
+            System.out.println("Passed.\n");
+        }
+        Assertions.assertTrue(dogs && nulls && parents && ret);
+    }
+
+    @Test
+    @DisplayName("Should test adopt with all-right branches")
+    void testAdopt4() {
+        Dog R = new Dog("Rex", 8, 100, 5, 50.0);
+        Dog S = new Dog("Stella", 10, 90, 2, 250.0);
+        Dog L = new Dog("Lessie", 12, 80, 9, 25.0);
+        DogShelter shelter = new DogShelter(R);
+        shelter.shelter(S);
+        shelter.shelter(L);
+
+        Assertions.assertEquals(shelter.adopt(), R);
+        Assertions.assertEquals(shelter.adopt(), S);
+        Assertions.assertEquals(shelter.adopt(), L);
+    }
+
+    @Test
+    @DisplayName("Should test adopt with all-left branches")
+    void testAdopt5() {
+        Dog R = new Dog("Rex", 8, 100, 5, 50.0);
+        Dog S = new Dog("Stella", 5, 90, 2, 250.0);
+        Dog L = new Dog("Lessie", 3, 80, 9, 25.0);
+        DogShelter shelter = new DogShelter(R);
+        shelter.shelter(S);
+        shelter.shelter(L);
+
+        Assertions.assertEquals(shelter.adopt(), R);
+        Assertions.assertEquals(shelter.adopt(), S);
+        Assertions.assertEquals(shelter.adopt(), L);
     }
 
     @Test
@@ -959,127 +1073,12 @@ public class Megatester {
 
     // From meow10811's Test Suite
 
-    @Test
-    @DisplayName("Should adopt iteratively all dogs correctly")
-    void testAdopt2() {
-        DogShelter shelter = generateSampleShelter();
-        Dog R = new Dog("Rex", 8, 100, 5, 50.0);
-        Dog S = new Dog("Stella", 5, 50, 2, 250.0);
-        Dog L = new Dog("Lessie", 3, 70, 9, 25.0);
-        Dog Z = new Dog("Z", 4, 200, 10, 25.0);
-//        TreePrinter.print(shelter.root);
-        Assertions.assertEquals(shelter.adopt(), Z);
-//        TreePrinter.print(shelter.root);
-        Assertions.assertEquals(shelter.adopt(), R);
-//        TreePrinter.print(shelter.root);
-        Assertions.assertEquals(shelter.adopt(), L);
-//        TreePrinter.print(shelter.root);
-        Assertions.assertEquals(shelter.adopt(), S);
-//        TreePrinter.print(shelter.root);
-    }
-
-    @Test
-    void testAdopt3() {
-        Dog L = new Dog("Lessie", 3, 70, 9, 25.0);
-        Dog R = new Dog("Rex", 8, 100, 5, 50.0);
-        Dog S = new Dog("Stella", 5, 50, 2, 250.0);
-        Dog P = new Dog("Poldo", 10, 60, 1, 35.0);
-        Dog B = new Dog("Bella", 1, 55, 15, 120.0);
-        Dog C = new Dog("Cloud", 4, 10, 23, 80.0);
-        Dog A = new Dog("Archie", 6, 120, 18, 40.0);
-        Dog D = new Dog("Daisy", 7, 15, 12, 35.0);
-
-        DogShelter test = new DogShelter(A);
-
-        DogShelter.DogNode ll = test.new DogNode(L);
-        DogShelter.DogNode rr = test.new DogNode(R);
-        DogShelter.DogNode ss = test.new DogNode(S);
-        DogShelter.DogNode pp = test.new DogNode(P);
-        DogShelter.DogNode bb = test.new DogNode(B);
-        DogShelter.DogNode cc = test.new DogNode(C);
-        DogShelter.DogNode aa = test.new DogNode(A);
-        DogShelter.DogNode dd = test.new DogNode(D);
-
-        test.root.younger = ll;
-        test.root.younger.parent = test.root;
-        test.root.older = rr;
-        test.root.older.parent = test.root;
-
-        test.root.younger.younger = bb;
-        test.root.younger.younger.parent = ll;
-        test.root.younger.older = ss;
-        test.root.younger.older.parent = ll;
-
-        test.root.younger.older.younger = cc;
-        test.root.younger.older.younger.parent = ss;
-
-        test.root.older.younger = dd;
-        test.root.older.younger.parent = rr;
-        test.root.older.older = pp;
-        test.root.older.older.parent = rr;
-
-        System.out.print("Testing adopt() #3... \n");
-////        TreePrinter.print(test.root);
-        Dog a = test.adopt();
-//        TreePrinter.print(test.root);
-
-        boolean dogs = test.root.d == R && test.root.younger.d == L && test.root.older.d == P &&
-                test.root.younger.younger.d == B && test.root.younger.older.d == S && test.root.younger.older.younger.d == C &&
-                test.root.younger.older.older.d == D;
-
-        boolean nulls = test.root.parent == null && test.root.older.younger == null && test.root.older.older == null &&
-                test.root.younger.younger.younger == null && test.root.younger.younger.older == null &&
-                test.root.younger.older.younger.younger == null && test.root.younger.older.younger.older == null &&
-                test.root.younger.older.older.younger == null && test.root.younger.older.older.older == null;
-
-        boolean parents = test.root.younger.parent.d == R &&
-                test.root.older.parent.d == R &&
-                test.root.younger.younger.parent.d == L &&
-                test.root.younger.older.parent.d == L &&
-                test.root.younger.older.younger.parent.d == S &&
-                test.root.younger.older.older.parent.d == S;
-        boolean ret = a == A;
-
-        if (!(dogs && nulls && parents && ret)) {
-            if (!dogs) System.out.println("Dogs are not assigned correctly");
-            else if (!nulls) System.out.println("Null values are not assigned correctly");
-            else if (!parents) System.out.println("Parent pointers are not assigned correctly");
-            else if (!ret) System.out.println("The method returned incorrect value");
-        } else {
-            System.out.println("Passed.\n");
-        }
-        Assertions.assertTrue(dogs && nulls && parents && ret);
-    }
-
-    @Test
-    @DisplayName("Should test adopt with all-right branches")
-    void testAdopt4() {
-        Dog R = new Dog("Rex", 8, 100, 5, 50.0);
-        Dog S = new Dog("Stella", 10, 90, 2, 250.0);
-        Dog L = new Dog("Lessie", 12, 80, 9, 25.0);
-        DogShelter shelter = new DogShelter(R);
-        shelter.shelter(S);
-        shelter.shelter(L);
-
-        Assertions.assertEquals(shelter.adopt(), R);
-        Assertions.assertEquals(shelter.adopt(), S);
-        Assertions.assertEquals(shelter.adopt(), L);
-    }
-
-    @Test
-    @DisplayName("Should test adopt with all-left branches")
-    void testAdopt5() {
-        Dog R = new Dog("Rex", 8, 100, 5, 50.0);
-        Dog S = new Dog("Stella", 5, 90, 2, 250.0);
-        Dog L = new Dog("Lessie", 3, 80, 9, 25.0);
-        DogShelter shelter = new DogShelter(R);
-        shelter.shelter(S);
-        shelter.shelter(L);
-
-        Assertions.assertEquals(shelter.adopt(), R);
-        Assertions.assertEquals(shelter.adopt(), S);
-        Assertions.assertEquals(shelter.adopt(), L);
-    }
+    // The shelter
+    DogShelter shelter;
+    // My test 🐶
+    Dog max = new Dog("Max", 11, 0, 2, 100.0);
+    Dog neptune = new Dog("Neptune", 12, 3, 250, 0.0);
+    Dog izzie = new Dog("Izzie", 6, 5, 15, 150.0);
 
     @Test
     void IterateFunctionalityTest() {
