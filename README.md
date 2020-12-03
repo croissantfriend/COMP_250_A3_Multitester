@@ -52,6 +52,7 @@ All other instructions are written with IntelliJ in mind;  also not sure how to 
 * SpeedTester:
     * Follow the instructions on [this page](https://github.com/TheBigSasha/RuntimeTester) to download RuntimeTester.jar
       and add it to your project.
+    * Modify `build.gradle` to point to the location of your .jar file. I recommend making a folder called `libs/` in your project root and putting the .jar there, for simplicity's sake.
     * Run `SpeedTester.java`.
 * TreePrinter
     * Make DogNode implement PrintableNode, including its 3 methods. (remove this after!)

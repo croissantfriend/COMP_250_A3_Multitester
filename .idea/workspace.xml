@@ -33,12 +33,8 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7734e7e-5730-42e8-8760-77d7c1343762" name="Default Changelist" comment="Switched project to Gradle for hopeful Eclipse compatibility">
-      <change afterPath="$PROJECT_DIR$/src/test/java/assignment3/SpeedTester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="b7734e7e-5730-42e8-8760-77d7c1343762" name="Default Changelist" comment="Fixed ordering of Megatester tests, added documentation for Eclipse support">
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/assignment3/Megatester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/Megatester.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -288,7 +284,7 @@
       <workItem from="1606968102400" duration="5858000" />
       <workItem from="1606977563488" duration="760000" />
       <workItem from="1606978504455" duration="1314000" />
-      <workItem from="1606979849806" duration="1444000" />
+      <workItem from="1606979849806" duration="1840000" />
     </task>
     <task id="LOCAL-00001" summary="remove IntelliJ specific UI elements">
       <created>1586035512776</created>
@@ -472,7 +468,21 @@
       <option name="project" value="LOCAL" />
       <updated>1606980153695</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Split SpeedTester.java back out into its own class">
+      <created>1606981359234</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1606981359234</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Fixed ordering of Megatester tests, added documentation for Eclipse support">
+      <created>1606981649474</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1606981649474</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -503,8 +513,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="remove IntelliJ specific UI elements" />
     <MESSAGE value="change code generation from class to source, remove GridLayoutManager (unsupported in Eclipse)" />
     <MESSAGE value="Fix IntelliJ IDEA settings" />
     <MESSAGE value="Add Null root handling" />
@@ -528,10 +536,9 @@
     <MESSAGE value="Changed some UI and random values&#10;- UI: Changed labels to note broken things (because I'm too lazy to fix them)&#10;- UI: Changed radio buttons to checkboxes to reflect functionality&#10;- Random: Changed values to lessen chance of duplication and create more realistic values (100 year old dogs here we come)" />
     <MESSAGE value="Added missing files" />
     <MESSAGE value="Switched project to Gradle for hopeful Eclipse compatibility" />
-    <option name="LAST_COMMIT_MESSAGE" value="Switched project to Gradle for hopeful Eclipse compatibility" />
-    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
-    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
-    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
+    <MESSAGE value="Split SpeedTester.java back out into its own class" />
+    <MESSAGE value="Fixed ordering of Megatester tests, added documentation for Eclipse support" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed ordering of Megatester tests, added documentation for Eclipse support" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
