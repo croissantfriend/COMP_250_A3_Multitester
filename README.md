@@ -18,8 +18,10 @@ Includes:
     * speedtesting functions by huubdejong
     * Requires TheBigSasha's [RuntimeTester](https://github.com/TheBigSasha/RuntimeTester)
 - __M E G A T E S T E R !__ Includes:
-    * [DogShelterTest.java](https://github.com/jamesxu123/COMP-250-A3-Tests)
-        * jamesxu123's test cases as well as a couple other tester methods
+    * DogShelterTest.java
+        * [jamesxu123's test cases](https://github.com/jamesxu123/COMP-250-A3-Tests)
+        * [meow10811's Test Suite](https://github.com/meow10811/AdoptionShelterTestSuite)
+        * a couple other tester methods
     * Minitester tests, modified to use JUnit Assertions so they can be run along with all the other tests in IntelliJ
     
 and more!
