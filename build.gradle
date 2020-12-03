@@ -8,7 +8,7 @@ repositories {
 
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter:5.7.0'
-    testImplementation files('libs/RuntimeTester-MacOS.jar') // Change this to the name and location of your .jar file
+    testImplementation files('C:\\Users\\zashr\\Downloads\\RuntimeTester-Windows.jar') // Change this to the name and location of your .jar file
 }
 
 test {

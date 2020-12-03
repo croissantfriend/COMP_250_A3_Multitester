@@ -1166,4 +1166,644 @@ public class Megatester {
                 () -> assertEquals(max, shelter.root.younger.d, "Original dog should be younger")
         );
     }
+
+    // Alex P's tests
+
+        @Test
+        public void getVetScheduleMegaTester(){
+            Dog R = new Dog("Rex", 8, 100, 5, 50.0);
+            Dog S = new Dog("Stella", 5, 50, 15, 250.0);
+            Dog L = new Dog("Lessie", 3, 151, 0, 25.0);
+            Dog P = new Dog("Poldo", 10, 60, 1, 35.0);
+            Dog B = new Dog("Bella", 11, 150, 48, 120.0);
+            Dog C = new Dog("Cloud", 4, 10, 12, 80.0);
+            Dog A = new Dog("Archie", 6, 120, 7, 40.0);
+            Dog D = new Dog("Daisy", 7, 15, 12, 35.0);
+            Dog J = new Dog("Jesse", 8, 58, 12, 50.0);
+
+            DogShelter test = new DogShelter(R);
+
+            test.shelter(S);
+            test.shelter(L);
+            test.shelter(P);
+            test.shelter(B);
+            test.shelter(C);
+
+
+            System.out.print("\n");
+            System.out.print("\n");
+            System.out.print("~~~~~~~~~~~~~~Case 1: empty weeks in between~~~~~~~~~~~~~~~~~\n");
+
+
+            ArrayList< ArrayList< Dog > > ald =  test.getVetSchedule();
+
+            boolean arlSizes = ald.size() == 7 && ald.get( 0 ).size() == 3 && ald.get( 1 ).size() == 1 && ald.get( 2 ).size() == 1
+                    && ald.get( 3 ).size() == 0 && ald.get( 4 ).size() == 0 && ald.get( 5 ).size() == 0 && ald.get( 6 ).size() == 1;
+            boolean arlDogs1 = ald.get( 0 ).get( 0 ) == L && ald.get( 0 ).get( 1 ) == R && ald.get( 0 ).get( 2 ) == P;
+            boolean arlDogs2 = ald.get( 1 ).get( 0 ) == C;
+            boolean arlDogs3 = ald.get( 2 ).get( 0 ) == S;
+            boolean arlDogs4 = ald.get( 6 ).get( 0 ) == B;
+
+
+            if( !( arlSizes && arlDogs1 && arlDogs2 && arlDogs3 && arlDogs4) )
+            {
+//                if( !arlSizes ) System.out.println( "At least one ArrayList has wrong number of elements" );
+//                else if( !arlDogs1 ) System.out.println( "Incorrect elements in ArrayList 0" );
+//                else if( !arlDogs2 ) System.out.println( "Incorrect elements in ArrayList 1" );
+//                else if( !arlDogs3 ) System.out.println( "Incorrect elements in ArrayList 2" );
+//                else if( !arlDogs4 ) System.out.println( "Incorrect elements in ArrayList 6" );
+            } else {
+                System.out.println("Passed case 1.");
+            }
+            assertTrue(arlSizes, "At least one ArrayList has wrong number of elements");
+            assertTrue(arlDogs1, "Incorrect elements in ArrayList 0");
+            assertTrue(arlDogs2, "Incorrect elements in ArrayList 1");
+            assertTrue(arlDogs3, "Incorrect elements in ArrayList 1");
+            assertTrue(arlDogs4, "Incorrect elements in ArrayList 6");
+
+            test.shelter(A);
+            test.shelter(D);
+            test.shelter(J);
+
+
+            System.out.print("\n");
+            System.out.print("\n");
+            System.out.print("~~~~~~~~~~~~~~Case 2: dogs with same dates~~~~~~~~~~~~~~~~~\n");
+
+
+            ArrayList< ArrayList< Dog > > ald2 =  test.getVetSchedule();
+
+            boolean arlSizes2 = ald2.size() == 7 && ald2.get( 0 ).size() == 3 && ald2.get( 1 ).size() == 4 && ald2.get( 2 ).size() == 1
+                    && ald2.get( 3 ).size() == 0 && ald2.get( 4 ).size() == 0 && ald2.get( 5 ).size() == 0 && ald2.get( 6 ).size() == 1;
+            boolean arlDogs12 = ald2.get( 0 ).get( 0 ) == L && ald2.get( 0 ).get( 1 ) == R && ald2.get( 0 ).get( 2 ) == P;
+            boolean arlDogs22 = ald2.get( 1 ).get( 0 ) == C && ald2.get( 1 ).get( 1 ) == A && ald2.get( 1 ).get( 2 ) == D && ald2.get( 1 ).get( 3 ) == J;
+            boolean arlDogs32 = ald2.get( 2 ).get( 0 ) == S;
+            boolean arlDogs42 = ald2.get( 6 ).get( 0 ) == B;
+
+
+            if( !( arlSizes2 && arlDogs12 && arlDogs22 && arlDogs32 && arlDogs42) )
+            {
+//                if( !arlSizes2 ) System.out.println( "At least one ArrayList has wrong number of elements" );
+//                else if( !arlDogs12 ) System.out.println( "Incorrect elements in ArrayList 0" );
+//                else if( !arlDogs22 ) System.out.println( "Incorrect elements in ArrayList 1" );
+//                else if( !arlDogs32 ) System.out.println( "Incorrect elements in ArrayList 2" );
+//                else if( !arlDogs42 ) System.out.println( "Incorrect elements in ArrayList 6" );
+            } else {
+                System.out.println("Passed case 2.");
+            }
+            assertTrue(arlSizes2, "At least one ArrayList has wrong number of elements");
+            assertTrue(arlDogs12, "Incorrect elements in ArrayList 0");
+            assertTrue(arlDogs22, "Incorrect elements in ArrayList 1");
+            assertTrue(arlDogs32, "Incorrect elements in ArrayList 2");
+            assertTrue(arlDogs42, "Incorrect elements in ArrayList 6");
+        }
+//
+//    public static void main(String[] args) {
+//        shelterMegaTester();
+//
+//        System.out.print("\n");
+//        System.out.print("\n");
+//        System.out.println("------------------------------------------------------------------------------------------------------------------------------------------");
+//        System.out.print("\n");
+//        System.out.print("\n");
+//
+//        findDogToAdoptMegaTester();
+//
+//        System.out.print("\n");
+//        System.out.print("\n");
+//        System.out.println("------------------------------------------------------------------------------------------------------------------------------------------");
+//        System.out.print("\n");
+//        System.out.print("\n");
+//
+//        adoptMegaTester();
+//
+//        System.out.print("\n");
+//        System.out.print("\n");
+//        System.out.println("------------------------------------------------------------------------------------------------------------------------------------------");
+//        System.out.print("\n");
+//        System.out.print("\n");
+//
+//        getVetScheduleMegaTester();
+//
+//    }
+
+    @Test
+    public void shelterMegaTester(){
+        Dog R = new Dog("Rex", 8, 100, 5, 50.0);
+        Dog S = new Dog("Stella", 5, 50, 2, 250.0);
+        Dog L = new Dog("Lessie", 3, 151, 9, 25.0);
+        Dog P = new Dog("Poldo", 10, 60, 1, 35.0);
+        Dog B = new Dog("Bella", 11, 150, 15, 120.0);
+        Dog C = new Dog("Cloud", 4, 10, 23, 80.0);
+        Dog A = new Dog("Archie", 6, 120, 18, 40.0);
+        Dog D = new Dog("Daisy", 7, 15, 12, 35.0);
+
+        DogShelter test = new DogShelter(D);
+
+        System.out.print("Testing shelter Mega Tester. There will be multiple mini tests in order to cover the different possible case scenarios\n");
+        System.out.print("If you don't succeed in all tests, go into the debugger for the specific test you failed\n");
+
+        System.out.print("\n");
+        System.out.print("\n");
+        System.out.print("~~~~~~~~~~~~~~Testing basic tree building~~~~~~~~~~~~~~~~~\n");
+
+        test.shelter(C);
+
+        StringBuilder errorBuilder = new StringBuilder();
+        boolean checkDogs = test.root.d == D && test.root.younger.d == C;
+//        if (!checkDogs) {
+//            errorBuilder.append("Dogs are not assigned correctly. ");
+//        }
+        assertTrue(checkDogs, "Dogs are not assigned correctly. ");
+        boolean checkParents = test.root.younger.parent.d == D;
+//        if (!checkParents) {
+//            errorBuilder.append("Parent pointers are not assigned correctly. ");
+//        }
+        assertTrue(checkParents, "Parent pointers are not assigned correctly. ");
+        boolean checkNulls = test.root.parent == null &&
+                test.root.younger.younger == null && test.root.younger.older == null;
+//        if (!checkNulls) {
+//            errorBuilder.append("Null values are not assigned correctly.");
+//        }
+        assertTrue(checkNulls,"Null values are not assigned correctly.");
+        if (!checkDogs || !checkParents || !checkNulls) {
+            System.out.println(errorBuilder.toString());
+        } else {
+            System.out.println("Passed first build case.");
+        }
+
+        test.shelter(R);
+
+        StringBuilder errorBuilder2 = new StringBuilder();
+        boolean checkDogs2 = test.root.d == R && test.root.younger.d == D && test.root.younger.younger.d == C;
+//        if (!checkDogs2) {
+//            errorBuilder2.append("Dogs are not assigned correctly. ");
+//        }
+        assertTrue(checkDogs2, "Dogs are not assigned correctly. ");
+        boolean checkParents2 = test.root.younger.parent.d == R && test.root.younger.younger.parent.d == D;
+//        if (!checkParents2) {
+//            errorBuilder2.append("Parent pointers are not assigned correctly. ");
+//        }
+        assertTrue(checkParents2, "Parent pointers are not assigned correctly. ");
+        boolean checkNulls2 = test.root.parent == null && test.root.older == null &&
+                test.root.younger.older == null && test.root.younger.younger.older == null &&
+                test.root.younger.younger.younger == null;
+//        if (!checkNulls2) {
+//            errorBuilder2.append("Null values are not assigned correctly.");
+//        }
+        assertTrue(checkNulls2, "Null values are not assigned correctly.");
+        if (!checkDogs2 || !checkParents2 || !checkNulls2) {
+            System.out.println(errorBuilder2.toString());
+        } else {
+            System.out.println("Passed second build case.");
+        }
+
+        System.out.print("\nBasic tests done, let's try something harder\n");
+
+        test.shelter(P);
+        test.shelter(A);
+        test.shelter(S);
+
+        StringBuilder errorBuilder3 = new StringBuilder();
+        boolean checkDogs3 = test.root.d == A && test.root.younger.d == S && test.root.younger.younger.d == C &&
+                test.root.older.d == R && test.root.older.younger.d == D && test.root.older.older.d == P;
+//        if (!checkDogs3) {
+//            errorBuilder3.append("Dogs are not assigned correctly. ");
+//        }
+        assertTrue(checkDogs3, "Dogs are not assigned correctly. ");
+        boolean checkParents3 = test.root.younger.parent.d == A && test.root.younger.younger.parent.d == S &&
+                test.root.older.parent.d == A && test.root.older.younger.parent.d == R &&
+                test.root.older.older.parent.d == R;
+//        if (!checkParents3) {
+//            errorBuilder3.append("Parent pointers are not assigned correctly. ");
+//        }
+        assertTrue(checkParents3, "Parent pointers are not assigned correctly. ");
+        boolean checkNulls3 = test.root.parent == null && test.root.younger.older == null &&
+                test.root.younger.younger.older == null && test.root.older.younger.older == null &&
+                test.root.older.younger.younger == null && test.root.older.older.younger == null &&
+                test.root.older.older.older == null;
+//        if (!checkNulls3) {
+//            errorBuilder3.append("Null values are not assigned correctly.");
+//        }
+        assertTrue(checkNulls3, "Null values are not assigned correctly.");
+        if (!checkDogs3 || !checkParents3 || !checkNulls3) {
+            System.out.println(errorBuilder3.toString());
+        } else {
+            System.out.println("\nPassed third build case.");
+        }
+
+
+        System.out.print("~~~~~~~~~~~~~~Testing first hardest case~~~~~~~~~~~~~~~~~\n");
+
+        test.shelter(B);
+
+        StringBuilder errorBuilder4 = new StringBuilder();
+        boolean checkDogs4 = test.root.d == B && test.root.younger.d == A && test.root.younger.younger.d == S &&
+                test.root.younger.younger.younger.d == C && test.root.younger.older.d == R &&
+                test.root.younger.older.older.d == P && test.root.younger.older.younger.d == D;
+//        if (!checkDogs4) {
+//            errorBuilder4.append("Dogs are not assigned correctly. ");
+//        }
+        assertTrue(checkDogs4, "Dogs are not assigned correctly. ");
+        boolean checkParents4 = test.root.younger.parent.d == B && test.root.younger.younger.parent.d == A &&
+                test.root.younger.younger.younger.parent.d == S && test.root.younger.older.parent.d == A &&
+                test.root.younger.older.younger.parent.d == R &&  test.root.younger.older.older.parent.d == R;
+//        if (!checkParents4) {
+//            errorBuilder4.append("Parent pointers are not assigned correctly. ");
+//        }
+        assertTrue(checkParents4, "Parent pointers are not assigned correctly. ");
+        boolean checkNulls4 = test.root.parent == null && test.root.older == null &&
+                test.root.younger.younger.older == null && test.root.younger.younger.younger.older == null &&
+                test.root.younger.older.older.younger == null && test.root.younger.older.older.older == null &&
+                test.root.younger.older.younger.younger == null && test.root.younger.older.younger.older == null;
+//        if (!checkNulls4) {
+//            errorBuilder4.append("Null values are not assigned correctly.");
+//        }
+        assertTrue(checkNulls4, "Null values are not assigned correctly.");
+        if (!checkDogs4 || !checkParents4 || !checkNulls4) {
+            System.out.println(errorBuilder4.toString());
+        } else {
+            System.out.println("Passed fourth build case.");
+        }
+
+        System.out.print("\nGreat job! that was the hardest case so far which required the most rotations!\n");
+
+        System.out.print("~~~~~~~~~~~~~~Testing hardest case~~~~~~~~~~~~~~~~~\n");
+
+        test.shelter(L);
+
+        StringBuilder errorBuilder5 = new StringBuilder();
+        boolean checkDogs5 = test.root.d == L && test.root.older.d == B &&
+                test.root.older.younger.d == A && test.root.older.younger.younger.d == S &&
+                test.root.older.younger.younger.younger.d == C &&  test.root.older.younger.older.d == R &&
+                test.root.older.younger.older.younger.d == D && test.root.older.younger.older.older.d == P;
+//        if (!checkDogs5) {
+//            errorBuilder5.append("Dogs are not assigned correctly. ");
+//        }
+        assertTrue(checkDogs5, "Dogs are not assigned correctly. ");
+        boolean checkParents5 = test.root.older.parent.d == L && test.root.older.younger.parent.d == B &&
+                test.root.older.younger.younger.parent.d == A && test.root.older.younger.older.parent.d == A &&
+                test.root.older.younger.younger.younger.parent.d == S && test.root.older.younger.older.younger.parent.d == R
+                && test.root.older.younger.older.older.parent.d == R;
+//        if (!checkParents5) {
+//            errorBuilder5.append("Parent pointers are not assigned correctly. ");
+//        }
+        assertTrue(checkParents5, "Parent pointers are not assigned correctly. ");
+        boolean checkNulls5 = test.root.parent == null && test.root.younger == null && test.root.older.older == null &&
+                test.root.older.younger.younger.older == null && test.root.older.younger.younger.younger.older == null
+                && test.root.older.younger.older.younger.younger == null && test.root.older.younger.older.younger.older == null
+                && test.root.older.younger.older.older.younger == null && test.root.older.younger.older.older.older == null;
+//        if (!checkNulls5) {
+//            errorBuilder5.append("Null values are not assigned correctly.");
+//        }
+        assertTrue(checkNulls5, "Null values are not assigned correctly.");
+        if (!checkDogs5 || !checkParents5 || !checkNulls5) {
+            System.out.println(errorBuilder5.toString());
+        } else {
+            System.out.println("\nPassed fifth and final build case.");
+        }
+
+        System.out.print("\nThis last case involved plenty of right and left rotations so I think it should be a good test\n");
+
+
+
+
+    }
+
+    @Test
+    public void findDogToAdoptMegaTester(){
+        Dog R = new Dog("Rex", 8, 100, 5, 50.0);
+        Dog S = new Dog("Stella", 5, 50, 2, 250.0);
+        Dog L = new Dog("Lessie", 3, 151, 9, 25.0);
+        Dog P = new Dog("Poldo", 10, 60, 1, 35.0);
+        Dog B = new Dog("Bella", 11, 150, 15, 120.0);
+        Dog C = new Dog("Cloud", 4, 10, 23, 80.0);
+        Dog A = new Dog("Archie", 6, 120, 18, 40.0);
+        Dog D = new Dog("Daisy", 7, 15, 12, 35.0);
+
+        DogShelter test = new DogShelter(D);
+
+        test.shelter(R);
+        test.shelter(B);
+        test.shelter(A);
+        test.shelter(S);
+
+        System.out.print("Testing DogToAdopt Mega Tester. There will be multiple mini tests in order to cover the different possible case scenarios\n");
+        System.out.print("If you don't succeed in all tests, go into the debugger for the specific test you failed\n");
+
+        System.out.print("\n");
+        System.out.print("\n");
+        System.out.print("~~~~~~~~~~~~~~Case 1: minAge = maxAge~~~~~~~~~~~~~~~~~\n");
+
+        Dog d = test.findDogToAdopt(5,5);
+        if(!(d.equals(S))) {
+            if(!(d.getAge() >=5 && d.getAge() <=5)) {
+//                System.out.println("The dog found was not the correct age range.");
+            }
+//            System.out.println("The dog found did not have the highest priority within the age range.");
+        } else {
+            System.out.println("Passed case 1.");
+        }
+        assertTrue(d.getAge()==5, "The dog found was not the correct age range.");
+        assertTrue(d.equals(S), "The dog found did not have the highest priority within the age range.");
+
+        System.out.print("\n");
+        System.out.print("\n");
+        System.out.print("~~~~~~~~~~~~~~Case 2: no such dog exists (age too big)~~~~~~~~~~~~~~~~~\n");
+
+        Dog a = test.findDogToAdopt(12,16);
+
+        if(!(a == null)) {
+//            System.out.println("You found a dog when you shouldn't have.");
+        } else {
+            System.out.println("Passed case 2.");
+        }
+        assertNull(a, "You found a dog when you shouldn't have.");
+
+        System.out.print("\n");
+        System.out.print("\n");
+        System.out.print("~~~~~~~~~~~~~~Case 3: no such dog exists (age too small)~~~~~~~~~~~~~~~~~\n");
+
+        Dog b = test.findDogToAdopt(1,4);
+
+        if(!(b == null)) {
+//            System.out.println("You found a dog when you shouldn't have.");
+        } else {
+            System.out.println("Passed case 3.");
+        }
+        assertNull(b, "You found a dog when you shouldn't have.");
+
+        System.out.print("\n");
+        System.out.print("\n");
+        System.out.print("~~~~~~~~~~~~~~Case 4: Age == maxAge~~~~~~~~~~~~~~~~~\n");
+
+        Dog c = test.findDogToAdopt(1,5);
+
+        if(!(c.equals(S))) {
+            if(!(c.getAge() >=1 && c.getAge()<=5)) {
+//                System.out.println("The dog found was not the correct age range.");
+            }
+//            System.out.println("The dog found did not have the highest priority within the age range.");
+        } else {
+            System.out.println("Passed case 4.");
+        }
+        assertTrue(c.getAge() >= 1 || c.getAge() <= 5, "The dog found was not the correct age range.");
+        assertTrue(c.equals(S), "The dog found did not have the highest priority within the age range.");
+
+        System.out.print("\n");
+        System.out.print("\n");
+        System.out.print("~~~~~~~~~~~~~~Case 5: Age == minAge~~~~~~~~~~~~~~~~~\n");
+
+        Dog e = test.findDogToAdopt(8,10);
+
+        if(!(e.equals(R))) {
+            if(!(e.getAge() >=8 && e.getAge() <=10)) {
+//                System.out.println("The dog found was not the correct age range.");
+            }
+//            System.out.println("The dog found did not have the highest priority within the age range.");
+        } else {
+            System.out.println("Passed case 5.");
+        }
+//        System.out.println(e);
+        assertTrue(e.getAge() >= 8 && e.getAge() <= 10, "The dog found was not the correct age range.");
+        assertTrue(e.equals(R), "The dog found did not have the highest priority within the age range.");
+
+
+        System.out.print("\n");
+        System.out.print("\n");
+        System.out.print("~~~~~~~~~~~~~~Case 6: Find highest priority~~~~~~~~~~~~~~~~~\n");
+
+        Dog f = test.findDogToAdopt(4, 12);
+
+        if(!(f.equals(B))) {
+            if(!(f.getAge() >=4 && f.getAge() <=12)) {
+                System.out.println("The dog found was not the correct age range.");
+            }
+//            System.out.println("The dog found did not have the highest priority within the age range.");
+        } else {
+            System.out.println("Passed case 6.");
+        }
+        assertTrue(f.getAge() >=4 && f.getAge() <=12, "The dog found was not the correct age range.");
+        assertTrue(f.equals(B), "The dog found did not have the highest priority within the age range.");
+
+        System.out.print("\n");
+        System.out.print("\n");
+        System.out.print("~~~~~~~~~~~~~~Case 7: Find highest priority~~~~~~~~~~~~~~~~~\n");
+
+        Dog g = test.findDogToAdopt(4, 10);
+
+        if(!(g.equals(A))) {
+            if(!(g.getAge() >=4 && g.getAge() <=10)) {
+//                System.out.println("The dog found was not the correct age range.");
+            }
+//            System.out.println("The dog found did not have the highest priority within the age range.");
+        } else {
+            System.out.println("Passed case 7.");
+        }
+        assertTrue(g.getAge() >=4 && g.getAge() <=10, "The dog found was not the correct age range.");
+        assertTrue(g.equals(A), "The dog found did not have the highest priority within the age range.");
+        System.out.print("\nThat should have covered most of the edge cases, great job if you passed them all! :)\n");
+    }
+
+    @Test
+    public void adoptMegaTester(){
+        Dog R = new Dog("Rex", 8, 100, 5, 50.0);
+        Dog S = new Dog("Stella", 5, 50, 2, 250.0);
+        Dog L = new Dog("Lessie", 3, 151, 9, 25.0);
+        Dog P = new Dog("Poldo", 10, 60, 1, 35.0);
+        Dog B = new Dog("Bella", 11, 150, 15, 120.0);
+        Dog C = new Dog("Cloud", 4, 10, 23, 80.0);
+        Dog A = new Dog("Archie", 6, 120, 18, 40.0);
+        Dog D = new Dog("Daisy", 7, 15, 12, 35.0);
+        Dog J = new Dog("Jesse", 8, 58, 5, 50.0);
+        Dog M = new Dog("Monica", 12, 59, 5, 50.0);
+        Dog N = new Dog("Nina", 11, 55, 5, 50.0);
+        Dog O = new Dog("Ollie", 14, 57, 5, 50.0);
+        Dog LO = new Dog("Louigi", 13, 54, 5, 50.0);
+
+        DogShelter test = new DogShelter(D);
+
+        test.shelter(C);
+        test.shelter(B);
+
+
+        System.out.print("Testing Adopt Mega Tester. There will be multiple mini tests in order to cover the different possible case scenarios\n");
+        System.out.print("If you don't succeed in all tests, go into the debugger for the specific test you failed\n");
+
+        System.out.print("\n");
+        System.out.print("\n");
+        System.out.print("~~~~~~~~~~~~~~Case 1: adopting root~~~~~~~~~~~~~~~~~\n");
+
+        Dog a = test.adopt();
+
+        boolean dogs = test.root.d == D && test.root.younger.d == C;
+
+        boolean nulls = test.root.parent == null && test.root.older== null && test.root.younger.older == null &&
+                test.root.younger.younger == null;
+
+        boolean parents = test.root.younger.parent.d == D;
+
+        boolean ret = a == B;
+
+        if( !( dogs && nulls && parents && ret ) )
+        {
+//            if( !dogs ) System.out.println( "Dogs are not assigned correctly" );
+//            else if( !nulls ) System.out.println( "Null values are not assigned correctly" );
+//            else if( !parents ) System.out.println( "Parent pointers are not assigned correctly" );
+//            else if( !ret ) System.out.println( "The method returned incorrect value" );
+        } else {
+            System.out.println("Passed case 1.");
+        }
+        assertTrue(dogs, "Dogs are not assigned correctly");
+        assertTrue(nulls, "Null values are not assigned correctly");
+        assertTrue(parents, "Parent pointers are not assigned correctly");
+        assertTrue(ret, "The method returned incorrect value");
+
+        test.shelter(A);
+        test.shelter(L);
+
+        System.out.print("\n");
+        System.out.print("\n");
+        System.out.print("~~~~~~~~~~~~~~Case 2: adopting root~~~~~~~~~~~~~~~~~\n");
+
+        Dog b = test.adopt();
+
+        boolean dogs2 = test.root.d == A && test.root.younger.d == C && test.root.older.d == D;
+
+        boolean nulls2 = test.root.parent == null && test.root.older.younger== null && test.root.older.older== null &&
+                test.root.younger.older == null && test.root.younger.younger == null;
+
+        boolean parents2 = test.root.younger.parent.d == A && test.root.older.parent.d == A;
+
+        boolean ret2 = b == L;
+
+        if( !( dogs2 && nulls2 && parents2 && ret2 ) )
+        {
+//            if( !dogs2 ) System.out.println( "Dogs are not assigned correctly" );
+//            else if( !nulls2 ) System.out.println( "Null values are not assigned correctly" );
+//            else if( !parents2 ) System.out.println( "Parent pointers are not assigned correctly" );
+//            else if( !ret2 ) System.out.println( "The method returned incorrect value" );
+        } else {
+            System.out.println("Passed case 2.");
+        }
+        assertTrue(dogs2, "Dogs are not assigned correctly");
+        assertTrue(nulls2, "Null values are not assigned correctly");
+        assertTrue(parents2, "Parent pointers are not assigned correctly");
+        assertTrue(ret2, "The method returned incorrect value");
+
+        test.shelter(S);
+        test.shelter(R);
+        test.shelter(P);
+
+        System.out.print("\n");
+        System.out.print("\n");
+        System.out.print("~~~~~~~~~~~~~~Case 3: adopting a specific dog~~~~~~~~~~~~~~~~~\n");
+
+        test.adopt(R);
+
+        boolean dogs3 = test.root.d == A && test.root.younger.d == S && test.root.younger.younger.d == C &&
+                test.root.older.d == P && test.root.older.younger.d == D;
+
+        boolean nulls3 = test.root.parent == null && test.root.older.older== null && test.root.older.younger.younger == null
+                && test.root.older.younger.older == null && test.root.younger.older == null &&
+                test.root.younger.younger.younger == null && test.root.younger.younger.older == null;
+
+        boolean parents3 = test.root.younger.parent.d == A && test.root.older.parent.d == A &&
+                test.root.younger.younger.parent.d == S && test.root.older.younger.parent.d == P;
+
+        if( !( dogs3 && nulls3 && parents3) )
+        {
+//            if( !dogs3 ) System.out.println( "Dogs are not assigned correctly" );
+//            else if( !nulls3 ) System.out.println( "Null values are not assigned correctly" );
+//            else if( !parents3 ) System.out.println( "Parent pointers are not assigned correctly" );
+        } else {
+            System.out.println("Passed case 3.");
+        }
+        assertTrue(dogs3, "Dogs are not assigned correctly");
+        assertTrue(nulls3, "Null values are not assigned correctly");
+        assertTrue(parents3, "Parent pointers are not assigned correctly");
+
+        test.shelter(J);
+        test.shelter(M);
+        test.shelter(N);
+        test.shelter(O);
+        test.shelter(LO);
+
+        System.out.print("\n");
+        System.out.print("\n");
+        System.out.print("~~~~~~~~~~~~~~Case 4: adopting a specific dog~~~~~~~~~~~~~~~~~\n");
+
+        test.adopt(P);
+
+        boolean dogs4 = test.root.d == A && test.root.younger.d == S && test.root.younger.younger.d == C &&
+                test.root.older.d == M && test.root.older.younger.d == J && test.root.older.older.d == O &&
+                test.root.older.younger.younger.d == D && test.root.older.younger.older.d == N &&
+                test.root.older.older.younger.d == LO;
+
+        boolean nulls4 = test.root.parent == null && test.root.older.older.older == null &&
+                test.root.older.younger.younger.younger == null && test.root.older.younger.younger.older == null &&
+                test.root.older.younger.older.younger == null && test.root.older.younger.older.older == null &&
+                test.root.older.older.younger.younger == null && test.root.older.older.younger.older == null &&
+                test.root.younger.younger.younger == null && test.root.younger.younger.older ==  null &&
+                test.root.younger.older == null;
+
+        boolean parents4 = test.root.younger.parent.d == A && test.root.older.parent.d == A &&
+                test.root.younger.younger.parent.d == S && test.root.older.younger.parent.d == M &&
+                test.root.older.older.parent.d == M && test.root.older.younger.younger.parent.d == J &&
+                test.root.older.younger.older.parent.d == J && test.root.older.older.younger.parent.d == O;
+
+        if( !( dogs4 && nulls4 && parents4) )
+        {
+//            if( !dogs4 ) System.out.println( "Dogs are not assigned correctly" );
+//            else if( !nulls4 ) System.out.println( "Null values are not assigned correctly" );
+//            else if( !parents4 ) System.out.println( "Parent pointers are not assigned correctly" );
+        } else {
+            System.out.println("Passed case 4.");
+        }
+        assertTrue(dogs4, "Dogs are not assigned correctly");
+        assertTrue(nulls4, "Null values are not assigned correctly");
+        assertTrue(parents4, "Parent pointers are not assigned correctly");
+
+        System.out.print("\nIf you passed all the tests, congrats! :)\n");
+        System.out.print("\nThis last case involved plenty of right and left rotations so I think it should be a good test\n");
+    }
+
+    @Test
+    public void dogIteratorExceptionCheck(){
+        Dog R = new Dog("Rex", 8, 100, 5, 50.0);
+        Dog S = new Dog("Stella", 5, 50, 15, 250.0);
+        Dog L = new Dog("Lessie", 3, 151, 0, 25.0);
+
+
+        DogShelter test = new DogShelter(R);
+
+        test.shelter(S);
+        test.shelter(L);
+
+        System.out.print("\n");
+        System.out.print("\n");
+        System.out.print("~~~~~~~~~~~~~~Raising NoSuchElementException~~~~~~~~~~~~~~~~~\n");
+
+
+        Iterator<Dog> d1 = test.iterator();
+
+        d1.next();
+        d1.next();
+        d1.next();
+
+        boolean didntWork = true;
+
+        try {
+            d1.next();
+        }
+        catch (NoSuchElementException e){
+            System.out.println("Great! your code raised an exception as it should!");
+            didntWork = false;
+        }
+        if(didntWork){
+//            System.out.println("Hmm your code didn't raise the NoSuchElementException...");
+        }
+        assertFalse(didntWork, "Hmm your code didn't raise the NoSuchElementException...");
+    }
+
 }
