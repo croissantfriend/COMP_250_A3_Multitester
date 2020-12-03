@@ -1,7 +1,5 @@
 package assignment3;
 
-import org.junit.jupiter.api.Test;
-
 // Louis-Philippe Robichaud's tests
 public class ZTestCode {
 
@@ -11,7 +9,6 @@ public class ZTestCode {
         return s;
     }
 
-    @Test
     public static DogShelter createRootOlder() {
         Dog R = new Dog("Rex", 8, 100, 5, 50.0);
         Dog P = new Dog("Poldo", 10, 60, 1, 35.0);
@@ -20,7 +17,6 @@ public class ZTestCode {
         return s;
     }
 
-    @Test
     public static DogShelter createRootYounger() {
         Dog R = new Dog("Rex", 8, 100, 5, 50.0);
         Dog S = new Dog("Stella", 5, 50, 7, 250.0);
@@ -42,7 +38,6 @@ public class ZTestCode {
         return s;
     }
 
-    @Test
     public static DogShelter rightUnbalanced() {
         Dog R = new Dog("Rex", 8, 80, 5, 50.0);
         Dog L = new Dog("Lessie", 3, 120, 9, 25.0);
@@ -57,7 +52,6 @@ public class ZTestCode {
         return s;
     }
 
-    @Test
     public static DogShelter bigTree() {
         Dog R = new Dog("Rex", 8, 70, 5, 50.0);
         Dog L = new Dog("Lessie", 3, 11, 9, 25.0);
