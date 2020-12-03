@@ -2,7 +2,7 @@
 This repository is meant to act as a bundle of
 several tools and testers others have 
 shared over the past days and weeks. 
-
+ 
 Includes:
 
 - Dog.java, and the course-provided template for DogShelter.java - replace this with your own code! 
