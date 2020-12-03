@@ -37,16 +37,16 @@ Eclipse
 ## Usage
 * First of all, add your DogShelter code in place of the blank/template DogShelter file.
 * DViz: 
-    * Run DViz.java.
+    * Run `DViz.java`.
 * Test cases:
-    * (In IntelliJ) right click the folder assignment3 under src and click "Run Tests in 
+    * (In IntelliJ) right click the folder `assignment3` under `src` and click "Run Tests in 
     'assignment3".
 * SpeedTester: 
     * Follow the instructions on 
     [this page](https://github.com/TheBigSasha/RuntimeTester)
     to download RuntimeTester.jar and add it to your project.
-    * Run SpeedTester.java.
-* TreePrinter.java
+    * Run `SpeedTester.java`.
+* TreePrinter
     * Make DogNode implement PrintableNode, including its 3 methods. (remove this after!)
     * Call `TreePrinter.print(shelter.root)` on the root of the desired shelter.
 
