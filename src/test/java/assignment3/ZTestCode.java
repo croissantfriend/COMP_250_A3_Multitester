@@ -16,7 +16,7 @@ public class ZTestCode {
         s.shelter(P);
         return s;
     }
-
+    
     public static DogShelter createRootYounger() {
         Dog R = new Dog("Rex", 8, 100, 5, 50.0);
         Dog S = new Dog("Stella", 5, 50, 7, 250.0);
@@ -80,7 +80,7 @@ public class ZTestCode {
         /*
          * CHANGE THE NAME OF THE METHOD TO CREATE THE SHELTER HERE
          */
-        DogShelter s = rightUnbalanced();
+        DogShelter s = bigTree();
         DogShelter p = new DogShelter(d);
         p.adopt(d);
         for (Dog n : s) {
