@@ -5,8 +5,7 @@ shared over the past days and weeks.
 
 Includes:
 
-- Dog.java, and the course-provided template for DogShelter.java - replace this with your own code!
-    * 
+- Dog.java, and the course-provided template for DogShelter.java - replace this with your own code! 
 - [DViz.java](https://github.com/meow10811/C250_Assignment3_Debugger) and related files
     * meow10811's rework of TheBigSasha's tree visualization debugger for last year
 - [ZTestCode.java](https://github.com/Lprob1/Assignment3_COMP250)
