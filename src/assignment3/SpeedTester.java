@@ -3,66 +3,20 @@ package assignment3;
 import RuntimeTester.Visualizer;
 import RuntimeTester.benchmark;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.Random;
-import java.util.Scanner;
 
+// My tests were bad so these are all Huub's now
 public class SpeedTester {
 
     public static final String categoryName = "DogShelter";
 
-    @benchmark(name = "adopt()", expectedEfficiency = "O(log(n))", category = categoryName)
-    public static long testAdopt(long input) throws FileNotFoundException {
-        Random random = new Random();
-        File file = new File("src/assignment3/first_names.all.txt");
-        Scanner scanner = new Scanner(file);
-        String name = "None";
-        if (scanner.hasNextLine())
-            name = scanner.nextLine();
-        Dog d = new Dog("FirstDog", random.nextInt(), random.nextInt(), random.nextInt(), random.nextDouble());
-        DogShelter shelter = new DogShelter(d);
-        Dog toAdopt = new Dog(name, random.nextInt(), random.nextInt(), random.nextInt(), random.nextDouble());
-        for (int i = 0; i < input; i++) {
-            shelter.shelter(toAdopt);
-        }
-        /* You can use TreePrinter here to show you the tree before the adoption - just be careful when
-           using it for very large trees! */
-        long startTime = System.nanoTime();
-        shelter.adopt();
-        long endTime = System.nanoTime();
-        /* You can use TreePrinter here to show you the tree after to make sure you're doing this right - just be careful when
-           using it for very large trees! */
-        return endTime - startTime;
-    }
-
-    @benchmark(name = "findOldest()", expectedEfficiency = "O(log(n))", category = categoryName)
-    public static long testFindOldest(long input) {
-        Random random = new Random();
-        Dog d = new Dog("FirstDog", random.nextInt(), random.nextInt(), random.nextInt(), random.nextDouble());
-        DogShelter shelter = new DogShelter(d);
-        long startTime = System.nanoTime();
-        Dog o = shelter.findOldest();
-        long endTime = System.nanoTime();
-        return endTime - startTime;
-    }
-
-    @benchmark(name = "findYoungest()", expectedEfficiency = "O(log(n))", category = categoryName)
-    public static long testFindYoungest(long input) {
-        Random random = new Random();
-        Dog d = new Dog("FirstDog", random.nextInt(), random.nextInt(), random.nextInt(), random.nextDouble());
-        DogShelter shelter = new DogShelter(d);
-        long startTime = System.nanoTime();
-        Dog y = shelter.findYoungest();
-        long endTime = System.nanoTime();
-        return endTime - startTime;
-    }
 
     @benchmark(name="Shelter", category = categoryName, expectedEfficiency = "O(logn)")
     public static long testShelter(long size){
         // tests shelter on a random shelter of size size
         // DOES NOT TEST CORRECTNESS OF SHELTER()
-        Dog A = new Dog("A", 15, 198,5,5.0);
+        Random rand = new Random();
+        Dog A = new Dog("A", 15, 198, 5, 5.0);
         DogShelter d = new DogShelter(A);
         for (int i = 0; i < size; i++){
             int y = rand.nextInt( Integer.MAX_VALUE );
@@ -79,7 +33,8 @@ public class SpeedTester {
     public static long testAdopt(long size){
         // tests adopt on random shelter of size size
         // DOES NOT TEST CORRECTNESS OF ADOPT()
-        Dog A = new Dog("A", rand.nextInt(), rand.nextInt(),5,5.0);
+        Random rand = new Random();
+        Dog A = new Dog("A", rand.nextInt(), rand.nextInt(), 5, 5.0);
         DogShelter d = new DogShelter(A);
         for (int i = 0; i < size; i++){
             d.shelter(new Dog("B", rand.nextInt(), rand.nextInt(),5,5.0));
@@ -94,7 +49,8 @@ public class SpeedTester {
     public static long testFindOldest(long size){
         // tests findOldest on random shelter of size size
         // DOES NOT TEST CORRECTNESS OF FINDOLDEST()
-        Dog A = new Dog("A", rand.nextInt(), rand.nextInt(),5,5.0);
+        Random rand = new Random();
+        Dog A = new Dog("A", rand.nextInt(), rand.nextInt(), 5, 5.0);
         DogShelter d = new DogShelter(A);
         for (int i = 0; i < size; i++){
             d.shelter(new Dog("B", rand.nextInt(), rand.nextInt(),5,5.0));
@@ -109,7 +65,8 @@ public class SpeedTester {
     public static long testFindYoungest(long size){
         // tests findYoungest on random shelter of size size
         // DOES NOT TEST CORRECTNESS OF FINDYOUNGEST
-        Dog A = new Dog("A", rand.nextInt(), rand.nextInt(),5,5.0);
+        Random rand = new Random();
+        Dog A = new Dog("A", rand.nextInt(), rand.nextInt(), 5, 5.0);
         DogShelter d = new DogShelter(A);
         for (int i = 0; i < size; i++){
             d.shelter(new Dog("B", rand.nextInt(), rand.nextInt(),5,5.0));
@@ -124,7 +81,8 @@ public class SpeedTester {
     public static long testDogToAdopt(long size){
         // tests findDogToAdopt on a random shelter of size size with a random adoption range
         // DOES NOT TEST CORRECTNESS OF FINDDOGTOADOPT()
-        Dog A = new Dog("A", rand.nextInt(), rand.nextInt(),5,5.0);
+        Random rand = new Random();
+        Dog A = new Dog("A", rand.nextInt(), rand.nextInt(), 5, 5.0);
         DogShelter d = new DogShelter(A);
         for (int i = 0; i < size; i++){
             d.shelter(new Dog("B", rand.nextInt(), rand.nextInt(),5,5.0));
@@ -145,6 +103,7 @@ public class SpeedTester {
         // all input dogs have their vet appointment at most 180 days from now
         // the input to getVetExpenses is max integer value should add all dogs to expenses
         // DOES NOT TEST CORRECTNESS OF GETVETEXPENSES()
+        Random rand = new Random();
         Dog A = new Dog("A", rand.nextInt(), rand.nextInt(), rand.nextInt(180), rand.nextDouble());
         DogShelter d = new DogShelter(A);
         for (int i = 0; i < size; i++) {
@@ -160,6 +119,7 @@ public class SpeedTester {
     public static long testGetVetSchedule(long size) {
         // tests findDogToAdopt on a random shelter of size size wwith next vet appointment at most 180 days from now
         // DOES NOT TEST CORRECTNESS OF GETVETSCHEDULE
+        Random rand = new Random();
         Dog A = new Dog("A", rand.nextInt(), rand.nextInt(), rand.nextInt(180), 5.0);
         DogShelter d = new DogShelter(A);
         for (int i = 0; i < size; i++) {
