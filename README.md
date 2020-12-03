@@ -50,7 +50,7 @@ All instructions are written with IntelliJ in mind; also not sure about JUnit's 
 * TreePrinter
     * Make DogNode implement PrintableNode, including its 3 methods. (remove this after!)
     * Call `TreePrinter.print(shelter.root)` on the root of the desired shelter.
-* Lprop1's tests
+* Lprob1's tests
     * Run ZTestCode.java like you would normally. These tests don't user JUnit - Lprob1 intended them to be such that you determine whether or not the results are correct based on what's printed to the console.
 
 ## Contributing
