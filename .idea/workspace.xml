@@ -33,31 +33,12 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7734e7e-5730-42e8-8760-77d7c1343762" name="Default Changelist" comment="Added missing files">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/COMP250_A3_Multitester.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/org_junit_jupiter_junit_jupiter_engine_5_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="b7734e7e-5730-42e8-8760-77d7c1343762" name="Default Changelist" comment="Switched project to Gradle for hopeful Eclipse compatibility">
+      <change afterPath="$PROJECT_DIR$/src/test/java/assignment3/SpeedTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment3/AddCustomDog.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/AddCustomDog.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment3/DViz.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/DViz.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment3/DViz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/DViz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment3/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/Dog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment3/DogBox.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/DogBox.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment3/DogNodeDrawing.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/DogNodeDrawing.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment3/DogShelter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/DogShelter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment3/Megatester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/Megatester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment3/RandomDogs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/RandomDogs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment3/Replace DogShelter.java template with your own file" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/Replace DogShelter.java template with your own file" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment3/StressTest.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/StressTest.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment3/TreePrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/TreePrinter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment3/ZTestCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/ZTestCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment3/first_names.all.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/first_names.all.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment3/last_names.all.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/last_names.all.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/assignment3/Megatester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/Megatester.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +129,7 @@
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propGUI" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -166,10 +147,36 @@
       <recent name="assignment3" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Megatester.testShelter1">
+  <component name="RunManager" selected="Application.ZTestCode (1)">
+    <configuration name="SpeedTester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="assignment3.SpeedTester" />
+      <module name="COMP_250_A3_Multitester.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="assignment3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ZTestCode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="assignment3.ZTestCode" />
       <module name="COMP_250_A3_Multitester" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="assignment3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ZTestCode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="assignment3.ZTestCode" />
+      <module name="COMP_250_A3_Multitester.test" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="assignment3.*" />
@@ -193,63 +200,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="COMP_250_A3_Multitester [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Megatester" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="--tests &quot;assignment3.Megatester&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="dependencies" />
+            <option value=":test" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="COMP_250_A3_Multitester [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="COMP_250_A3_Multitester" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list />
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
@@ -277,18 +244,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.ZTestCode" />
-      <item itemvalue="Gradle.COMP_250_A3_Multitester" />
-      <item itemvalue="Gradle.COMP_250_A3_Multitester [dependencies]" />
-      <item itemvalue="Gradle.COMP_250_A3_Multitester [test]" />
       <item itemvalue="Gradle.Megatester.testShelter1" />
+      <item itemvalue="Gradle.Megatester" />
+      <item itemvalue="Application.ZTestCode (1)" />
+      <item itemvalue="Application.SpeedTester" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ZTestCode (1)" />
+        <item itemvalue="Application.SpeedTester" />
+        <item itemvalue="Gradle.Megatester" />
         <item itemvalue="Gradle.Megatester.testShelter1" />
         <item itemvalue="Application.ZTestCode" />
-        <item itemvalue="Gradle.COMP_250_A3_Multitester [dependencies]" />
-        <item itemvalue="Gradle.COMP_250_A3_Multitester [test]" />
-        <item itemvalue="Gradle.COMP_250_A3_Multitester" />
       </list>
     </recent_temporary>
   </component>
@@ -321,6 +288,7 @@
       <workItem from="1606968102400" duration="5858000" />
       <workItem from="1606977563488" duration="760000" />
       <workItem from="1606978504455" duration="1314000" />
+      <workItem from="1606979849806" duration="1444000" />
     </task>
     <task id="LOCAL-00001" summary="remove IntelliJ specific UI elements">
       <created>1586035512776</created>
@@ -497,7 +465,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606953377620</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Switched project to Gradle for hopeful Eclipse compatibility">
+      <created>1606980153695</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1606980153695</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -552,7 +527,8 @@
     <MESSAGE value="idk what changed but apparently something did" />
     <MESSAGE value="Changed some UI and random values&#10;- UI: Changed labels to note broken things (because I'm too lazy to fix them)&#10;- UI: Changed radio buttons to checkboxes to reflect functionality&#10;- Random: Changed values to lessen chance of duplication and create more realistic values (100 year old dogs here we come)" />
     <MESSAGE value="Added missing files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added missing files" />
+    <MESSAGE value="Switched project to Gradle for hopeful Eclipse compatibility" />
+    <option name="LAST_COMMIT_MESSAGE" value="Switched project to Gradle for hopeful Eclipse compatibility" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
