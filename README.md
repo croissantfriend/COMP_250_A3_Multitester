@@ -40,6 +40,8 @@ Eclipse
 Now supports Eclipse! You should be able to import the project as described above and run Megatester.java by left-clicking.
 All other instructions are written with IntelliJ in mind;  also not sure how to import libraries into Eclipse, so yeah try IntelliJ.
 
+IntelliJ recommendation: To regain your console output, go to Preferences -> Build, Execution, Deployment -> Build Tools -> Gradle and switch both "Build and run using" and "Run tests using" to "IntelliJ IDEA". (There's probably a better way of dealing with this but I sure don't know it so if you have any tips feel free to let me know please)
+
 * First of all, add your DogShelter code in place of the blank/template DogShelter file.
 * DViz:
     * Run `DViz.java`.

@@ -33,9 +33,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7734e7e-5730-42e8-8760-77d7c1343762" name="Default Changelist" comment="Fixed ordering of Megatester tests, added documentation for Eclipse support">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="b7734e7e-5730-42e8-8760-77d7c1343762" name="Default Changelist" comment="Added instructions for using RuntimeTester.jar with Gradle" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -143,7 +141,7 @@
       <recent name="assignment3" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ZTestCode (1)">
+  <component name="RunManager" selected="Application.ZTestCode">
     <configuration name="SpeedTester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="assignment3.SpeedTester" />
       <module name="COMP_250_A3_Multitester.test" />
@@ -179,19 +177,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -240,14 +225,12 @@
     </configuration>
     <list>
       <item itemvalue="Application.ZTestCode" />
+      <item itemvalue="Application.SpeedTester" />
       <item itemvalue="Gradle.Megatester.testShelter1" />
       <item itemvalue="Gradle.Megatester" />
-      <item itemvalue="Application.ZTestCode (1)" />
-      <item itemvalue="Application.SpeedTester" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ZTestCode (1)" />
         <item itemvalue="Application.SpeedTester" />
         <item itemvalue="Gradle.Megatester" />
         <item itemvalue="Gradle.Megatester.testShelter1" />
@@ -284,7 +267,7 @@
       <workItem from="1606968102400" duration="5858000" />
       <workItem from="1606977563488" duration="760000" />
       <workItem from="1606978504455" duration="1314000" />
-      <workItem from="1606979849806" duration="1840000" />
+      <workItem from="1606979849806" duration="1862000" />
     </task>
     <task id="LOCAL-00001" summary="remove IntelliJ specific UI elements">
       <created>1586035512776</created>
@@ -482,7 +465,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606981649474</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Added instructions for using RuntimeTester.jar with Gradle">
+      <created>1606981747587</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1606981747587</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -513,7 +503,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="change code generation from class to source, remove GridLayoutManager (unsupported in Eclipse)" />
     <MESSAGE value="Fix IntelliJ IDEA settings" />
     <MESSAGE value="Add Null root handling" />
     <MESSAGE value="Add superior readouts for remove failures" />
@@ -538,7 +527,8 @@
     <MESSAGE value="Switched project to Gradle for hopeful Eclipse compatibility" />
     <MESSAGE value="Split SpeedTester.java back out into its own class" />
     <MESSAGE value="Fixed ordering of Megatester tests, added documentation for Eclipse support" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed ordering of Megatester tests, added documentation for Eclipse support" />
+    <MESSAGE value="Added instructions for using RuntimeTester.jar with Gradle" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added instructions for using RuntimeTester.jar with Gradle" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
