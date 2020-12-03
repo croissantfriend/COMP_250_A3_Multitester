@@ -5,8 +5,8 @@ shared over the past days and weeks.
 
 Includes:
 
-- Dog, Minitester, and the course-provided template for DogShelter - replace this with your own code
-    * Minitester tests have been modified to use JUnit Assertions so they can be run along with all the other tests in IntelliJ.
+- Dog.java, Minitester.java, and the course-provided template for DogShelter.java - replace this with your own code!
+    * Minitester tests have been modified to use JUnit Assertions so they can be run along with all the other tests in IntelliJ!
 - SpeedTester.java
     * speedtesting functions written by me (currently only for `shelter()` and `adopt()`), which means they probably have issues - 
     definitely modify and add your own! (Feel free to submit a PR so I can add them as well!)
