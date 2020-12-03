@@ -13,30 +13,46 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:github" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7734e7e-5730-42e8-8760-77d7c1343762" name="Default Changelist" comment="Changed some UI and random values&#10;- UI: Changed labels to note broken things (because I'm too lazy to fix them)&#10;- UI: Changed radio buttons to checkboxes to reflect functionality&#10;- Random: Changed values to lessen chance of duplication and create more realistic values (100 year old dogs here we come)">
+    <list default="true" id="b7734e7e-5730-42e8-8760-77d7c1343762" name="Default Changelist" comment="Added missing files">
+      <change afterPath="$PROJECT_DIR$/.idea/COMP250_A3_Multitester.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/org_junit_jupiter_junit_jupiter_engine_5_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assignment3/Treap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/C250_Assignment3_Debugger.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/C250_Assignment3_Debugger_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/C250_Assignment3_Debugger_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/COMP250_A3_W2020/AddCustomDog.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment3/AddCustomDog.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/COMP250_A3_W2020/DViz.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment3/DViz.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/COMP250_A3_W2020/DViz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment3/DViz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/COMP250_A3_W2020/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment3/Dog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/COMP250_A3_W2020/DogBox.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment3/DogBox.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/COMP250_A3_W2020/DogNodeDrawing.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment3/DogNodeDrawing.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/COMP250_A3_W2020/DogShelter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment3/DogShelter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/COMP250_A3_W2020/Put Your java files here.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment3/Put Your java files here.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/COMP250_A3_W2020/RandomDogs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment3/RandomDogs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/COMP250_A3_W2020/StressTest.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment3/StressTest.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assignment3/DogShelter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment3/DogShelter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -49,60 +65,39 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="true" />
-    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW" value="true" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/COMP250_A3_W2020" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="project.propGUI" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\zashr\IdeaProjects\C250_Assignment3_Debugger\src\assignment3" />
+      <recent name="$PROJECT_DIR$/src/COMP250_A3_W2020" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/COMP250_A3_W2020" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/COMP250_A3_W2020" />
-    </key>
   </component>
-  <component name="RunManager" selected="Application.DViz">
-    <configuration name="DViz" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="assignment3.DViz" />
-      <module name="C250_Assignment3_Debugger" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="assignment3.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="MakeProject" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MiniTester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="COMP250_A3_W2020.MiniTester" />
-      <module name="C250_Assignment3_Debugger" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="assignment3.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.DogShelterTest.testBinaryInsertion">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -114,14 +109,144 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DogShelterTest.testAddToShelter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="COMP250_A3_Multitester" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="assignment3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="assignment3" />
+      <option name="MAIN_CLASS_NAME" value="assignment3.DogShelterTest" />
+      <option name="METHOD_NAME" value="testAddToShelter" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DogShelterTest.testBinaryInsertion" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="COMP250_A3_Multitester" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="assignment3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="assignment3" />
+      <option name="MAIN_CLASS_NAME" value="assignment3.DogShelterTest" />
+      <option name="METHOD_NAME" value="testBinaryInsertion" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Minitester" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="COMP250_A3_Multitester" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="assignment3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="assignment3" />
+      <option name="MAIN_CLASS_NAME" value="assignment3.Minitester" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Minitester.testBudgetVetExpenses1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="COMP250_A3_Multitester" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="assignment3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="assignment3" />
+      <option name="MAIN_CLASS_NAME" value="assignment3.Minitester" />
+      <option name="METHOD_NAME" value="testBudgetVetExpenses1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="assignment3 in C250_Assignment3_Debugger" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="COMP250_A3_Multitester" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="assignment3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="assignment3" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="COMP250_A3_Multitester" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="COMP250_A3_Multitester" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Application.MiniTester" />
-      <item itemvalue="Application.DViz" />
+      <item itemvalue="JUnit.assignment3 in C250_Assignment3_Debugger" />
+      <item itemvalue="JUnit.Minitester" />
+      <item itemvalue="JUnit.Minitester.testBudgetVetExpenses1" />
+      <item itemvalue="JUnit.DogShelterTest.testAddToShelter" />
+      <item itemvalue="JUnit.DogShelterTest.testBinaryInsertion" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DViz" />
-        <item itemvalue="Application.MiniTester" />
+        <item itemvalue="JUnit.DogShelterTest.testBinaryInsertion" />
+        <item itemvalue="JUnit.DogShelterTest.testAddToShelter" />
+        <item itemvalue="JUnit.assignment3 in C250_Assignment3_Debugger" />
+        <item itemvalue="JUnit.Minitester.testBudgetVetExpenses1" />
+        <item itemvalue="JUnit.Minitester" />
       </list>
     </recent_temporary>
   </component>
@@ -145,6 +270,10 @@
       <workItem from="1586382218868" duration="709000" />
       <workItem from="1586385705498" duration="1795000" />
       <workItem from="1606700944929" duration="7482000" />
+      <workItem from="1606802190257" duration="482000" />
+      <workItem from="1606802692999" duration="3579000" />
+      <workItem from="1606806658969" duration="5673000" />
+      <workItem from="1606813440442" duration="62816000" />
     </task>
     <task id="LOCAL-00001" summary="remove IntelliJ specific UI elements">
       <created>1586035512776</created>
@@ -314,7 +443,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606719056733</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Added missing files">
+      <created>1606953377620</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1606953377620</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,7 +461,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -356,12 +504,21 @@
     <MESSAGE value="Fixed GraphNodes; I think I got everything?" />
     <MESSAGE value="idk what changed but apparently something did" />
     <MESSAGE value="Changed some UI and random values&#10;- UI: Changed labels to note broken things (because I'm too lazy to fix them)&#10;- UI: Changed radio buttons to checkboxes to reflect functionality&#10;- Random: Changed values to lessen chance of duplication and create more realistic values (100 year old dogs here we come)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed some UI and random values&#10;- UI: Changed labels to note broken things (because I'm too lazy to fix them)&#10;- UI: Changed radio buttons to checkboxes to reflect functionality&#10;- Random: Changed values to lessen chance of duplication and create more realistic values (100 year old dogs here we come)" />
+    <MESSAGE value="Added missing files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added missing files" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="93" y="93" width="1350" height="678" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1606942217799">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="93" y="93" width="1350" height="678" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1536.864@0.0.1536.864" timestamp="1606942217799" />
+    <state x="485" y="90" key="#com.intellij.ide.util.MemberChooser" timestamp="1606870422444">
+      <screen x="0" y="0" width="1360" height="768" />
+    </state>
+    <state x="485" y="90" key="#com.intellij.ide.util.MemberChooser/1360.0.1536.864/0.0.1360.768@0.0.1360.768" timestamp="1606870422444" />
     <state x="457" y="258" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1606713856891">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -370,51 +527,161 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="0" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1440.877/1440.23.1600.877@0.23.1440.877" timestamp="1606715430874" />
-    <state width="1398" height="231" key="GridCell.Tab.0.bottom" timestamp="1606719402840">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="399" height="438" key="DebuggerActiveHint" timestamp="1606889992512">
+      <screen x="0" y="0" width="1360" height="768" />
     </state>
+    <state width="399" height="438" key="DebuggerActiveHint/1360.0.1536.864/0.0.1360.768@0.0.1360.768" timestamp="1606889992512" />
+    <state x="93" y="93" width="1350" height="678" key="DiffContextDialog" timestamp="1606928419972">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="93" y="93" width="1350" height="678" key="DiffContextDialog/0.0.1536.864@0.0.1536.864" timestamp="1606928419972" />
+    <state x="436" y="141" key="FileChooserDialogImpl" timestamp="1606953991606">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="436" y="141" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1606953991606" />
+    <state x="386" y="125" key="FileChooserDialogImpl/1360.0.1536.864/0.0.1360.768@0.0.1360.768" timestamp="1606901953811" />
+    <state x="595" y="330" key="Github.ShareDialog" timestamp="1606952800173">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="595" y="330" key="Github.ShareDialog/0.0.1536.864@0.0.1536.864" timestamp="1606952800173" />
+    <state width="1317" height="371" key="GridCell.Tab.-1.bottom" timestamp="1606877113045">
+      <screen x="0" y="0" width="1360" height="768" />
+    </state>
+    <state width="1317" height="371" key="GridCell.Tab.-1.bottom/1360.0.1536.864/0.0.1360.768@0.0.1360.768" timestamp="1606877113045" />
+    <state width="1317" height="371" key="GridCell.Tab.-1.center" timestamp="1606877113045">
+      <screen x="0" y="0" width="1360" height="768" />
+    </state>
+    <state width="1317" height="371" key="GridCell.Tab.-1.center/1360.0.1536.864/0.0.1360.768@0.0.1360.768" timestamp="1606877113045" />
+    <state width="1317" height="371" key="GridCell.Tab.-1.left" timestamp="1606877113045">
+      <screen x="0" y="0" width="1360" height="768" />
+    </state>
+    <state width="1317" height="371" key="GridCell.Tab.-1.left/1360.0.1536.864/0.0.1360.768@0.0.1360.768" timestamp="1606877113045" />
+    <state width="1317" height="371" key="GridCell.Tab.-1.right" timestamp="1606877113045">
+      <screen x="0" y="0" width="1360" height="768" />
+    </state>
+    <state width="1317" height="371" key="GridCell.Tab.-1.right/1360.0.1536.864/0.0.1360.768@0.0.1360.768" timestamp="1606877113045" />
+    <state width="1493" height="56" key="GridCell.Tab.0.bottom" timestamp="1606953342500">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="56" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1606953342500" />
     <state width="1398" height="231" key="GridCell.Tab.0.bottom/0.23.1440.877/1440.23.1600.877@0.23.1440.877" timestamp="1606719402840" />
     <state width="1558" height="231" key="GridCell.Tab.0.bottom/0.23.1440.877/1440.23.1600.877@1440.23.1600.877" timestamp="1606718211849" />
-    <state width="1398" height="231" key="GridCell.Tab.0.center" timestamp="1606719402839">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1317" height="236" key="GridCell.Tab.0.bottom/1360.0.1536.864/0.0.1360.768@0.0.1360.768" timestamp="1606902092641" />
+    <state width="1493" height="192" key="GridCell.Tab.0.bottom/1360.0.1536.864/0.0.1360.768@1360.0.1536.864" timestamp="1606811354197" />
+    <state width="1493" height="56" key="GridCell.Tab.0.center" timestamp="1606953342500">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
+    <state width="1493" height="56" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1606953342500" />
     <state width="1398" height="231" key="GridCell.Tab.0.center/0.23.1440.877/1440.23.1600.877@0.23.1440.877" timestamp="1606719402839" />
     <state width="1558" height="231" key="GridCell.Tab.0.center/0.23.1440.877/1440.23.1600.877@1440.23.1600.877" timestamp="1606718211848" />
-    <state width="1398" height="231" key="GridCell.Tab.0.left" timestamp="1606719402839">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1317" height="236" key="GridCell.Tab.0.center/1360.0.1536.864/0.0.1360.768@0.0.1360.768" timestamp="1606902092640" />
+    <state width="1493" height="192" key="GridCell.Tab.0.center/1360.0.1536.864/0.0.1360.768@1360.0.1536.864" timestamp="1606811354197" />
+    <state width="1493" height="56" key="GridCell.Tab.0.left" timestamp="1606953342500">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
+    <state width="1493" height="56" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1606953342500" />
     <state width="1398" height="231" key="GridCell.Tab.0.left/0.23.1440.877/1440.23.1600.877@0.23.1440.877" timestamp="1606719402839" />
     <state width="1558" height="231" key="GridCell.Tab.0.left/0.23.1440.877/1440.23.1600.877@1440.23.1600.877" timestamp="1606718211848" />
-    <state width="1398" height="231" key="GridCell.Tab.0.right" timestamp="1606719402839">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1317" height="236" key="GridCell.Tab.0.left/1360.0.1536.864/0.0.1360.768@0.0.1360.768" timestamp="1606902092640" />
+    <state width="1493" height="192" key="GridCell.Tab.0.left/1360.0.1536.864/0.0.1360.768@1360.0.1536.864" timestamp="1606811354196" />
+    <state width="1493" height="56" key="GridCell.Tab.0.right" timestamp="1606953342500">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
+    <state width="1493" height="56" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1606953342500" />
     <state width="1398" height="231" key="GridCell.Tab.0.right/0.23.1440.877/1440.23.1600.877@0.23.1440.877" timestamp="1606719402839" />
     <state width="1558" height="231" key="GridCell.Tab.0.right/0.23.1440.877/1440.23.1600.877@1440.23.1600.877" timestamp="1606718211849" />
-    <state x="320" y="201" key="Vcs.Push.Dialog.v2" timestamp="1606719068410">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1317" height="236" key="GridCell.Tab.0.right/1360.0.1536.864/0.0.1360.768@0.0.1360.768" timestamp="1606902092641" />
+    <state width="1493" height="192" key="GridCell.Tab.0.right/1360.0.1536.864/0.0.1360.768@1360.0.1536.864" timestamp="1606811354197" />
+    <state width="1493" height="56" key="GridCell.Tab.1.bottom" timestamp="1606953342501">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
+    <state width="1493" height="56" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1606953342501" />
+    <state width="1317" height="296" key="GridCell.Tab.1.bottom/1360.0.1536.864/0.0.1360.768@0.0.1360.768" timestamp="1606900486876" />
+    <state width="1493" height="56" key="GridCell.Tab.1.center" timestamp="1606953342501">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="56" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1606953342501" />
+    <state width="1317" height="296" key="GridCell.Tab.1.center/1360.0.1536.864/0.0.1360.768@0.0.1360.768" timestamp="1606900486876" />
+    <state width="1493" height="56" key="GridCell.Tab.1.left" timestamp="1606953342500">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="56" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1606953342500" />
+    <state width="1317" height="296" key="GridCell.Tab.1.left/1360.0.1536.864/0.0.1360.768@0.0.1360.768" timestamp="1606900486875" />
+    <state width="1493" height="56" key="GridCell.Tab.1.right" timestamp="1606953342501">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="56" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1606953342501" />
+    <state width="1317" height="296" key="GridCell.Tab.1.right/1360.0.1536.864/0.0.1360.768@0.0.1360.768" timestamp="1606900486876" />
+    <state width="1493" height="56" key="GridCell.Tab.2.bottom" timestamp="1606953342501">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="56" key="GridCell.Tab.2.bottom/0.0.1536.864@0.0.1536.864" timestamp="1606953342501" />
+    <state width="1317" height="296" key="GridCell.Tab.2.bottom/1360.0.1536.864/0.0.1360.768@0.0.1360.768" timestamp="1606900486876" />
+    <state width="1493" height="56" key="GridCell.Tab.2.center" timestamp="1606953342501">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="56" key="GridCell.Tab.2.center/0.0.1536.864@0.0.1536.864" timestamp="1606953342501" />
+    <state width="1317" height="296" key="GridCell.Tab.2.center/1360.0.1536.864/0.0.1360.768@0.0.1360.768" timestamp="1606900486876" />
+    <state width="1493" height="56" key="GridCell.Tab.2.left" timestamp="1606953342501">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="56" key="GridCell.Tab.2.left/0.0.1536.864@0.0.1536.864" timestamp="1606953342501" />
+    <state width="1317" height="296" key="GridCell.Tab.2.left/1360.0.1536.864/0.0.1360.768@0.0.1360.768" timestamp="1606900486876" />
+    <state width="1493" height="56" key="GridCell.Tab.2.right" timestamp="1606953342501">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="56" key="GridCell.Tab.2.right/0.0.1536.864@0.0.1536.864" timestamp="1606953342501" />
+    <state width="1317" height="296" key="GridCell.Tab.2.right/1360.0.1536.864/0.0.1360.768@0.0.1360.768" timestamp="1606900486876" />
+    <state x="498" y="14" key="SettingsEditor" timestamp="1606924959157">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="498" y="14" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1606924959157" />
+    <state x="160" y="0" key="SettingsEditor/1360.0.1536.864/0.0.1360.768@0.0.1360.768" timestamp="1606901958059" />
+    <state x="341" y="175" key="Vcs.Push.Dialog.v2" timestamp="1606953403813">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="341" y="175" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1606953403813" />
     <state x="320" y="201" key="Vcs.Push.Dialog.v2/0.23.1440.877/1440.23.1600.877@0.23.1440.877" timestamp="1606719068410" />
+    <state x="567" y="256" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1606924949800">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="567" y="256" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1536.864@0.0.1536.864" timestamp="1606924949800" />
+    <state x="44" y="276" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/1360.0.1536.864/0.0.1360.768@0.0.1360.768" timestamp="1606802338438" />
     <state x="477" y="337" key="com.intellij.uiDesigner.propertyInspector.editors.string.StringEditorDialog" timestamp="1606718365144">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="477" y="337" key="com.intellij.uiDesigner.propertyInspector.editors.string.StringEditorDialog/0.0.1440.900/1440.0.1600.900@0.0.1440.900" timestamp="1606718365144" />
+    <state x="1680" y="168" width="895" height="628" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1606806729831">
+      <screen x="1360" y="0" width="1536" height="864" />
+    </state>
+    <state x="1680" y="168" width="895" height="628" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/1360.0.1536.864/0.0.1360.768@1360.0.1536.864" timestamp="1606806729831" />
+    <state x="672" y="0" width="696" height="776" key="dock-window-1" timestamp="1606900903004">
+      <screen x="0" y="0" width="1360" height="768" />
+    </state>
+    <state x="672" y="0" width="696" height="776" key="dock-window-1/1360.0.1536.864/0.0.1360.768@0.0.1360.768" timestamp="1606900903004" />
+    <state x="478" y="31" width="579" height="801" key="find.popup" timestamp="1606931187221">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="478" y="31" width="579" height="801" key="find.popup/0.0.1536.864@0.0.1536.864" timestamp="1606931187221" />
     <state x="419" y="244" key="refactoring.ChangeSignatureDialog" timestamp="1606714267696">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="419" y="244" key="refactoring.ChangeSignatureDialog/0.23.1440.877/1440.23.1600.877@0.23.1440.877" timestamp="1606714267696" />
-    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup" timestamp="1606713469271">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state x="379" y="194" key="run.anything.popup" timestamp="1606928155945">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
+    <state x="379" y="194" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1606928155945" />
+    <state x="336" y="172" key="run.anything.popup/1360.0.1536.864/0.0.1360.768@0.0.1360.768" timestamp="1606893022598" />
+    <state x="410" y="187" width="759" height="666" key="search.everywhere.popup" timestamp="1606950557970">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="410" y="187" width="759" height="666" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1606950557970" />
     <state x="385" y="213" width="670" height="676" key="search.everywhere.popup/0.23.1440.877/1440.23.1600.877@0.23.1440.877" timestamp="1606713469271" />
+    <state x="364" y="166" width="672" height="592" key="search.everywhere.popup/1360.0.1536.864/0.0.1360.768@0.0.1360.768" timestamp="1606898006414" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/assignment3/MiniTester.java</url>
-          <line>239</line>
-          <option name="timeStamp" value="64" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/assignment3/CatTree.java</url>
           <line>326</line>
@@ -430,12 +697,11 @@
           <line>514</line>
           <option name="timeStamp" value="108" />
         </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.OutOfMemoryError" package="java.lang" />
+          <option name="timeStamp" value="109" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="Application">
-        <watch expression="((CViz)this).root" language="JAVA" custom="COMP250_A3_W2020.CViz" />
-      </configuration>
-    </watches-manager>
   </component>
 </project>

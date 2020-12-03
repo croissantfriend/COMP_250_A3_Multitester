@@ -2,7 +2,7 @@
   <artifact type="jar" build-on-make="true" name="C250_Assignment3_Debugger:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/C250_Assignment3_Debugger_jar</output-path>
     <root id="archive" name="C250_Assignment3_Debugger.jar">
-      <element id="module-output" name="C250_Assignment3_Debugger" />
+      <element id="module-output" name="COMP250_A3_Multitester" />
     </root>
   </artifact>
 </component>
