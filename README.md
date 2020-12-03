@@ -5,8 +5,7 @@ shared over the past days and weeks.
 
 Includes:
 
-- Dog.java
-- Minitester.java
+- Dog, Minitester, and the course-provided template for DogShelter - replace this with your own code
 - SpeedTester.java
     * speedtesting functions written by me, which means they probably have issues - 
     definitely modify and add your own! (Feel free to submit a PR so I can add them as well!)
