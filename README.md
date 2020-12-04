@@ -1,4 +1,4 @@
-# COMP 250: Assignment 3 - Grand Unified Tester v1.2.1
+# COMP 250: Assignment 3 - Grand Unified Tester v1.2.2
 This repository is meant to act as a bundle of
 several tools and testers others have 
 shared over the past days and weeks. 
