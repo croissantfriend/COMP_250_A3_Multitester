@@ -3,6 +3,7 @@ package assignment3;
 import RuntimeTester.Visualizer;
 import RuntimeTester.benchmark;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class SpeedTester {
@@ -10,7 +11,7 @@ public class SpeedTester {
     public static final String categoryName = "DogShelter";
 
     public static void main(String[] args) {
-        Visualizer.launch(Megatester.class); // Comment this if you don't want to see the visualization
+        Visualizer.launch(SpeedTester.class); // Comment this if you don't want to see the visualization
     }
 
     // Speedtests
@@ -133,4 +134,19 @@ public class SpeedTester {
         long endTime = System.nanoTime();
         return endTime - startTime;
     }
+
+    @benchmark(name="binarySearch", category = "Math demos", expectedEfficiency = "O(logn)")
+    public static long binarySearch(long size) {
+        Random random = new Random();
+        int[] arr = new int[(int) size];
+        for (int i = 0; i < size; i++) {
+            arr[i] = i;
+        }
+        int key = random.nextInt((int) size);
+        long startTime = System.nanoTime();
+        int index = Arrays.binarySearch(arr, key);
+        long endTime = System.nanoTime();
+        return endTime - startTime;
+    }
+
 }

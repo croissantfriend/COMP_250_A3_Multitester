@@ -14,34 +14,29 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:test2" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7734e7e-5730-42e8-8760-77d7c1343762" name="Default Changelist" comment="Added Alex's tests">
-      <change afterPath="$PROJECT_DIR$/.idea/COMP250_A3_Multitester.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/RuntimeTester_Windows.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/RuntimeTester_MacOS.xml" beforeDir="false" />
+    <list default="true" id="b7734e7e-5730-42e8-8760-77d7c1343762" name="Default Changelist" comment="DogShelterTest">
+      <change afterPath="$PROJECT_DIR$/src/test/java/assignment3/Megatester.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/assignment3/AddCustomDog.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/assignment3/AddCustomDog.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/assignment3/DViz.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/assignment3/DViz.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/assignment3/DViz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/assignment3/DViz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/assignment3/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/assignment3/Dog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/assignment3/DogBox.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/assignment3/DogBox.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/assignment3/DogNodeDrawing.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/assignment3/DogNodeDrawing.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/assignment3/DogShelter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/assignment3/Megatester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/assignment3/Megatester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/assignment3/RandomDogs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/assignment3/RandomDogs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/assignment3/Replace DogShelter.java template with your own file" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/assignment3/Replace DogShelter.java template with your own file" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/assignment3/SpeedTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/assignment3/SpeedTester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/assignment3/StressTest.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/assignment3/StressTest.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/assignment3/TreePrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/assignment3/TreePrinter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/assignment3/ZTestCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/assignment3/ZTestCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/assignment3/first_names.all.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/assignment3/first_names.all.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/assignment3/last_names.all.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/assignment3/last_names.all.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/assignment3/AddCustomDog.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/AddCustomDog.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/assignment3/DViz.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/DViz.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/assignment3/DViz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/DViz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/assignment3/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/Dog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/assignment3/DogBox.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/DogBox.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/assignment3/DogNodeDrawing.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/DogNodeDrawing.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/assignment3/Megatester.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/assignment3/RandomDogs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/RandomDogs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/assignment3/Replace DogShelter.java template with your own file" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/Replace DogShelter.java template with your own file" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/assignment3/SpeedTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/SpeedTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/assignment3/StressTest.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/StressTest.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/assignment3/TreePrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/TreePrinter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/assignment3/ZTestCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/ZTestCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/assignment3/first_names.all.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/first_names.all.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/assignment3/last_names.all.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/last_names.all.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +81,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="test" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -109,7 +104,7 @@
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/RuntimeTester-Windows.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/java/assignment3/Megatester.java" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -120,26 +115,27 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/src/test/java/assignment3/Megatester.java" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\zashr\IdeaProjects\COMP 250 A3 Multitester\src\java" />
-      <recent name="C:\Users\zashr\IdeaProjects\COMP 250 A3 Multitester\src\test" />
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/src/test/java/assignment3" />
-      <recent name="$PROJECT_DIR$/src/main/java/assignment3" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="assignment3" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/COMP250_A3_W2020" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="assignment3" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\zashr\IdeaProjects\COMP 250 A3 Multitester\src\test\java\assignment3" />
+      <recent name="C:\Users\zashr\IdeaProjects\COMP 250 A3 Multitester\src\java" />
+      <recent name="C:\Users\zashr\IdeaProjects\COMP 250 A3 Multitester\src\test" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/test/java/assignment3" />
+    </key>
   </component>
   <component name="RunManager" selected="JUnit.Megatester">
-    <configuration name="ZTestCode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="assignment3.ZTestCode" />
+    <configuration name="SpeedTester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="assignment3.SpeedTester" />
       <module name="COMP_250_A3_Multitester.test" />
       <extension name="coverage">
         <pattern>
@@ -151,15 +147,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -190,22 +184,6 @@
       <option name="PACKAGE_NAME" value="assignment3" />
       <option name="MAIN_CLASS_NAME" value="assignment3.Megatester" />
       <option name="METHOD_NAME" value="adoptMegaTester" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Megatester.dogIteratorExceptionCheck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="COMP_250_A3_Multitester.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="assignment3.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="assignment3" />
-      <option name="MAIN_CLASS_NAME" value="assignment3.Megatester" />
-      <option name="METHOD_NAME" value="dogIteratorExceptionCheck" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -246,17 +224,17 @@
     <list>
       <item itemvalue="JUnit.Megatester.findDogToAdoptMegaTester" />
       <item itemvalue="JUnit.Megatester.adoptMegaTester" />
-      <item itemvalue="JUnit.Megatester.dogIteratorExceptionCheck" />
       <item itemvalue="JUnit.Megatester.getVetScheduleMegaTester" />
       <item itemvalue="JUnit.Megatester" />
+      <item itemvalue="Application.SpeedTester" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.Megatester" />
-        <item itemvalue="JUnit.Megatester.getVetScheduleMegaTester" />
-        <item itemvalue="JUnit.Megatester.dogIteratorExceptionCheck" />
-        <item itemvalue="JUnit.Megatester.adoptMegaTester" />
+        <item itemvalue="Application.SpeedTester" />
         <item itemvalue="JUnit.Megatester.findDogToAdoptMegaTester" />
+        <item itemvalue="JUnit.Megatester.adoptMegaTester" />
+        <item itemvalue="JUnit.Megatester.getVetScheduleMegaTester" />
       </list>
     </recent_temporary>
   </component>
@@ -518,7 +496,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="test2" />
                       </list>
                     </value>
                   </entry>
@@ -532,7 +510,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add Null root handling" />
     <MESSAGE value="Add superior readouts for remove failures" />
     <MESSAGE value="Add many features" />
     <MESSAGE value="Add drawing of subtrees" />
@@ -557,7 +534,8 @@
     <MESSAGE value="Fixed ordering of Megatester tests, added documentation for Eclipse support" />
     <MESSAGE value="Added instructions for using RuntimeTester.jar with Gradle" />
     <MESSAGE value="Added Alex's tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Alex's tests" />
+    <MESSAGE value="DogShelterTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="DogShelterTest" />
   </component>
   <component name="WindowStateProjectService">
     <state x="249" y="7" key="#Project_Structure" timestamp="1607034824286">
@@ -572,26 +550,70 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="413" y="357" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.864@0.0.1536.864" timestamp="1607021748449" />
-    <state x="473" y="174" key="FileChooserDialogImpl" timestamp="1607021535469">
+    <state x="499" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1607036447010">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="473" y="174" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1607021535469" />
-    <state width="1493" height="223" key="GridCell.Tab.0.bottom" timestamp="1607033485857">
+    <state x="499" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.864@0.0.1536.864" timestamp="1607036447010" />
+    <state x="93" y="93" width="1350" height="678" key="DiffContextDialog" timestamp="1607043949449">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="223" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1607033485857" />
-    <state width="1493" height="223" key="GridCell.Tab.0.center" timestamp="1607033485857">
+    <state x="93" y="93" width="1350" height="678" key="DiffContextDialog/0.0.1536.864@0.0.1536.864" timestamp="1607043949449" />
+    <state x="473" y="174" key="FileChooserDialogImpl" timestamp="1607043838943">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="223" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1607033485857" />
-    <state width="1493" height="223" key="GridCell.Tab.0.left" timestamp="1607033485856">
+    <state x="473" y="174" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1607043838943" />
+    <state width="1493" height="2" key="GridCell.Tab.0.bottom" timestamp="1607043993138">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="223" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1607033485856" />
-    <state width="1493" height="223" key="GridCell.Tab.0.right" timestamp="1607033485857">
+    <state width="1493" height="2" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1607043993138" />
+    <state width="1493" height="2" key="GridCell.Tab.0.center" timestamp="1607043993138">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="223" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1607033485857" />
+    <state width="1493" height="2" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1607043993138" />
+    <state width="1493" height="2" key="GridCell.Tab.0.left" timestamp="1607043993138">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="2" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1607043993138" />
+    <state width="1493" height="2" key="GridCell.Tab.0.right" timestamp="1607043993138">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="2" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1607043993138" />
+    <state width="1493" height="354" key="GridCell.Tab.1.bottom" timestamp="1607042018201">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="354" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1607042018201" />
+    <state width="1493" height="354" key="GridCell.Tab.1.center" timestamp="1607042018201">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="354" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1607042018201" />
+    <state width="1493" height="354" key="GridCell.Tab.1.left" timestamp="1607042018201">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="354" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1607042018201" />
+    <state width="1493" height="354" key="GridCell.Tab.1.right" timestamp="1607042018201">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="354" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1607042018201" />
+    <state width="1493" height="354" key="GridCell.Tab.2.bottom" timestamp="1607042018201">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="354" key="GridCell.Tab.2.bottom/0.0.1536.864@0.0.1536.864" timestamp="1607042018201" />
+    <state width="1493" height="354" key="GridCell.Tab.2.center" timestamp="1607042018201">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="354" key="GridCell.Tab.2.center/0.0.1536.864@0.0.1536.864" timestamp="1607042018201" />
+    <state width="1493" height="354" key="GridCell.Tab.2.left" timestamp="1607042018201">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="354" key="GridCell.Tab.2.left/0.0.1536.864@0.0.1536.864" timestamp="1607042018201" />
+    <state width="1493" height="354" key="GridCell.Tab.2.right" timestamp="1607042018201">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="354" key="GridCell.Tab.2.right/0.0.1536.864@0.0.1536.864" timestamp="1607042018201" />
+    <state x="407" y="194" key="MultipleFileMergeDialog" timestamp="1607036320539">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="407" y="194" key="MultipleFileMergeDialog/0.0.1536.864@0.0.1536.864" timestamp="1607036320539" />
     <state x="249" y="7" key="SettingsEditor" timestamp="1607033920416">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -604,14 +626,18 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="93" y="93" width="1350" height="678" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1536.864@0.0.1536.864" timestamp="1607035081410" />
+    <state x="425" y="197" key="run.anything.popup" timestamp="1607044019368">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="425" y="197" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1607044019368" />
     <state x="561" y="291" key="scopes" timestamp="1607021483866">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="561" y="291" key="scopes/0.0.1536.864@0.0.1536.864" timestamp="1607021483866" />
-    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1607032950653">
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1607043830095">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1607032950653" />
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1607043830095" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -2,14 +2,11 @@ package assignment3;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
-import javax.swing.plaf.FontUIResource;
-import javax.swing.text.StyleContext;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.ArrayList;
-import java.util.Locale;
 import java.util.Stack;
 
 public class DViz extends DogShelter {                         //TODO: Cleanup console outputs
