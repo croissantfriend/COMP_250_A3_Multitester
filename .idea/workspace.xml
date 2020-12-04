@@ -19,25 +19,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7734e7e-5730-42e8-8760-77d7c1343762" name="Default Changelist" comment="DogShelterTest">
-      <change afterPath="$PROJECT_DIR$/src/test/java/assignment3/Megatester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/assignment3/AddCustomDog.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/AddCustomDog.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/assignment3/DViz.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/DViz.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/assignment3/DViz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/DViz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/assignment3/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/Dog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/assignment3/DogBox.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/DogBox.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/assignment3/DogNodeDrawing.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/DogNodeDrawing.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/assignment3/Megatester.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/assignment3/RandomDogs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/RandomDogs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/assignment3/Replace DogShelter.java template with your own file" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/Replace DogShelter.java template with your own file" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/assignment3/SpeedTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/SpeedTester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/assignment3/StressTest.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/StressTest.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/assignment3/TreePrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/TreePrinter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/assignment3/ZTestCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/ZTestCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/assignment3/first_names.all.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/first_names.all.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/assignment3/last_names.all.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/last_names.all.txt" afterDir="false" />
-    </list>
+    <list default="true" id="b7734e7e-5730-42e8-8760-77d7c1343762" name="Default Changelist" comment="DogShelterTest" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -479,7 +461,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607033554025</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="DogShelterTest">
+      <created>1607044323695</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1607044323695</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
