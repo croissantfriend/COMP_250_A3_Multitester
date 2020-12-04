@@ -33,7 +33,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7734e7e-5730-42e8-8760-77d7c1343762" name="Default Changelist" comment="Added instructions for using RuntimeTester.jar with Gradle" />
+    <list default="true" id="b7734e7e-5730-42e8-8760-77d7c1343762" name="Default Changelist" comment="Added an IntelliJ tip" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -268,6 +268,7 @@
       <workItem from="1606977563488" duration="760000" />
       <workItem from="1606978504455" duration="1314000" />
       <workItem from="1606979849806" duration="1862000" />
+      <workItem from="1606981925641" duration="187000" />
     </task>
     <task id="LOCAL-00001" summary="remove IntelliJ specific UI elements">
       <created>1586035512776</created>
@@ -472,7 +473,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606981747587</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Added an IntelliJ tip">
+      <created>1606982071928</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1606982071928</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -503,7 +511,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix IntelliJ IDEA settings" />
     <MESSAGE value="Add Null root handling" />
     <MESSAGE value="Add superior readouts for remove failures" />
     <MESSAGE value="Add many features" />
@@ -528,7 +535,8 @@
     <MESSAGE value="Split SpeedTester.java back out into its own class" />
     <MESSAGE value="Fixed ordering of Megatester tests, added documentation for Eclipse support" />
     <MESSAGE value="Added instructions for using RuntimeTester.jar with Gradle" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added instructions for using RuntimeTester.jar with Gradle" />
+    <MESSAGE value="Added an IntelliJ tip" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added an IntelliJ tip" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
