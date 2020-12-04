@@ -19,7 +19,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7734e7e-5730-42e8-8760-77d7c1343762" name="Default Changelist" comment="DogShelterTest" />
+    <list default="true" id="b7734e7e-5730-42e8-8760-77d7c1343762" name="Default Changelist" comment="Added Alex's tests">
+      <change afterPath="$PROJECT_DIR$/src/test/java/assignment3/Megatester2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/assignment3/Megatester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/Megatester.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -100,13 +104,6 @@
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/src/test/java/assignment3/Megatester.java" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src/COMP250_A3_W2020" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="assignment3" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\zashr\IdeaProjects\COMP 250 A3 Multitester\src\test\java\assignment3" />
       <recent name="C:\Users\zashr\IdeaProjects\COMP 250 A3 Multitester\src\java" />
@@ -114,8 +111,15 @@
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/test/java/assignment3" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="assignment3" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/COMP250_A3_W2020" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.Megatester">
+  <component name="RunManager" selected="JUnit.All in COMP_250_A3_Multitester.test">
     <configuration name="SpeedTester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="assignment3.SpeedTester" />
       <module name="COMP_250_A3_Multitester.test" />
@@ -140,7 +144,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Megatester" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="All in COMP_250_A3_Multitester.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="COMP_250_A3_Multitester.test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Megatester2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="COMP_250_A3_Multitester.test" />
       <extension name="coverage">
         <pattern>
@@ -149,13 +161,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="assignment3" />
-      <option name="MAIN_CLASS_NAME" value="assignment3.Megatester" />
+      <option name="MAIN_CLASS_NAME" value="assignment3.Megatester2" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Megatester.adoptMegaTester" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Megatester2.adoptMegaTester" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="COMP_250_A3_Multitester.test" />
       <extension name="coverage">
         <pattern>
@@ -164,14 +176,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="assignment3" />
-      <option name="MAIN_CLASS_NAME" value="assignment3.Megatester" />
+      <option name="MAIN_CLASS_NAME" value="assignment3.Megatester2" />
       <option name="METHOD_NAME" value="adoptMegaTester" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Megatester.findDogToAdoptMegaTester" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Megatester2.findDogToAdoptMegaTester" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="COMP_250_A3_Multitester.test" />
       <extension name="coverage">
         <pattern>
@@ -180,43 +192,27 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="assignment3" />
-      <option name="MAIN_CLASS_NAME" value="assignment3.Megatester" />
+      <option name="MAIN_CLASS_NAME" value="assignment3.Megatester2" />
       <option name="METHOD_NAME" value="findDogToAdoptMegaTester" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Megatester.getVetScheduleMegaTester" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="COMP_250_A3_Multitester.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="assignment3.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="assignment3" />
-      <option name="MAIN_CLASS_NAME" value="assignment3.Megatester" />
-      <option name="METHOD_NAME" value="getVetScheduleMegaTester" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="JUnit.Megatester.findDogToAdoptMegaTester" />
-      <item itemvalue="JUnit.Megatester.adoptMegaTester" />
-      <item itemvalue="JUnit.Megatester.getVetScheduleMegaTester" />
-      <item itemvalue="JUnit.Megatester" />
       <item itemvalue="Application.SpeedTester" />
+      <item itemvalue="JUnit.Megatester2.findDogToAdoptMegaTester" />
+      <item itemvalue="JUnit.Megatester2.adoptMegaTester" />
+      <item itemvalue="JUnit.Megatester2" />
+      <item itemvalue="JUnit.All in COMP_250_A3_Multitester.test" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.Megatester" />
+        <item itemvalue="JUnit.All in COMP_250_A3_Multitester.test" />
+        <item itemvalue="JUnit.Megatester2" />
         <item itemvalue="Application.SpeedTester" />
-        <item itemvalue="JUnit.Megatester.findDogToAdoptMegaTester" />
-        <item itemvalue="JUnit.Megatester.adoptMegaTester" />
-        <item itemvalue="JUnit.Megatester.getVetScheduleMegaTester" />
+        <item itemvalue="JUnit.Megatester2.findDogToAdoptMegaTester" />
+        <item itemvalue="JUnit.Megatester2.adoptMegaTester" />
       </list>
     </recent_temporary>
   </component>
